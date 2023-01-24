@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 
-const turma = database.define('Turma', {
+const turmas = database.define('Turma', {
     Turma_ID: 
     {
         type: Sequelize.INTEGER,
@@ -14,14 +14,8 @@ const turma = database.define('Turma', {
     {
         type: Sequelize.STRING(50),
         allowNull: false
-    },
-
-    Instrutor_ID: 
-    {
-        type: Sequelize.INTEGER,
-        allowNull: false
     }
+
 });
 
-
-module.exports = turma;
+module.exports = turmas;

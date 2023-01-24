@@ -43,18 +43,4 @@ const informacoes = database.define('Informações', {
 
 });
 
-
-aluno.belongsTo(turma, 
-{
-    constraint: true, 
-    foreignKey: 'Turma_ID'
-});
-
-aluno.belongsTo(contato, 
-{
-    constraint: true, 
-    foreignKey: 'informacoes_ID'
-});
-
-
 module.exports = informacoes;

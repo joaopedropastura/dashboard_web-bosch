@@ -1,10 +1,9 @@
-
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const turma = require('./turma');
+const turmas = require('./turma');
 const informacoes = require('./informacoes');
 
-const aluno = database.define('Aluno', {
+const alunos = database.define('Alunos', {
     EDV: 
     {
         type: Sequelize.INTEGER,
@@ -27,17 +26,17 @@ const aluno = database.define('Aluno', {
 });
 
 
-aluno.belongsTo(turma, 
+alunos.belongsTo(turmas, 
 {
     constraint: true, 
     foreignKey: 'Turma_ID'
 });
 
-aluno.belongsTo(informacoes, 
+alunos.belongsTo(informacoes, 
 {
     constraint: true, 
     foreignKey: 'Informacoes_ID'
 });
 
 
-module.exports = aluno;
+module.exports = alunos;
