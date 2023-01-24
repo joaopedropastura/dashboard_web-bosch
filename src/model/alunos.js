@@ -3,7 +3,8 @@ const database = require('../config/db');
 const turmas = require('./turma');
 const informacoes = require('./informacoes');
 
-const alunos = database.define('Alunos', {
+const alunos = database.define('Alunos', 
+{
     EDV: 
     {
         type: Sequelize.INTEGER,

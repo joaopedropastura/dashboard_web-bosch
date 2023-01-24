@@ -3,7 +3,8 @@ const Sequelize = require('sequelize');
 const database = require('../config/db');
 const informacoes = require('./informacoes');
 
-const instrutores = database.define('Instrutores', {
+const instrutores = database.define('Instrutores', 
+{
     EDV: 
     {
         type: Sequelize.INTEGER,

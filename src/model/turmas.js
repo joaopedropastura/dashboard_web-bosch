@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 
-const turmas = database.define('Turma', {
+const turmas = database.define('Turma', 
+{
     Turma_ID: 
     {
         type: Sequelize.INTEGER,

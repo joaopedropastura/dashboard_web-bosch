@@ -2,7 +2,8 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 
-const informacoes = database.define('Informações', {
+const informacoes = database.define('Informações', 
+{
     Informacoes_ID: 
     {
         type: Sequelize.INTEGER,
