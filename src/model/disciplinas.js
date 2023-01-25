@@ -2,9 +2,9 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 
-const conteudos = database.define('Conteudos', 
+const disciplinas = database.define('Disciplinas', 
 {
-    Conteudo_ID: 
+    Disciplina_ID: 
     {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -37,4 +37,4 @@ const conteudos = database.define('Conteudos',
     }
 });
 
-module.exports = conteudos;
+module.exports = disciplinas;

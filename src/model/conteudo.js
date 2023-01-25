@@ -3,11 +3,11 @@ const Sequelize = require('sequelize');
 const database = require('../config/db');
 const turmas = require('./turma');
 const instrutores = require('./instrutores');
-const conteudos = require('./conteudos');
+const disciplina = require('./disciplina');
 
-const disciplinas = database.define('Disciplinas', 
+const conteudo = database.define('Conteudos', 
 {
-    Disciplinas_ID: 
+    Conteudo_ID: 
     {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -24,22 +24,22 @@ const disciplinas = database.define('Disciplinas',
 });
 
 
-disciplinas.belongsTo(turmas, 
+conteudo.belongsTo(turmas, 
 {
     constraint: true, 
     foreignKey: 'Turma_ID'
 });
 
-disciplinas.belongsTo(instrutores, 
+conteudo.belongsTo(instrutores, 
 {
     constraint: true, 
     foreignKey: 'Instrutores_ID'
 });
 
-disciplinas.belongsTo(conteudos, 
+conteudo.belongsTo(disciplinas, 
 {
     constraint: true, 
-    foreignKey: 'Conteudos_ID'
+    foreignKey: 'Disciplinas_ID'
 });
 
-module.exports = disciplinas;
+module.exports = conteudo;
