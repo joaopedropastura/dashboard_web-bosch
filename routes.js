@@ -1,30 +1,29 @@
+// Iniciando Route do Express
 const express = require('express');
+const multer = require("multer");
+
 const route = express.Router();
 
-// const multer = require("multer");
-// const config = require('./src/config/multer');
 
+// Importando os Controllers
 const home = require('./src/controllers/home');
+// Recebendo arquivo do multer que criamos
+const config = require('./src/config/multer');
+// Cadastro de aluno irá receber um arquivo com o "name" do HTML chamado de "foto"
 
-route.post('/index', home.index);
-// const cadastro = require('./src/controllers/cadastro');
+const cadastro = require('./src/controllers/cadastro');
+const editar  =  require('./src/controllers/editar');
+// Iniciando as rotas
+route.get('/', home.pagInicialGet);
+route.get('/alunos', home.pagAlunos);
+route.get('/sala', home.PagSala);
 
+route.post('/alunos', multer(config).single('foto'), cadastro.alunoInsert);
+route.post('/alunos', cadastro.alunoInsert);
+route.post('/salas', cadastro.salaInsert);
+route.post('/', home.pagInicialPost);
+route.post('/editarAluno/:id', multer(config).single('foto'), editar.adicionar);
 
-// route.get('/', home.pagInicialget);
-// route.post('/', home.pagInicialPost);
-
-// route.get('/cadastroTime', cadastro.time);
-// route.post('/cadastroTime', cadastro.timeInsert);
-
-// route.get('/editarTimes/:id', editar.time);
-// route.post('/editarTimes/:id', editar.timeUpdate);
-
-// route.get('/cadastroJogador', cadastro.jogador);
-// route.post('/cadastroJogador', multer(config).single('foto'), cadastro.jogadorInsert);
-
-// route.get('/editarJogadores/:id', editar.jogador);
-// route.post('/editarJogadores/:id', multer(config).single('foto'), editar.jogadorUpdate);
-
-
+// route.get('/alunos', cadastro.sala);
 
 module.exports = route;

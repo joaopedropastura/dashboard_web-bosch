@@ -10,13 +10,11 @@ const turmas = database.define('Turma',
         allowNull: false,
         primaryKey: true
     },
-
     Nome: 
     {
         type: Sequelize.STRING(50),
         allowNull: false
     }
-
 });
 
 module.exports = turmas;

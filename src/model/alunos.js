@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const turmas = require('./turma');
+const turmas = require('./turmas');
 const informacoes = require('./informacoes');
 
 const alunos = database.define('Alunos', 
@@ -11,21 +11,17 @@ const alunos = database.define('Alunos',
         allowNull: false,
         primaryKey: true
     },
-
     Nome: 
     {
         type: Sequelize.STRING(100),
         allowNull: false
     },
-
     Senha: 
     {
         type: Sequelize.STRING(15),
         allowNull: false
     }
-
 });
-
 
 alunos.belongsTo(turmas, 
 {
