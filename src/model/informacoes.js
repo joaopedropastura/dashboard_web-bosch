@@ -2,7 +2,8 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 
-const informacoes = database.define('Informações', {
+const informacoes = database.define('Informações', 
+{
     Informacoes_ID: 
     {
         type: Sequelize.INTEGER,
@@ -42,19 +43,5 @@ const informacoes = database.define('Informações', {
     }
 
 });
-
-
-aluno.belongsTo(turma, 
-{
-    constraint: true, 
-    foreignKey: 'Turma_ID'
-});
-
-aluno.belongsTo(contato, 
-{
-    constraint: true, 
-    foreignKey: 'informacoes_ID'
-});
-
 
 module.exports = informacoes;
