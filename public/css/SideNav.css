@@ -1,0 +1,84 @@
+
+/* Side Nav */
+/* { */
+    .sidenav 
+    {
+      height: 100%;
+      width: 18vw; 
+      position: fixed;
+      z-index: 1; 
+      top: 0;
+      left: 0;
+      background-color: rgb(205, 205, 205); 
+      overflow-x: hidden; 
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: top;
+      align-items: center;
+      border-right: 3px solid black;
+    }
+
+    #imageSide
+    {
+      width: 100%;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #imageSide img
+    {
+      width: 13vw;
+      height: fit-content;
+      border-radius: 45px;
+      margin-bottom: 20px;
+    }
+
+    .opcoes
+    {
+      width: 100vw;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .opcoes a 
+    {
+      position: relative;
+      margin: 30px;
+      text-decoration: none;
+      font-size: 30px;
+      color: #000000;
+      display: block;
+      
+    }
+
+    .af {
+      border-top: 3px solid black;
+      position: absolute;
+      bottom: 0;
+    }
+
+    #links a:hover 
+    {
+      color: #ff0000;
+    }
+
+    .main 
+    {
+      margin-left: 18vw; 
+      padding: 0px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+
+    @media screen and (max-height: 450px) 
+    {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 20px;}
+    }
+/* } */
