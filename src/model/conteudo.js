@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const database = require('../config/db');
 const turmas = require('./turmas');
 const instrutores = require('./instrutores');
-const disciplina = require('./disciplina');
+const disciplinas = require('./disciplinas');
 
 const conteudo = database.define('Conteudos', 
 {
