@@ -1,7 +1,7 @@
 
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const turmas = require('./turma');
+const turmas = require('./turmas');
 const instrutores = require('./instrutores');
 const disciplina = require('./disciplina');
 
@@ -33,13 +33,13 @@ conteudo.belongsTo(turmas,
 conteudo.belongsTo(instrutores, 
 {
     constraint: true, 
-    foreignKey: 'Instrutores_ID'
+    foreignKey: 'Instrutor_ID'
 });
 
 conteudo.belongsTo(disciplinas, 
 {
     constraint: true, 
-    foreignKey: 'Disciplinas_ID'
+    foreignKey: 'Disciplina_ID'
 });
 
 module.exports = conteudo;
