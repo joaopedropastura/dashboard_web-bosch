@@ -5,3 +5,6 @@ links de inspiração:
 EXCALIDRAW:
 
     https://excalidraw.com/#json=BE1VXBPCHyBK4vCvrzMKN,xaL87ZUoq2u0bPaR96ccZw
+
+
+    https://d3js.org/
