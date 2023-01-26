@@ -112,7 +112,6 @@
 /* Layout das caixas dos inputs */
 .inputs
 {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

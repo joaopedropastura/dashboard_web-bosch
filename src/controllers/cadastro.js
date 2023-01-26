@@ -4,7 +4,6 @@ const conteudo = require('../model/conteudo')
 const instrutor = require('../model/instrutores')
 const aluno = require('../model/alunos')
 const turma = require('../model/turmas')
-const instrutor = require('../model/instrutores')
 
 module.exports = {
     async alunoInsert(req, res){

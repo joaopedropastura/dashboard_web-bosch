@@ -19,7 +19,7 @@ module.exports =
 
     async pagCadastro(req, res)
     {
-        res.render('../views/telas-instrutores/cadastros/cadastro-turmas')
+        res.render('../views/telas-instrutores/cadastro')
     },
 
     async pagLogin(req, res)
