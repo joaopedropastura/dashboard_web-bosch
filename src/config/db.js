@@ -1,16 +1,3 @@
-//banco kaiky
-
-// const sequelize = require('sequelize');
-
-// const database = new sequelize('BoschBoard', 'Kaikyy', 'Animais@1234',
-// {
-//     dialect: 'mssql', host:'localhost', port: 49766
-// });
-
-// database.sync();
-
-// module.exports = database;
-
 // MYSQL JP
 
 // const sequelize = require('sequelize');
@@ -39,7 +26,8 @@ const sequelize = require('sequelize');
 
 const database = new sequelize('DashBoard', 'user_dashboard', 'etsds10243110',
 {
-    dialect: 'mssql', host:'localhost', port: 1433
+    // dialect: 'mssql', host:'localhost', port: 1433
+    dialect: 'mssql', host:'localhost', port: 49766   //KAIKY
 });
 
 database.authenticate()
