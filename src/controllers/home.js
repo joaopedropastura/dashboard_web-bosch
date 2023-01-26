@@ -15,7 +15,10 @@ module.exports =
     {
 
         res.render('../views/index')
+    },
+    async pagCadastro(req, res)
+    {
+        res.render('../views/Telas_instrutores/cadastros/cadastro_Disciplina')
     }
-
  }
 

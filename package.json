@@ -1,7 +1,6 @@
 {
   "name": "webbosch",
   "version": "1.0.0",
-  "description": "",
   "main": "routes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,5 +24,6 @@
     "mysql2": "^3.0.1",
     "nodemon": "^2.0.20",
     "sequelize": "^6.28.0"
-  }
+  },
+  "description": ""
 }
