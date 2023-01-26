@@ -69,6 +69,7 @@
 
     .main 
     {
+      width: 82vw;
       margin-left: 18vw; 
       padding: 0px 10px;
       display: flex;
