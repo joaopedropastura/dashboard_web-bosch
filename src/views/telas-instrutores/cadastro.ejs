@@ -13,9 +13,8 @@
     <title>Profile</title>
     
 <body>
-
+<div id="sidAndMain">
     <div class="sidenav">
-
         <div id="imageSide">
             <img src="../img/teste.jfif" class="imgUser" alt="Foto Usuario">
         </div>
@@ -33,70 +32,73 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="card">
-                    <div class="card-top">
-                        
-                        <div class="cadastros">
-                            <div class="opcoesCadastro"> <a href="">Turmas</a> </div>
-                            <div class="opcoesCadastro"> <a href="">Usuários</a> </div>
-                            <div class="opcoesCadastro"> <a href="">Disciplinas</a> </div>
-                            <div class="opcoesCadastro"> <a href="">Conteúdos</a> </div>
+                        <div class="card-top">
+                            
+                            <div class="cadastros">
+                                <div class="opcoesCadastro"> <a href="">Turmas</a> </div>
+                                <div class="opcoesCadastro"> <a href="">Usuários</a> </div>
+                                <div class="opcoesCadastro"> <a href="">Disciplinas</a> </div>
+                                <div class="opcoesCadastro"> <a href="">Conteúdos</a> </div>
+                            </div>
+
                         </div>
 
-                    </div>
-
-                    <div class="card-body">
-                        
-                        <div class="inputs">
-                            <div class="mb-3 caixas">
-                                <label for="nome" class="form-label textLabel">Nome do Conteúdo:</label>
-                                <input type="text" class="form-control" id="inputConteudo" name="nome">
-                            </div>
-                            <div class="mb-3 caixas">
-                                <label for="instrutor" class="form-label textLabel">Instrutor:</label>
-                                <select style="width: 100%;" id="inputInstrutor" class="form-select" name="instrutor" required>
-                                    
-                                </select>
-                            </div>
-                            <div class="mb-3 caixas">
-                                <label for="disciplina" class="form-label textLabel">Disciplina:</label>
-                                <select style="width: 100%;" id="inputDisciplina" class="form-select" name="disciplina" required>
-                                    
-                                </select>
-                            </div>
-                            <div class="mb-3 caixas">
-                                <label for="turma" class="form-label textLabel">Turma:</label>
-                                <select style="width: 100%;" id="inputTurma" class="form-select" name="turma" required>
-                                    
-                                </select>
-                            </div>
+                        <div class="card-body">
+                            <form action="/cadastro" method="post" enctype="multipart/form-data">
+                                <div class="inputs">
+                                    <div class="mb-3 caixas">
+                                        <label for="nome" class="form-label textLabel">Nome do Conteúdo:</label>
+                                        <input type="text" class="form-control" id="inputConteudo" name="nome">
+                                    </div>
+                                    <div class="mb-3 caixas">
+                                        <label for="instrutor" class="form-label textLabel">Instrutor:</label>
+                                        <select style="width: 100%;" id="inputInstrutor" class="form-select" name="instrutor" required>
+                                            <% for (let i=0; i<instrutores.length; i++) { %>
+                                                <option value='<%= instrutores[i].Instrutor_ID %>'> <%= instrutores[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 caixas">
+                                        <label for="disciplina" class="form-label textLabel">Disciplina:</label>
+                                        <select style="width: 100%;" id="inputDisciplina" class="form-select" name="disciplina" required>
+                                            
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 caixas">
+                                        <label for="turma" class="form-label textLabel">Turma:</label>
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="turma" required>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
 
-                    </div>
+                        <div class="card-bottom">
+                            
+                            <button class="botao_liquido" type="submit" id="cancelar">
+                                <a href="#">
+                                    <span>Cancelar</span>
+                                    <div class="liquid"></div>
+                                </a>
+                            </button>
+                            
+                            <button class="botao_liquido" type="submit" id="enviar">
+                                <a href="#">
+                                    <span>Enviar</span>
+                                    <div class="liquid"></div>
+                                </a>
+                            </button>
 
-                    <div class="card-bottom">
-                        
-                        <button class="botao_liquido" type="submit">
-                            <a href="#">
-                                <span>Cancelar</span>
-                                <div class="liquid"></div>
-                            </a>
-                        </button>
-                        
-                        <button class="botao_liquido" type="submit">
-                            <a href="#">
-                                <span>Enviar</span>
-                                <div class="liquid"></div>
-                            </a>
-                        </button>
-
-                    </div>
-
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
 
     </div>
 
+</div>
     <script src="../js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 

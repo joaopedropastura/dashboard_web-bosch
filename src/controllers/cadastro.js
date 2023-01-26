@@ -2,6 +2,7 @@ const disciplina = require('../model/disciplinas')
 const conteudo = require('../model/conteudo')
 const aluno = require('../model/alunos')
 const turma = require('../model/turmas')
+const instrutor = require('../model/instrutores')
 
 module.exports = {
     async alunoInsert(req, res){
@@ -40,10 +41,18 @@ module.exports = {
         res.redirect('/');
     },
 
+
+
+
+    async instrutor (req, res){
+
+        const instrutores = await instrutor.findAll({ raw: true, attributes: ['Instrutor_ID', 'Nome'] });
+        res.render('../views/telas-instrutores/cadastro', {instrutores});
+    },
     async instrutoresInsert(req, res){
         const dados = req.body;
 
-        await aluno.create({
+        await instrutor.create({
             EDV: dados.edv,
             Nome: dados.nome,
             Senha: 'ETS' + dados.edv,
@@ -51,6 +60,8 @@ module.exports = {
         })
         res.redirect('/');
     },
+
+
 
     async salaInsert(req, res){
         const dados = req.body
