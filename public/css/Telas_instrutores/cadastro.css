@@ -1,85 +1,114 @@
-.card
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60vw;
-    height: 93vh;
-    background-color: rgb(175, 175, 175);
-    border-radius: 45px;
-    
-}
+/* CARDS */
+/* { */
+        .card
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60vw;
+            height: 93vh;
+            background-color: rgb(175, 175, 175);
+            border-radius: 45px;
+            
+        }
 
-.card-body
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .card-body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.card-bottom
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cadastros
-{
-    width: 60vw;
-    height: 10vh;
-    border-bottom: 3px solid black;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-}
-
-.cadastros a
-{
-    position: relative;
-    margin: 30px;
-    text-decoration: none;
-    font-size: 30px;
-    color: #000000;
-    display: block;
-}
-
-.cadastros a:hover
-{
-    color: rgb(255, 255, 255);
-}
-
-.opcoesCadastro
-{
-   
-}
-
-#inputCargo
-{
-    border-color: #000;
-}
-
-#inputNome
-{
-    border-color: #000;
-}
-
-#inputNomeTurma
-{
-    width: 25vw;
-    height: 5vh;
-    border-color: #000;
-}
+        .card-bottom
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+/* } */
 
 
+/* NavBar dos Cadastros */
+/* { */
+        .cadastros
+        {
+            width: 60vw;
+            height: 10vh;
+            border-bottom: 3px solid black;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
 
-#inputEdv
-{
-    border-color: #000;
-}
+        .cadastros a
+        {
+            position: relative;
+            margin: 30px;
+            text-decoration: none;
+            font-size: 30px;
+            color: #000000;
+            display: block;
+        }
+
+        .cadastros a:hover
+        {
+            color: rgb(255, 255, 255);
+        }
+/* } */
 
 
+/*Borda dos Inputs*/
+/* { */
+        #inputNomeTurma  /* Especifico */
+        {
+            width: 25vw;
+            height: 5vh;
+            border-color: #000;
+        }
 
+        #inputCargo
+        {
+            border-color: #000;
+        }
+
+        #inputNome
+        {
+            border-color: #000;
+        }
+
+        #inputConteudo
+        {
+            border-color: black;
+        }
+
+        #inputInstrutor
+        {
+            border-color: black;
+        }
+
+        #inputDisciplina
+        {
+            border-color: black;
+        }
+
+        #inputTurma
+        {
+            border-color: black;
+        }
+
+        #inputMateria
+        {
+            border-color: black;
+        }
+
+        #inputEdv
+        {
+            border-color: #000;
+        }
+/* } */
+/* ////////////////////////////////// */
+
+/* Layout das caixas dos inputs */
 .inputs
 {
     display: flex;
@@ -88,12 +117,13 @@
     align-items: center;
    
 }
-
+/* Tamanho das palavras que ficam em cima das caixas */
 .textLabel
 {
     font-size: 20px;
 }
 
+/* Tamanho das caixas dos inputs */
 .caixas
 {
     width: 25vw;
