@@ -11,8 +11,10 @@ const home = require('./src/controllers/home')
 
 route.get('/', home.pagInicialget)
 route.get('/cadastro', home.pagCadastro)
+route.get('/login', home.pagLogin)
 
 route.post('/',home.pagInicialPost)
+route.post('/cadastro', cadastroGeral.ConteudoInsert)
 
 // route.get('/alunos', cadastro.sala);
 

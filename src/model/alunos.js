@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const turmas = require('./alunos');
+const turmas = require('./turmas');
 const informacoes = require('./info-aluno');
 
 const alunos = database.define('Alunos',
@@ -23,17 +23,17 @@ const alunos = database.define('Alunos',
     }
 });
 
-// alunos.belongsTo(turmas,
-// {
-//     constraint: true,
-//     foreignKey: 'Turma_ID'
-// });
+alunos.belongsTo(turmas,
+{
+    constraint: true,
+    foreignKey: 'Turma_ID'
+});
 
-// alunos.belongsTo(informacoes,
-// {
-//     constraint: true,
-//     foreignKey: 'Informacoes_ID'
-// });
+alunos.belongsTo(informacoes,
+{
+    constraint: true,
+    foreignKey: 'Informacoes_ID'
+});
 
 alunos.sync()
 
