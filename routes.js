@@ -5,10 +5,13 @@ const route = express.Router();
 const db = require('./src/config/db')
 
 // Importando os Controllers
+const cadastroGeral = require('./src/controllers/cadastro')
 const home = require('./src/controllers/home')
 
 
 route.get('/', home.pagInicialget)
+route.get('/cadastro', home.pagCadastro)
+
 route.post('/',home.pagInicialPost)
 
 // route.get('/alunos', cadastro.sala);
