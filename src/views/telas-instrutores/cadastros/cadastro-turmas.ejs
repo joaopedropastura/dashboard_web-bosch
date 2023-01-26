@@ -23,7 +23,7 @@
         <div id="links">
             <div class="opcoes"> <a href="#">Profile</a></div>
             <div class="opcoes"> <a href="#">Avaliações</a></div>
-            <div class="opcoes"> <a href="#">Calendário</a></div>
+            <div class="opcoes"> <a href="#">Cadastrar</a></div>
             <div class="opcoes af"> <a href="#">Cardápio</a></div>
         </div>
     </div>
@@ -33,46 +33,37 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="card">
-                    <div class="card-top">
-                        
-                        <div class="cadastros">
-                            <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Turmas.html">Turmas</a> </div>
-                            <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Usuarios.html">Usuários</a> </div>
-                            <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Disciplina.html">Disciplinas</a> </div>
-                            <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Conteudos.html">Conteúdos</a> </div>
+                    <form action="/cadastro" method="post">
+                        <div class="card-top">
+                            <div class="cadastros">
+                                <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Turmas.html">Turmas</a> </div>
+                                <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Usuarios.html">Usuários</a> </div>
+                                <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Disciplina.html">Disciplinas</a> </div>
+                                <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Conteudos.html">Conteúdos</a> </div>
+                            </div>
                         </div>
-
-                    </div>
-
-                    <div class="card-body">
-                        
-                        <div class="inputs">
-                            <div class="mb-3" id="inputNomeTurma">
+                        <div class="card-body">
+                            <div class="inputs">
+                                <div class="mb-3" id="inputNomeTurma">
                                 <label for="nome" class="form-label textLabel">Nome da Turma:</label>
                                 <input type="text" class="form-control" id="inputNomeTurma" name="nome">
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="card-bottom">
-                        
-                        <button class="botao_liquido" type="submit">
-                            <a href="#">
-                                <span>Cancelar</span>
-                                <div class="liquid"></div>
-                            </a>
-                        </button>
-                        
-                        <button class="botao_liquido" type="submit">
-                            <a href="#">
-                                <span>Enviar</span>
-                                <div class="liquid"></div>
-                            </a>
-                        </button>
-
-                    </div>
-
+                        <div class="card-bottom"> 
+                            <button class="botao_liquido" type="submit">
+                                <a href="#">
+                                    <span>Cancelar</span>
+                                    <div class="liquid"></div>
+                                </a>
+                            </button>
+                            <button class="botao_liquido" type="submit">
+                                <a href="#">
+                                    <span>Enviar</span>
+                                    <div class="liquid"></div>
+                                </a>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

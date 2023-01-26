@@ -23,7 +23,7 @@
         <div id="links">
             <div class="opcoes"> <a href="#">Profile</a></div>
             <div class="opcoes"> <a href="#">Avaliações</a></div>
-            <div class="opcoes"> <a href="#">Calendário</a></div>
+            <div class="opcoes"> <a href="#">Cadastrar</a></div>
             <div class="opcoes af"> <a href="#">Cardápio</a></div>
         </div>
     </div>
@@ -37,9 +37,9 @@
                         
                         <div class="cadastros">
                             <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Turmas.html">Turmas</a> </div>
-                            <div class="opcoesCadastro"> <a href="#">Usuários</a> </div>
-                            <div class="opcoesCadastro"> <a href="#">Disciplinas</a> </div>
-                            <div class="opcoesCadastro"> <a href="#">Conteúdos</a> </div>
+                            <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Usuarios.html">Usuários</a> </div>
+                            <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Disciplina.html">Disciplinas</a> </div>
+                            <div class="opcoesCadastro"> <a href="/src/views/Telas_instrutores/cadastros/cadastro_Conteudos.html">Conteúdos</a> </div>
                         </div>
 
                     </div>
@@ -68,9 +68,9 @@
                             
                             <!-- if(cargo == adm)
                             { -->
-                                <div class="turmas caixas">
-                                    <label for="materia" class="form-label">Matéria</label>
-                                    <select style="width: 100%;" id="inputTurma" class="form-select" name="materia" required>
+                                <div class="materias caixas">
+                                    <label for="materia" class="form-label textLabel">Matéria</label>
+                                    <select style="width: 100%;" id="inputMateria" class="form-select" name="materia" required>
                                         <% for (let i=0; i<disciplinas.length; i++) { %>
                                             <option value='<%= disciplinas[i].Disciplina_ID %>'> <%= disciplinas[i].Nome %> </option>
                                         <% } %>
@@ -80,7 +80,7 @@
                             else()
                             { -->
                                 <div class="turmas caixas">
-                                    <label for="turma" class="form-label">Turma</label>
+                                    <label for="turma" class="form-label textLabel">Turma</label>
                                     <select style="width: 100%;" id="inputTurma" class="form-select" name="turma" required>
                                         <% for (let i=0; i<turmas.length; i++) { %>
                                             <option value='<%= turma[i].Turma_ID %>'> <%= turma[i].Nome %> </option>

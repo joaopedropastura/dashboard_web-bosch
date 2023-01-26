@@ -53,7 +53,7 @@ module.exports = {
         res.redirect('/');
     },
 
-    async salaInsert(req, res){
+    async turmaInsert(req, res){
         const dados = req.body
 
         await turma.create({

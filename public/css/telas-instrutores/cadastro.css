@@ -1,0 +1,240 @@
+/* CARDS */
+/* { */
+        .card
+        {
+            margin: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60vw;
+            height: 93vh;
+            background-color: rgb(175, 175, 175);
+            border-radius: 45px;
+            
+        }
+
+        .card-body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-bottom
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+/* } */
+
+
+/* NavBar dos Cadastros */
+/* { */
+        .cadastros
+        {
+            width: 60vw;
+            height: 10vh;
+            border-bottom: 3px solid black;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+
+        .cadastros a
+        {
+            position: relative;
+            margin: 30px;
+            text-decoration: none;
+            font-size: 30px;
+            color: #000000;
+            display: block;
+        }
+
+        .cadastros a:hover
+        {
+            color: rgb(255, 255, 255);
+        }
+/* } */
+
+
+/*Borda dos Inputs*/
+/* { */
+        #inputNomeTurma  /* Especifico */
+        {
+            width: 25vw;
+            height: 5vh;
+            border-color: #000;
+        }
+
+        #inputCargo
+        {
+            border-color: #000;
+        }
+
+        #inputNome
+        {
+            border-color: #000;
+        }
+
+        #inputConteudo
+        {
+            border-color: black;
+        }
+
+        #inputInstrutor
+        {
+            border-color: black;
+        }
+
+        #inputDisciplina
+        {
+            border-color: black;
+        }
+
+        #inputTurma
+        {
+            border-color: black;
+        }
+
+        #inputMateria
+        {
+            border-color: black;
+        }
+
+        #inputEdv
+        {
+            border-color: #000;
+        }
+/* } */
+/* ////////////////////////////////// */
+
+/* Layout das caixas dos inputs */
+.inputs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+/* Tamanho das palavras que ficam em cima das caixas */
+.textLabel
+{
+    font-size: 20px;
+}
+
+/* Tamanho das caixas dos inputs */
+.caixas
+{
+    width: 25vw;
+    height: 5vh;
+    margin: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* botao liquido */
+
+.botao_liquido
+{
+    position:relative;
+    margin-bottom: 20px;
+    margin: 15px;
+    padding: 2vh 5vw;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 7vw;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 40px;
+    
+   
+}
+
+.botao_liquido span
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1vw;
+    font-family: Arial;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.botao_liquido .liquid
+{
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #4973ff;
+    box-shadow: inset 0 0 50px rgba(0,0,0, .5);
+    transition: .5s;
+}
+.botao_liquido .liquid::after,
+.botao_liquido .liquid::before
+{
+    content:'';
+    width: 200%;
+    height: 200%;
+    position:absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+}
+
+.botao_liquido .liquid::before
+{
+    border-radius: 45%;
+    background: rgba(20,20,20,1);
+    animation: animate 5s linear infinite;
+}
+
+.botao_liquido .liquid::after
+{
+    border-radius: 40%;
+    background: rgba(20,20,20,.5);
+    animation: animate 10s linear infinite;
+}
+
+.botao_liquido:hover .liquid
+{
+    top: -120px
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+.editar
+{
+    border-radius: 35%;
+}

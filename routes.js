@@ -14,7 +14,7 @@ route.get('/cadastro', home.pagCadastro)
 route.get('/login', home.pagLogin)
 
 route.post('/',home.pagInicialPost)
-route.post('/cadastro', cadastroGeral.ConteudoInsert)
+route.post('/cadastro', cadastroGeral.turmaInsert)
 
 // route.get('/alunos', cadastro.sala);
 
