@@ -17,6 +17,7 @@ route.get('/login', home.pagLogin)
 route.post('/',home.pagInicialPost)
 route.post('/login')
 route.post('/cadastro', cadastroGeral.userInsert)
+route.post('/login', login.checkLogin)
 
 // route.get('/alunos', cadastro.sala);
 

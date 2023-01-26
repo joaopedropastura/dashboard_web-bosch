@@ -1,4 +1,3 @@
-const Sequelize = require('sequelize');
 const disciplina = require('../model/disciplinas')
 const conteudo = require('../model/conteudo')
 const instrutor = require('../model/instrutores')
