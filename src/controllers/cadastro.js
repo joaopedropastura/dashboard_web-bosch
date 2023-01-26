@@ -1,5 +1,7 @@
+const Sequelize = require('sequelize');
 const disciplina = require('../model/disciplinas')
 const conteudo = require('../model/conteudo')
+const instrutor = require('../model/instrutores')
 const aluno = require('../model/alunos')
 const turma = require('../model/turmas')
 const instrutor = require('../model/instrutores')
@@ -56,14 +58,11 @@ module.exports = {
             EDV: dados.edv,
             Nome: dados.nome,
             Senha: 'ETS' + dados.edv,
-            Turma_ID: dados.turma
         })
         res.redirect('/');
     },
 
-
-
-    async salaInsert(req, res){
+    async turmaInsert(req, res){
         const dados = req.body
 
         await turma.create({
