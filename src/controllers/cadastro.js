@@ -6,6 +6,29 @@ const aluno = require('../model/alunos')
 const turma = require('../model/turmas')
 
 module.exports = {
+
+    async userInsert(req,res){
+        const dados = req.body
+        if(dados.cargo == "aluno")
+        {
+            await aluno.create({
+                EDV: dados.edv,
+                Nome: dados.nome,
+                Senha: 'ETS' + dados.edv,
+                Turma_ID: dados.turma
+            })
+        }
+        else
+        {
+            await instrutor.create({
+                EDV: dados.edv,
+                Nome: dados.nome,
+                Senha: 'ETS' + dados.edv,
+            })
+        }
+        res.redirect('/');
+    },
+
     async alunoInsert(req, res){
         const dados = req.body;
 
@@ -44,7 +67,6 @@ module.exports = {
 
     async instrutoresInsert(req, res){
         const dados = req.body;
-
         await instrutor.create({
             EDV: dados.edv,
             Nome: dados.nome,

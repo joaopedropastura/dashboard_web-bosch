@@ -37,7 +37,6 @@ database.authenticate()
         console.log("Erro: Conexão com o banco de dados não foi realizada com sucesso!")
     })
 
-
 database.sync();
 
 module.exports = database;
