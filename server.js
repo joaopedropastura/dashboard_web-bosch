@@ -1,6 +1,8 @@
 const express = require('express');
 const routes = require('./routes');
 
+const aluno = require('./src/model/alunos')
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -14,4 +16,6 @@ app.set('view engine', 'ejs');
 
 app.use(routes);
 
-app.listen(3000, () => console.log('Acesse: http://localhost:3000/'));
+app.listen(3000, () => {
+	console.log('Acesse: http://localhost:3000/')
+});

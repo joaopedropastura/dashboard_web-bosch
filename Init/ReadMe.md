@@ -8,3 +8,7 @@ EXCALIDRAW:
 
 
     https://d3js.org/
+
+    
+video bala conexao:
+    https://www.youtube.com/watch?v=_OeuPAb9bhU&ab_channel=Celke

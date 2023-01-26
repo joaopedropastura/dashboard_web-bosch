@@ -4,9 +4,9 @@ const database = require('../config/db');
 const aluno = require('./alunos');
 
 
-const informacoes = database.define('Informações', 
+const informacoes = database.define('Informações',
 {
-    Informacoes_ID: 
+    Informacoes_ID:
     {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -14,31 +14,31 @@ const informacoes = database.define('Informações',
         primaryKey: true
     },
 
-    Email: 
+    Email:
     {
         type: Sequelize.STRING(50),
         allowNull: false
     },
 
-    Telefone: 
+    Telefone:
     {
         type: Sequelize.STRING(20),
         allowNull: false
     },
 
-    Skype: 
+    Skype:
     {
         type: Sequelize.STRING(50),
         allowNull: false
     },
 
-    GitHub: 
+    GitHub:
     {
         type: Sequelize.STRING(50),
         allowNull: false
     },
 
-    Foto: 
+    Foto:
     {
         type: Sequelize.STRING(50),
         allowNull: false
@@ -46,10 +46,10 @@ const informacoes = database.define('Informações',
 
 });
 
-informacoes.belongsTo(aluno, 
-    {
-        constraint: true, 
-        foreignKey: 'EDV'
-    });
+// informacoes.belongsTo(aluno,
+//     {
+//         constraint: true,
+//         foreignKey: 'EDV'
+//     });
 
 module.exports = informacoes;
