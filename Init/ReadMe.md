@@ -19,3 +19,6 @@ video bala conexao:
 
 login video: 
     https://www.youtube.com/watch?v=e5yZKTADxfk
+
+    repo lucas 
+    https://github.com/fortunato-sply/bosch-workspeak/blob/front/views/login.js
