@@ -16,9 +16,15 @@ module.exports =
 
         res.render('../views/index')
     },
+
     async pagCadastro(req, res)
     {
-        res.render('../views/Telas_instrutores/cadastros/cadastro_Conteudos')
+        res.render('../views/telas-instrutores/cadastro')
+    },
+
+    async pagLogin(req, res)
+    {
+        res.render('../views/Telas_/cadastros/cadastro-disciplina')
     }
  }
 
