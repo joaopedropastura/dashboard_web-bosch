@@ -64,23 +64,12 @@ module.exports = {
         res.redirect('/');
     },
 
-
-
-
     async instrutor (req, res){
 
         const instrutores = await instrutor.findAll({ raw: true, attributes: ['Instrutor_ID', 'Nome'] });
         res.render('../views/telas-instrutores/cadastro', {instrutores});
     },
-    async instrutoresInsert(req, res){
-        const dados = req.body;
-        await instrutor.create({
-            EDV: dados.edv,
-            Nome: dados.nome,
-            Senha: 'ETS' + dados.edv,
-        })
-        res.redirect('/');
-    },
+   
 
     async turmaInsert(req, res){
         const dados = req.body

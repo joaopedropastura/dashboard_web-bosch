@@ -5,48 +5,32 @@ var conteudo = document.getElementById('cadastroConteudo');
 
 const showTurma = () =>
 {
-  console.log(turma, usuario, disciplina, conteudo)
-  if(turma.classList.contains('show'))
-  {
-    turma.classList.replace('show', 'hidden');
-    usuario.classList.replace('hidden', 'show');
-    disciplina.classList.replace('hidden', 'show');
-    conteudo.classList.replace('hidden', 'show');
-  } 
+    turma.style.display = 'flex';
+    usuario.style.display = 'none';
+    disciplina.style.display = 'none';
+    conteudo.style.display = 'none';
 }
 
 const showUsuario = () => 
 {
-    console.log(turma, usuario, disciplina, conteudo)
-    if(usuario.classList.contains('show'))
-    {
-      turma.classList.replace('hidden', 'show');
-      usuario.classList.replace('show', 'hidden');
-      disciplina.classList.replace('hidden', 'show');
-      conteudo.classList.replace('hidden', 'show');
-    } 
+    turma.style.display = 'none';
+    usuario.style.display = 'flex';
+    disciplina.style.display = 'none';
+    conteudo.style.display = 'none';
 }
 
   const showDisciplina = () => 
 {
-    console.log(turma, usuario, disciplina, conteudo)
-    if(turma.classList.contains('show'))
-    {
-      turma.classList.replace('hidden', 'show');
-      usuario.classList.replace('hidden', 'show');
-      disciplina.classList.replace('show', 'hidden');
-      conteudo.classList.replace('hidden', 'show');
-    } 
+    turma.style.display = 'none';
+    usuario.style.display = 'none';
+    disciplina.style.display = 'flex';
+    conteudo.style.display = 'none';
 }
 
   const showConteudo = () => 
 {
-    console.log(turma, usuario, disciplina, conteudo)
-    if(turma.classList.contains('show'))
-    {
-      turma.classList.replace('hidden', 'show');
-      usuario.classList.replace('hidden', 'show');
-      disciplina.classList.replace('hidden', 'show');
-      conteudo.classList.replace('show', 'hidden');
-    } 
+    turma.style.display = 'none';
+    usuario.style.display = 'none';
+    disciplina.style.display = 'none';
+    conteudo.style.display = 'flex';
 }
