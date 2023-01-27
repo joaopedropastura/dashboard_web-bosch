@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // MYSQL JP
-=======
-// // MYSQL JP
->>>>>>> 11a4fbb48910c68e0a2921db4409f54cc3ff077f
 
 // const sequelize = require('sequelize');
 
