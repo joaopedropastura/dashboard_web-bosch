@@ -12,12 +12,13 @@ const login = require('./src/controllers/check-login')
 route.get('/', home.pagInicialget)
 route.get('/cadastro', home.pagCadastro)
 route.get('/login', home.pagLogin)
-
+route.get('/avaliacao', home.pagAvaliacao)
 
 route.post('/',home.pagInicialPost)
 route.post('/login')
 route.post('/cadastro', cadastroGeral.userInsert)
 route.post('/login', login.checkLogin)
+
 
 // route.get('/alunos', cadastro.sala);
 

@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+
+
+main{
+    height: 96vh;
+    display: flex;
+    align-items: center;
+    padding: 2vh;
+    position: relative;
+    gap: 2vh;
+}
+
+.nav-bar{
+    height: 100%;
+    width: 18vw;
+    background-color: lightblue;
+    border-radius: 20px;
+}
+
+.box-content{
+    height: 100%;
+    width: 86vw;
+    background-color: lightblue;
+    border-radius: 20px;
+
+}

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+// MYSQL JP
+=======
 // // MYSQL JP
+>>>>>>> 11a4fbb48910c68e0a2921db4409f54cc3ff077f
 
 // const sequelize = require('sequelize');
 
@@ -20,14 +24,14 @@
 // module.exports = database;
 
 
-// SQL SERVER 
+//SQL SERVER 
 
 const sequelize = require('sequelize');
 
 const database = new sequelize('DashBoard', 'user_dashboard', 'etsds10243110',
 {
-    // dialect: 'mssql', host:'localhost', port: 1433
-    dialect: 'mssql', host:'localhost', port: 49766   //KAIKY
+    dialect: 'mssql', host:'localhost', port: 1433
+    // dialect: 'mssql', host:'localhost', port: 49766   //KAIKY
 });
 
 database.authenticate()
