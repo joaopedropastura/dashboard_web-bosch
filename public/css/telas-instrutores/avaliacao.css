@@ -1,28 +1,73 @@
-*{
-    margin: 0;
-    font-family: Poppins, sans-serif;
-}
-
-
-main{
-    height: 96vh;
+.box-content
+{
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 2vh;
-    position: relative;
-    gap: 2vh;
 }
 
-.nav-bar{
-    height: 100%;
-    width: 18vw;
-    background-color: lightblue;
+.card-prova
+{
+    width: 85%;
+    height: 85%;
+    background-color: aquamarine;
     border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+
 }
 
-.box-content{
-    height: 100%;
-    width: 86vw;
-    background-color: lightblue;
+.add-avaliacao
+{
+    width: 80%;
+    height: 10%;
+    background-color: blue;
     border-radius: 20px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-avaliacao b
+{
+    color:aliceblue;
+}
+
+.provas
+{
+    width: 95%;
+    height: 80%;
+    background-color: blueviolet;
+    border-radius: 20px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: auto;
+}
+
+.prova
+{
+    width: 90%;
+    height: 13%;
+    background-color: blue;
+    border-radius: 20px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.prova b
+{
+    color: aliceblue;
+    margin-left: 30px;
 }
