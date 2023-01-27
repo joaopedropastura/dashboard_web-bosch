@@ -33,7 +33,7 @@ module.exports = {
                 }
             });
             if(podeEntrar)
-                res.redirect('/profile')
+                res.redirect('/cadastro')
         }
         else{
             res.send('please enter email address and password details')

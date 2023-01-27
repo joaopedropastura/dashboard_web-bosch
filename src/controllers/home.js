@@ -1,21 +1,18 @@
 
-// const aluno = require('../model/aluno');
 // const turma = require('../model/turma');
 const disciplina = require('../model/disciplinas')
 const turma = require('../model/turmas')
+const aluno = require('../model/alunos')
 
 module.exports =
 {
     async pagInicialget(req, res)
     {
-
         res.render('../views/index')
-
     },
 
     async pagInicialPost(req, res)
     {
-
         res.render('../views/index')
     },
 
@@ -35,8 +32,15 @@ module.exports =
 
     async pagLogin(req, res)
     {
-
         res.render('../views/telas-gerais/login')
-    }
- }
+    },
 
+    async pagAvaliacao(req, res)
+    {
+        const alunos = await aluno.findAll({
+            raw: true,
+            attributes: ['Turma_ID', 'Nome']
+        })
+        res.render('../views/telas-instrutores/avaliacao')
+    }
+}
