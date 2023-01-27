@@ -46,20 +46,14 @@
                                     <div class="opcoesCadastro" onclick="showUsuario()">Usuários </div>
                                     <div class="opcoesCadastro" onclick="showDisciplina()">Disciplinas </div>
                                     <div class="opcoesCadastro" onclick="showConteudo()">Conteúdos </div>
+                                    <div class="opcoesCadastro" onclick="showAula()">Aulas </div>
+
                                 </div>
 
                             </div>
 
                             <div class="card-body" id="cardBody">
-                                <form action="/cadastro" method="post">
-                                    <div class="inputs show" id="cadastroTurma">
-                                        <div class="mb-3" id="inputNomeTurma">
-                                            <label for="nome" class="form-label textLabel">Nome da Turma:</label>
-                                            <input type="text" class="form-control" id="inputNomeTurma" name="nome">
-                                        </div> 
-                                        <button type="submit" class="btn btn-info">Info</button>
-                                    </div>
-                                </form>
+                                <%- include("parts/formsTurma.ejs") %> 
                                 <form action="/cadastro-user" method="post">
                                     <div class="inputs hidden" id="cadastroUsuario">
                                         <div class="mb-3 caixas">
@@ -98,7 +92,7 @@
                                         </div>
                                         <div class="mb-3 caixas">
                                             <label for="cargaHoraria" class="form-label textLabel">Carga horária:</label>
-                                            <input type="text" class="form-control" id="inputNome" name="carga_H">
+                                            <input type="text" class="form-control" id="inputNome" name="carga_h">
                                         </div>
                                         <div class="mb-3 caixas">
                                             <label for="dataInicio" class="form-label textLabel">Data de início:</label>
@@ -111,11 +105,16 @@
                                         <button type="submit" class="btn btn-info">Info</button>
                                     </div>
                                 </form>
-                                <form action="cadastro-conteudo" method="post">
-                                    <div class="inputs hidden" id="cadastroConteudo">
+                                <form action="cadastro-aula" method="post">
+                                    <div class="inputs hidden" id="cadastroAula">
                                         <div class="sm-3 caixas">
-                                            <label for="nome" class="form-label textLabel">Nome do Conteúdo:</label>
-                                            <input type="text" class="form-control" id="inputConteudo" name="nome">
+                                            <label for="nome" class="form-label textLabel">Nome da Aula:</label>
+                                            <select style="width: 100%;" id="inputTurma" class="form-select" name="instrutor">
+                                                <option selected>selecione o conteudo</option>
+                                                <% for (let i=0; i<conteudos.length; i++) { %>
+                                                    <option value='<%= conteudos[i].conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
+                                                <% } %>
+                                            </select>
                                         </div>
                                         <div class="sm-3 caixas">
                                             <label for="instrutor" class="form-label textLabel">Instrutor:</label>
@@ -146,82 +145,9 @@
                                         </div>
                                         <button type="submit" class="btn btn-info">Info</button>
                                     </div>
-<<<<<<< HEAD
-
-                                    <!-- if(cargo.value == "aluno") -->
-                                
-                                    <div class="turmas caixas">
-                                        <label for="turma" class="form-label textLabel">Turma</label>
-                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
-                                            <option selected>selecione a turma</option>
-                                            <% for (let i=0; i<turmas.length; i++) { %>
-                                                <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
-                                            <% } %>
-                                        </select>
-                                    </div>
-                                  
-
-                                </div>
-
-                                <div class="inputs hidden" id="cadastroDisciplina">
-                                    <div class="mb-3 caixas">
-                                        <label for="nome" class="form-label textLabel">Nome da disciplina:</label>
-                                        <input type="text" class="form-control" id="inputNome" name="nome">
-                                    </div>
-                                    <div class="mb-3 caixas">
-                                        <label for="cargaHoraria" class="form-label textLabel">Carga horária:</label>
-                                        <input type="text" class="form-control" id="inputNome" name="carga_h">
-                                    </div>
-                                    <div class="mb-3 caixas">
-                                        <label for="dataInicio" class="form-label textLabel">Data de início:</label>
-                                        <input type="date" class="form-control" id="inputNome" name="data_init">
-                                    </div>
-                                    <div class="mb-3 caixas">
-                                        <label for="dataTermino" class="form-label textLabel">Data de término:</label>
-                                        <input type="date" class="form-control" id="inputNome" name="data_fim">
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="inputs hidden" id="cadastroConteudo">
-
-                                    <div class="mb-3 caixas">
-                                        <label for="nome" class="form-label textLabel">Nome do Conteúdo:</label>
-                                        <input type="text" class="form-control" id="inputConteudo" name="nome">
-                                    </div>
-
-                                    <div class="mb-3 caixas">
-                                        <label for="instrutor" class="form-label textLabel">Instrutor:</label>
-                                        <select style="width: 100%;"id="inputInstrutor" class="form-select" name="instrutor" required>
-                                        
-                                        </select>
-                                    </div>
-
-                                    <div class="mb-3 caixas">
-                                        <label for="disciplina" class="form-label textLabel">Disciplina:</label>
-                                        <select style="width: 100%;" id="inputDisciplina" class="form-select" name="disciplina" required>
-                                        
-                                        </select>
-                                    </div>
-
-                                    <div class="mb-3 caixas">
-                                        <label for="turma" class="form-label textLabel">Turma:</label>
-                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="turma" required>
-                                        
-                                        </select>
-                                    </div>
-                                </div>
-=======
-                                </form>
->>>>>>> faf1ca1f5d05008f0a65b277d4de290408fe9562
-
-                            <div class="card-bottom">
-
-
-                                
-
                             </div>
                         </form>
+                        <%- include("parts/formsConteudo.ejs") %> 
                     </div>
                 </div>
             </div>

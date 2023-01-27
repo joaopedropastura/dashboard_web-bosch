@@ -2,6 +2,7 @@ var turma = document.getElementById('cadastroTurma');
 var usuario = document.getElementById('cadastroUsuario');
 var disciplina = document.getElementById('cadastroDisciplina');
 var conteudo = document.getElementById('cadastroConteudo');
+var aula = document.getElementById('cadastroAula')
 
 const showTurma = () =>
 {
@@ -9,6 +10,16 @@ const showTurma = () =>
     usuario.style.display = 'none';
     disciplina.style.display = 'none';
     conteudo.style.display = 'none';
+    aula.style.display = 'none';
+}
+const showAula = () =>
+{
+    turma.style.display = 'none';
+    usuario.style.display = 'none';
+    disciplina.style.display = 'none';
+    conteudo.style.display = 'none';
+    aula.style.display = 'flex';
+
 }
 
 const showUsuario = () => 
@@ -17,6 +28,8 @@ const showUsuario = () =>
     usuario.style.display = 'flex';
     disciplina.style.display = 'none';
     conteudo.style.display = 'none';
+    aula.style.display = 'none';
+
 }
 
   const showDisciplina = () => 
@@ -25,6 +38,8 @@ const showUsuario = () =>
     usuario.style.display = 'none';
     disciplina.style.display = 'flex';
     conteudo.style.display = 'none';
+    aula.style.display = 'none';
+
 }
 
   const showConteudo = () => 
@@ -33,4 +48,7 @@ const showUsuario = () =>
     usuario.style.display = 'none';
     disciplina.style.display = 'none';
     conteudo.style.display = 'flex';
+    aula.style.display = 'none';
+
 }
+

@@ -19,6 +19,8 @@ route.post('/',home.pagInicialPost)
 route.post('/login')
 route.post('/cadastro', cadastroGeral.turmaInsert)
 route.post('/cadastro-user', cadastroGeral.userInsert)
+route.post('/cadastro-aulas', cadastroGeral.userInsert)
+
 route.post('/cadastro-disciplina', cadastroGeral.DisciplinaInsert)
 route.post('/cadastro-conteudo', cadastroGeral.ConteudoInsert)
 

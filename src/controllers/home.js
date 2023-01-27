@@ -2,6 +2,7 @@ const disciplina = require('../model/disciplinas')
 const turma = require('../model/turmas')
 const instrutor = require('../model/instrutores')
 const aluno = require('../model/alunos')
+const conteudo =  require('../model/conteudos')
 
 module.exports =
 {
@@ -29,7 +30,12 @@ module.exports =
             raw: true,
             attributes: ['Turma_ID', 'Nome']
         })
-        res.render('../views/telas-instrutores/cadastro', {disciplinas, turmas, instrutores})
+
+        const conteudos = await conteudo.findAll({
+            raw: true,
+            attributes: ['Conteudo_ID', 'Nome']
+        })
+        res.render('../views/telas-instrutores/cadastro', {disciplinas, turmas, instrutores, conteudos})
     },
 
     async pagLogin(req, res)
