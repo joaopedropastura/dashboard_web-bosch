@@ -1,8 +1,8 @@
 
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const conteudos = require('./conteudos');
-const questoes = require('./questoes');
+const disciplina = require('./disciplinas');
+const aluno = require('./alunos');
 
 const provas = database.define('Provas', 
 {
@@ -24,20 +24,26 @@ const provas = database.define('Provas',
     {
         type: Sequelize.FLOAT,
         allowNull: false
+    },
+
+    Recuperacao: 
+    {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
     }
 
 });
 
-provas.belongsTo(conteudos, 
+provas.belongsTo(disciplina, 
 {
     constraint: true, 
-    foreignKey: 'Conteudos_ID'
+    foreignKey: 'Disciplina_ID'
 });
     
-provas.belongsTo(questoes, 
+provas.belongsTo(aluno, 
 {
     constraint: true, 
-    foreignKey: 'Questoes_ID'
+    foreignKey: 'EDV'
 });
 
 module.exports = provas;

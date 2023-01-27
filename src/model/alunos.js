@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 const turmas = require('./turmas');
-const informacoes = require('./info-aluno');
+const informacoes = require('./informacoes');
 
 const alunos = database.define('Alunos',
 {
@@ -34,7 +34,5 @@ alunos.belongsTo(informacoes,
     constraint: true,
     foreignKey: 'Informacoes_ID'
 });
-
-alunos.sync()
 
 module.exports = alunos;

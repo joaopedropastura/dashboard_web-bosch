@@ -20,6 +20,6 @@ route.post('/cadastro', cadastroGeral.userInsert)
 route.post('/login', login.checkLogin)
 
 
-// route.get('/alunos', cadastro.sala);
+
 
 module.exports = route;

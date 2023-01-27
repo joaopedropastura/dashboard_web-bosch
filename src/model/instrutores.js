@@ -1,7 +1,7 @@
 
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const informacoes = require('./info-instrutor');
+const informacoes = require('./informacoes');
 
 const instrutores = database.define('Instrutores', 
 {

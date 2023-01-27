@@ -1,5 +1,3 @@
-
-// const turma = require('../model/turma');
 const disciplina = require('../model/disciplinas')
 const turma = require('../model/turmas')
 const aluno = require('../model/alunos')

@@ -1,8 +1,6 @@
 const express = require('express');
 const routes = require('./routes');
 
-const aluno = require('./src/model/alunos')
-
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));

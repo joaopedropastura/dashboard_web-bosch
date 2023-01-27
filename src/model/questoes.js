@@ -2,6 +2,9 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 
+const prova = require('./provas');
+const conteudoQuestao = require('./conteudo-questoes');
+
 const questoes = database.define('Questoes', 
 {
     Questoes_ID: 
@@ -50,5 +53,16 @@ const questoes = database.define('Questoes',
 
 });
 
+questoes.belongsTo(prova,
+{
+    constraint: true,
+    foreignKey: 'Prova_ID'
+});
+
+questoes.belongsTo(conteudoQuestao,
+{
+    constraint: true,
+    foreignKey: 'Conteudo_Questao_ID'
+});
 
 module.exports = questoes;
