@@ -35,7 +35,7 @@ module.exports =
 
     async pagLogin(req, res)
     {
-        
+
         res.render('../views/telas-gerais/login')
     }
  }

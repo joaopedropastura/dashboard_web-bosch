@@ -8,17 +8,24 @@ EXCALIDRAW:
 
 
 LINKS PARA AJUDAR NOS GRAFICOS:
-    
+
     https://canvasjs.com/
     https://d3js.org/
 
-    
+
 video bala conexao:
     https://www.youtube.com/watch?v=_OeuPAb9bhU&ab_channel=Celke
 
 
-login video: 
+login video:
     https://www.youtube.com/watch?v=e5yZKTADxfk
 
-    repo lucas 
+    repo lucas
     https://github.com/fortunato-sply/bosch-workspeak/blob/front/views/login.js
+
+login page inspiracao:
+    https://dribbble.com/shots/19133985-Sign-Up-Page-UI
+
+site oficial de estilos web bosch
+
+    https://boschddm.com/project/menus/
