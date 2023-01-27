@@ -16,7 +16,9 @@ route.get('/avaliacao', home.pagAvaliacao)
 
 route.post('/',home.pagInicialPost)
 route.post('/login')
-route.post('/cadastro', cadastroGeral.userInsert)
+route.post('/cadastro', cadastroGeral.turmaInsert)
+
+
 route.post('/login', login.checkLogin)
 
 

@@ -33,3 +33,8 @@ login page inspiracao:
 site oficial de estilos web bosch
 
     https://boschddm.com/project/menus/
+
+
+icones
+
+    https://icons8.com.br/icons/set/home
