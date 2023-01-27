@@ -37,7 +37,7 @@ module.exports = {
             Senha: 'ETS' + dados.edv,
             Turma_ID: dados.turma
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
 
     async ConteudoInsert(req, res){
@@ -51,7 +51,6 @@ module.exports = {
         })
         res.redirect('/');
     },
-
     async DisciplinaInsert(req, res){
         const dados = req.body;
 
@@ -61,25 +60,31 @@ module.exports = {
             Data_Inicio: dados.data_init,
             Data_Fim: dados.data_fim
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
+    async InstrutorInsert(req, res){
+        const dados = req.body;
 
+        await aluno.create({
+            EDV: dados.edv,
+            Nome: dados.nome,
+        })
+        res.redirect('/cadastro');
+    },
     async instrutor (req, res){
 
-        const instrutores = await instrutor.findAll({ raw: true, attributes: ['Instrutor_ID', 'Nome'] });
+        const instrutores = await instrutor.findAll({ 
+            raw: true, 
+            attributes: ['Instrutor_ID', 'Nome']
+        });
         res.render('../views/telas-instrutores/cadastro', {instrutores});
     },
-   
-
     async turmaInsert(req, res){
         const dados = req.body
 
         await turma.create({
             Nome: dados.nome
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
     }
 }
-
-
-

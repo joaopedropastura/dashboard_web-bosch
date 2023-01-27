@@ -22,7 +22,6 @@ module.exports = {
                 if(dados.edv == ele.EDV && dados.senha == ele.Senha)
                 {
                     podeEntrar = true
-
                 }
             });
             instrutores.forEach(ele => {
