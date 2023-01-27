@@ -2,6 +2,7 @@
 // const turma = require('../model/turma');
 const disciplina = require('../model/disciplinas')
 const turma = require('../model/turmas')
+const instrutor = require('../model/instrutores')
 const aluno = require('../model/alunos')
 
 module.exports =
@@ -22,12 +23,15 @@ module.exports =
             raw: true,
             attributes: ['Disciplina_ID', 'Nome']
         })
-
+        const instrutores = await instrutor.findAll({
+            raw: true,
+            attributes: ['EDV', 'Nome']
+        })
         const turmas = await turma.findAll({
             raw: true,
             attributes: ['Turma_ID', 'Nome']
         })
-        res.render('../views/telas-instrutores/cadastro', {disciplinas, turmas})
+        res.render('../views/telas-instrutores/cadastro', {disciplinas, turmas, instrutores})
     },
 
     async pagLogin(req, res)
