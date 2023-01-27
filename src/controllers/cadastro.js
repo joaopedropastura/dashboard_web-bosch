@@ -4,7 +4,7 @@ const instrutor = require('../model/instrutores')
 const aluno = require('../model/alunos')
 const turma = require('../model/turmas')
 const informacoes = require('../model/informacoes')
-const execucao = require('../model/execucao')
+const aula = require('../model/aula')
 
 module.exports = {
 
@@ -58,16 +58,16 @@ module.exports = {
         res.redirect('/');
     },
 
-    async ExecucaoInsert(req, res){
+    async AulaInsert(req, res){
         const dados = req.body;
 
-        await execucao.create({
+        await aula.create({
             Conteudo_ID: dados.conteudo,
             Turma_ID: dados.turma,
             Instrutor_ID: dados.instrutor,
             Disciplina_ID: dados.disciplina
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
 
     async InformacoesInsert(req, res){
@@ -93,13 +93,12 @@ module.exports = {
         await conteudo.create({
             Nome: dados.nome,
         })
-
         res.redirect('/');
     },
 
     async DisciplinaInsert(req, res){
         const dados = req.body;
-
+        console.log(dados)
         await disciplina.create({
             Nome: dados.nome,
             Carga_Horaria: dados.carga_h,
@@ -115,7 +114,7 @@ module.exports = {
         await turma.create({
             Nome: dados.nome
         });
-        res.redirect('/');
+        res.redirect('/cadastro');
     }, 
 
     async questoesInsert(req, res){
