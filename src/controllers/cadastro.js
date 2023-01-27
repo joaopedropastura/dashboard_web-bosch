@@ -39,7 +39,7 @@ module.exports = {
             Senha: 'ETS' + dados.edv,
             Turma_ID: dados.turma
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
 
     async instrutor (req, res){
@@ -80,7 +80,11 @@ module.exports = {
             Github: dados.github,
             Foto: dados.foto
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
+    },
+
+    async InstrutorInsert(req, res){
+        const dados = req.body;
     },
 
     async ConteudoInsert(req, res){
@@ -143,6 +147,3 @@ module.exports = {
         res.redirect('/');
     }
 }
-
-
-

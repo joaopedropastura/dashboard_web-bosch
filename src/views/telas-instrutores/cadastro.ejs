@@ -50,36 +50,103 @@
 
                             </div>
 
-                            <div class="card-body" id="cardBody" style="display: flex">
+                            <div class="card-body" id="cardBody">
                                 <form action="/cadastro" method="post">
                                     <div class="inputs show" id="cadastroTurma">
                                         <div class="mb-3" id="inputNomeTurma">
                                             <label for="nome" class="form-label textLabel">Nome da Turma:</label>
                                             <input type="text" class="form-control" id="inputNomeTurma" name="nome">
                                         </div> 
-                                        <button class="botao_liquido" type="submit" id="enviar">
-                                            <span>Enviar</span>
-                                            <div class="liquid"></div>
-                                        </button>
+                                        <button type="submit" class="btn btn-info">Info</button>
                                     </div>
                                 </form>
-
-                                <div class="inputs hidden" id="cadastroUsuario">
-                                    <div class="mb-3 caixas">
-                                        <label for="cargo" class="form-label textLabel">Cargo:</label>
-                                        <select style="width: 100%;" id="inputCargo" class="form-select" name="cargo" required>
-                                            <option value="adm"> Administrador </option>
-                                            <option value="aluno"> Aluno </option>
-                                        </select>
+                                <form action="/cadastro-user" method="post">
+                                    <div class="inputs hidden" id="cadastroUsuario">
+                                        <div class="mb-3 caixas">
+                                            <label for="cargo" class="form-label textLabel">Cargo:</label>
+                                            <select style="width: 100%;" id="inputCargo" class="form-select" name="cargo" required>
+                                                <option value="adm"> Administrador </option>
+                                                <option value="aluno"> Aluno </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3 caixas">
+                                            <label for="nome" class="form-label textLabel">Nome:</label>
+                                            <input type="text" class="form-control" id="inputNome" name="nome">
+                                        </div>
+                                        <div class="mb-3 caixas">
+                                            <label for="edv" class="form-label textLabel">EDV:</label>
+                                            <input type="text" class="form-control" id="inputEdv" name="edv">
+                                        </div>
+                                        <!-- if(cargo.value == "aluno") -->
+                                        <div class="turmas caixas">
+                                            <label for="turma" class="form-label textLabel">Turma</label>
+                                            <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
+                                                <option selected>selecione a turma</option>
+                                                <% for (let i=0; i<turmas.length; i++) { %>
+                                                    <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
+                                                <% } %>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Info</button>
                                     </div>
-                                    <div class="mb-3 caixas">
-                                        <label for="nome" class="form-label textLabel">Nome:</label>
-                                        <input type="text" class="form-control" id="inputNome" name="nome">
+                                </form>
+                                <form action="/cadastro-disciplina" method="post">
+                                    <div class="inputs hidden" id="cadastroDisciplina">
+                                        <div class="mb-3 caixas">
+                                            <label for="nome" class="form-label textLabel">Nome da disciplina:</label>
+                                            <input type="text" class="form-control" id="inputNome" name="nome">
+                                        </div>
+                                        <div class="mb-3 caixas">
+                                            <label for="cargaHoraria" class="form-label textLabel">Carga horária:</label>
+                                            <input type="text" class="form-control" id="inputNome" name="carga_H">
+                                        </div>
+                                        <div class="mb-3 caixas">
+                                            <label for="dataInicio" class="form-label textLabel">Data de início:</label>
+                                            <input type="date" class="form-control" id="inputNome" name="data_init">
+                                        </div>
+                                        <div class="mb-3 caixas">
+                                            <label for="dataTermino" class="form-label textLabel">Data de término:</label>
+                                            <input type="date" class="form-control" id="inputNome" name="data_fim">
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Info</button>
                                     </div>
-                                    <div class="mb-3 caixas">
-                                        <label for="edv" class="form-label textLabel">EDV:</label>
-                                        <input type="text" class="form-control" id="inputEdv" name="edv">
+                                </form>
+                                <form action="cadastro-conteudo" method="post">
+                                    <div class="inputs hidden" id="cadastroConteudo">
+                                        <div class="sm-3 caixas">
+                                            <label for="nome" class="form-label textLabel">Nome do Conteúdo:</label>
+                                            <input type="text" class="form-control" id="inputConteudo" name="nome">
+                                        </div>
+                                        <div class="sm-3 caixas">
+                                            <label for="instrutor" class="form-label textLabel">Instrutor:</label>
+                                            <select style="width: 100%;" id="inputTurma" class="form-select" name="instrutor">
+                                                <option selected>selecione o instrutor</option>
+                                                <% for (let i=0; i<instrutores.length; i++) { %>
+                                                    <option value='<%= instrutores[i].Turma_ID %>'> <%= instrutores[i].Nome %> </option>
+                                                <% } %>
+                                            </select>
+                                        </div>
+                                        <div class="sm-3 caixas">
+                                            <label for="disciplina" class="form-label textLabel">Disciplina:</label>
+                                            <select style="width: 100%;" id="inputTurma" class="form-select" name="disciplina">
+                                                <option selected>selecione a disciplina</option>
+                                                <% for (let i=0; i<disciplinas.length; i++) { %>
+                                                    <option value='<%= disciplinas[i].Disciplina_ID %>'> <%= disciplinas[i].Nome %> </option>
+                                                <% } %>
+                                            </select>
+                                        </div>
+                                        <div class="sm-3 caixas">
+                                            <label for="turma" class="form-label textLabel">Turma:</label>
+                                            <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
+                                                <option selected>selecione a turma</option>
+                                                <% for (let i=0; i<turmas.length; i++) { %>
+                                                    <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
+                                                <% } %>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Info</button>
                                     </div>
+<<<<<<< HEAD
 
                                     <!-- if(cargo.value == "aluno") -->
                                 
@@ -144,6 +211,9 @@
                                         </select>
                                     </div>
                                 </div>
+=======
+                                </form>
+>>>>>>> faf1ca1f5d05008f0a65b277d4de290408fe9562
 
                             <div class="card-bottom">
 
