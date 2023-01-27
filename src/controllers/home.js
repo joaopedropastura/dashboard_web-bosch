@@ -27,7 +27,7 @@ module.exports =
             raw: true,
             attributes: ['Turma_ID', 'Nome']
         })
-        res.render('../views/telas-instrutores/cadastros/cadastro-usuarios', {disciplinas, turmas})
+        res.render('../views/telas-instrutores/cadastro', {disciplinas, turmas})
     },
 
     async pagLogin(req, res)

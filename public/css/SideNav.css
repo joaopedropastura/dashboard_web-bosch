@@ -4,25 +4,51 @@
     .sidenav 
     {
       height: 100%;
-      width: 18vw; 
+      width: 20%; 
       position: fixed;
       z-index: 1; 
       top: 0;
       left: 0;
-      background-color: rgb(205, 205, 205); 
+      background-color: rgb(255, 255, 255); 
       overflow-x: hidden; 
-      padding-top: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: top;
+      justify-content: center;
       align-items: center;
-      border-right: 3px solid black;
+      border: 3px solid black;
     }
+
+    .nav
+    {
+        width: 90%;
+        height: 98%;
+        background-color: #000000;
+        border-radius: 45px;
+    }
+
+    .nomeDasch
+    {
+      height: 15%;
+      width: 100%;
+      border-top-left-radius: 45px;
+      border-top-right-radius: 45px;
+      background: rgb(129,0,0);
+      background: linear-gradient(90deg, rgba(129,0,0,1) 0%, rgba(121,9,9,1) 8%, rgba(161,2,2,1) 13%, rgba(203,30,30,1) 23%, rgba(149,4,181,1) 34%, rgba(1,30,158,1) 52%, rgba(13,107,148,1) 60%, rgba(0,156,221,1) 67%, rgba(0,188,254,1) 79%, rgba(54,184,71,1) 86%, rgba(101,247,110,1) 93%, rgba(10,134,26,1) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nomeDasch b
+    {
+      font-size: 28px;
+      color: white;
+    }
+
 
     #imageSide
     {
       width: 100%;
-      border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -39,7 +65,6 @@
     .opcoes
     {
       width: 100vw;
-      border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -51,13 +76,13 @@
       margin: 30px;
       text-decoration: none;
       font-size: 30px;
-      color: #000000;
+      color: white;
       display: block;
       
     }
 
-    .af {
-      border-top: 3px solid black;
+    .af 
+    {
       position: absolute;
       bottom: 0;
     }
@@ -69,9 +94,12 @@
 
     .main 
     {
-      width: 82vw;
-      margin-left: 18vw; 
-      padding: 0px 10px;
+      border: 3px solid black;;
+      position: fixed;
+      width: 80%;
+      height: 100%;
+      margin-left: 20%; 
+      padding: 1vh;
       display: flex;
       justify-content: center;
       align-items: center;

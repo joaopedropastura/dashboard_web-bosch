@@ -3,7 +3,6 @@
         .card
         {
             margin: 30px;
-            display: flex;
             justify-content: center;
             align-items: center;
             width: 60vw;
@@ -15,7 +14,6 @@
 
         .card-body
         {
-            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -112,6 +110,7 @@
 /* Layout das caixas dos inputs */
 .inputs
 {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -131,6 +130,15 @@
     margin: 30px;
 }
 
+.show
+{
+    display: flex;
+}
+
+.hidden
+{
+    display: none;
+}
 
 
 
