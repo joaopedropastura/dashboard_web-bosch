@@ -27,7 +27,7 @@ module.exports = {
                 Senha: 'ETS' + dados.edv,
             })
         }
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
 
     async alunoInsert(req, res){
@@ -55,7 +55,7 @@ module.exports = {
             Nome: dados.nome,
             Senha: 'ETS' + dados.edv,
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
 
     async AulaInsert(req, res){
@@ -65,7 +65,10 @@ module.exports = {
             Conteudo_ID: dados.conteudo,
             Turma_ID: dados.turma,
             Instrutor_ID: dados.instrutor,
-            Disciplina_ID: dados.disciplina
+            Disciplina_ID: dados.disciplina,
+            Carga_Horaria: dados.carga_h,
+            Data_Inicio: dados.data_init,
+            Data_Fim: dados.data_fim
         })
         res.redirect('/cadastro');
     },
@@ -93,19 +96,16 @@ module.exports = {
         await conteudo.create({
             Nome: dados.nome,
         })
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
 
     async DisciplinaInsert(req, res){
         const dados = req.body;
         console.log(dados)
         await disciplina.create({
-            Nome: dados.nome,
-            Carga_Horaria: dados.carga_h,
-            Data_Inicio: dados.data_init,
-            Data_Fim: dados.data_fim
+            Nome: dados.nome
         });
-        res.redirect('/');
+        res.redirect('/cadastro');
     },
 
     async turmaInsert(req, res){
@@ -115,7 +115,7 @@ module.exports = {
             Nome: dados.nome
         });
         res.redirect('/cadastro');
-    }, 
+    },
 
     async questoesInsert(req, res){
         const dados = req.body
@@ -132,7 +132,7 @@ module.exports = {
         });
         res.redirect('/');
     },
-    
+
     async provasInsert(req, res){
         const dados = req.body;
 

@@ -6,9 +6,9 @@ const instrutores = require('./instrutores');
 const disciplinas = require('./disciplinas');
 const conteudos = require('./conteudos');
 
-const aula = database.define('Aulas', 
+const aula = database.define('Aulas',
 {
-    Aula_ID: 
+    Aula_ID:
     {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -16,36 +16,53 @@ const aula = database.define('Aulas',
         primaryKey: true
     },
 
-    Nome: 
+    Nome:
     {
         type: Sequelize.STRING(100),
+        allowNull: false
+    },
+
+    Carga_Horaria:
+    {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+
+    Data_Inicio:
+    {
+        type: Sequelize.DATEONLY,
+        allowNull: false
+    },
+
+    Data_Fim:
+    {
+        type: Sequelize.DATEONLY,
         allowNull: false
     }
 
 });
 
-
-aula.belongsTo(turmas, 
+aula.belongsTo(turmas,
 {
-    constraint: true, 
+    constraint: true,
     foreignKey: 'Turma_ID'
 });
 
-aula.belongsTo(instrutores, 
+aula.belongsTo(instrutores,
 {
-    constraint: true, 
+    constraint: true,
     foreignKey: 'Instrutor_ID'
 });
 
-aula.belongsTo(disciplinas, 
+aula.belongsTo(disciplinas,
 {
-    constraint: true, 
+    constraint: true,
     foreignKey: 'Disciplina_ID'
 });
 
-aula.belongsTo(conteudos, 
+aula.belongsTo(conteudos,
     {
-        constraint: true, 
+        constraint: true,
         foreignKey: 'Conteudo_ID'
     });
 

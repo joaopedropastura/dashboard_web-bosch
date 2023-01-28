@@ -22,7 +22,7 @@ const showAula = () =>
 
 }
 
-const showUsuario = () => 
+const showUsuario = () =>
 {
     turma.style.display = 'none';
     usuario.style.display = 'flex';
@@ -32,7 +32,7 @@ const showUsuario = () =>
 
 }
 
-  const showDisciplina = () => 
+  const showDisciplina = () =>
 {
     turma.style.display = 'none';
     usuario.style.display = 'none';
@@ -42,7 +42,7 @@ const showUsuario = () =>
 
 }
 
-  const showConteudo = () => 
+  const showConteudo = () =>
 {
     turma.style.display = 'none';
     usuario.style.display = 'none';
@@ -50,5 +50,20 @@ const showUsuario = () =>
     conteudo.style.display = 'flex';
     aula.style.display = 'none';
 
+}
+
+function viewTurma(event){
+    const isAdm = event.target.value
+    const turmaInput = document.getElementById("turma")
+    if(isAdm === "adm"){
+        turmaInput.style.display = 'none';
+    }
+    else{
+        turmaInput.style.display = 'block';
+    }
+}
+
+function viewNome(){
+    // alert("alo")
 }
 
