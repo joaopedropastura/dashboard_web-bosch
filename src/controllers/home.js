@@ -30,7 +30,6 @@ module.exports =
             raw: true,
             attributes: ['Turma_ID', 'Nome']
         })
-
         const conteudos = await conteudo.findAll({
             raw: true,
             attributes: ['Conteudo_ID', 'Nome']

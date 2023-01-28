@@ -9,7 +9,7 @@ main{
     padding: 2vh;
     position: relative;
     gap: 2vh;
-    background-color: rgb(255, 161, 161);
+    background-color: rgb(97, 96, 96)
 }
 
 .nav-bar{
@@ -20,7 +20,7 @@ main{
 }
 .nav-header b
 {
-    color: rgb(255, 240, 240);
+    color: whitesmoke;
     font-size: 25px;
 }
 .nav-links

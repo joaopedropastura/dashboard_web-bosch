@@ -60,7 +60,6 @@ module.exports = {
 
     async AulaInsert(req, res){
         const dados = req.body;
-
         await aula.create({
             Conteudo_ID: dados.conteudo,
             Turma_ID: dados.turma,

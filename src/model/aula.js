@@ -16,12 +16,6 @@ const aula = database.define('Aulas',
         primaryKey: true
     },
 
-    Nome:
-    {
-        type: Sequelize.STRING(100),
-        allowNull: false
-    },
-
     Carga_Horaria:
     {
         type: Sequelize.INTEGER,
@@ -51,7 +45,7 @@ aula.belongsTo(turmas,
 aula.belongsTo(instrutores,
 {
     constraint: true,
-    foreignKey: 'Instrutor_ID'
+    foreignKey: 'EDV'
 });
 
 aula.belongsTo(disciplinas,

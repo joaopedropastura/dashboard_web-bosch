@@ -30,39 +30,39 @@
                         <%- include("parts/formsTurma.ejs") %>
                         <form action="/cadastro-user" method="post">
                             <div class="inputs hidden" id="cadastroUsuario">
-                                <div class="mb-3 caixas">
-                                    <label for="cargo" class="form-label textLabel">Cargo:</label>
-                                    <select  onchange="viewTurma(event)" style="width: 100%;" id="inputCargo" class="form-select" name="cargo" required>
-                                        <option value="aluno"> Aluno </option>
-                                        <option value="adm"> Administrador </option>
-                                    </select>
+                                <div class="inputs-body">
+                                    <div class="mb-3 caixas">
+                                        <label for="cargo" class="form-label">Cargo:</label>
+                                        <select  onchange="viewTurma(event)" style="width: 100%;" id="inputCargo" class="form-select" name="cargo" required>
+                                            <option value="aluno"> Aluno </option>
+                                            <option value="adm"> Administrador </option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 caixas">
+                                        <label for="nome" class="form-label">Nome:</label>
+                                        <input type="text" class="form-control" id="inputNome" name="nome">
+                                    </div>
+                                    <div class="mb-3 caixas">
+                                        <label for="edv" class="form-label">EDV:</label>
+                                        <input type="text" class="form-control" id="inputEdv" name="edv">
+                                    </div>
+                                    <div class="mb-3 caixas" id="turma">
+                                        <label for="turma" class="form-label">Turma</label>
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
+                                            <option selected>selecione a turma</option>
+                                            <% for (let i=0; i<turmas.length; i++) { %>
+                                                <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="mb-3 caixas">
-                                    <label for="nome" class="form-label textLabel">Nome:</label>
-                                    <input type="text" class="form-control" id="inputNome" name="nome">
-                                </div>
-                                <div class="mb-3 caixas">
-                                    <label for="edv" class="form-label textLabel">EDV:</label>
-                                    <input type="text" class="form-control" id="inputEdv" name="edv">
-                                </div>
-                                <!-- if(cargo == "aluno"){  -->
-                                <div class="turmas caixas" id="turma">
-                                    <label for="turma" class="form-label textLabel">Turma</label>
-                                    <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
-                                        <option selected>selecione a turma</option>
-                                        <% for (let i=0; i<turmas.length; i++) { %>
-                                            <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
-                                        <% } %>
-                                    </select>
-                                </div>
-                                <!--  } -->
                                 <button type="submit" class="btn btn-info">Info</button>
                             </div>
                         </form>
                         <form action="/cadastro-disciplina" method="post">
                             <div class="inputs hidden" id="cadastroDisciplina">
                                 <div class="mb-3 caixas">
-                                    <label for="nome" class="form-label textLabel">Nome da disciplina:</label>
+                                    <label for="nome" class="form-label">Nome da disciplina:</label>
                                     <input type="text" class="form-control" id="inputNome" name="nome">
                                 </div>
                                 <button type="submit" class="btn btn-info">Info</button>
@@ -70,67 +70,69 @@
                         </form>
                         <form action="cadastro-aula" method="post">
                             <div class="inputs hidden" id="cadastroAula">
-                                <div class="sm-3 caixas">
-                                    <label for="nome" class="form-label textLabel">Nome da Aula:</label>
-                                    <select style="width: 100%;" id="inputTurma" class="form-select" name="instrutor">
-                                        <option selected>selecione o conteudo</option>
-                                        <% for (let i=0; i<conteudos.length; i++) { %>
-                                            <option value='<%= conteudos[i].conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
-                                        <% } %>
-                                    </select>
-                                </div>
-                                <div class="sm-3 caixas">
-                                    <label for="instrutor" class="form-label textLabel">Instrutor:</label>
-                                    <select style="width: 100%;" id="inputTurma" class="form-select" name="instrutor">
-                                        <option selected>selecione o instrutor</option>
-                                        <% for (let i=0; i<instrutores.length; i++) { %>
-                                            <option value='<%= instrutores[i].Turma_ID %>'> <%= instrutores[i].Nome %> </option>
-                                        <% } %>
-                                    </select>
-                                </div>
-                                <div class="sm-3 caixas">
-                                    <label for="disciplina" class="form-label textLabel">Disciplina:</label>
-                                    <select style="width: 100%;" id="inputTurma" class="form-select" name="disciplina">
-                                        <option selected>selecione a disciplina</option>
-                                        <% for (let i=0; i<disciplinas.length; i++) { %>
-                                            <option value='<%= disciplinas[i].Disciplina_ID %>'> <%= disciplinas[i].Nome %> </option>
-                                        <% } %>
-                                    </select>
-                                </div>
-                                <div class="sm-3 caixas">
-                                    <label for="turma" class="form-label textLabel">Turma:</label>
-                                    <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
-                                        <option selected>selecione a turma</option>
-                                        <% for (let i=0; i<turmas.length; i++) { %>
-                                            <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
-                                        <% } %>
-                                    </select>
-                                </div>
-                                <div class="mb-3 caixas">
-                                    <label for="cargaHoraria" class="form-label textLabel">Carga horária:</label>
-                                    <input type="text" class="form-control" id="inputNome" name="carga_h">
-                                </div>
-                                <div class="mb-3 caixas">
-                                    <label for="dataInicio" class="form-label textLabel">Data de início:</label>
-                                    <input type="date" class="form-control" id="inputNome" name="data_init">
-                                </div>
-                                <div class="mb-3 caixas">
-                                    <label for="dataTermino" class="form-label textLabel">Data de término:</label>
-                                    <input type="date" class="form-control" id="inputNome" name="data_fim">
+                                <div class="inputs-body">
+                                    <div class="sm-3 caixas">
+                                        <label for="nome" class="form-label">Nome do Conteudo:</label>
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="conteudo">
+                                            <option selected>selecione o conteudo</option>
+                                            <% for (let i=0; i<conteudos.length; i++) { %>
+                                                <option value='<%= conteudos[i].Conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="sm-3 caixas">
+                                        <label for="instrutor" class="form-label">Instrutor:</label>
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="instrutor">
+                                            <option selected>selecione o instrutor</option>
+                                            <% for (let i=0; i<instrutores.length; i++) { %>
+                                                <option value='<%= instrutores[i].EDV %>'> <%= instrutores[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="sm-3 caixas">
+                                        <label for="disciplina" class="form-label">Disciplina:</label>
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="disciplina">
+                                            <option selected>selecione a disciplina</option>
+                                            <% for (let i=0; i<disciplinas.length; i++) { %>
+                                                <option value='<%= disciplinas[i].Disciplina_ID %>'> <%= disciplinas[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="sm-3 caixas">
+                                        <label for="turma" class="form-label">Turma:</label>
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
+                                            <option selected>selecione a turma</option>
+                                            <% for (let i=0; i<turmas.length; i++) { %>
+                                                <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="sm-3 caixas">
+                                        <label for="cargaHoraria" class="form-label">Carga horária:</label>
+                                        <input type="text" class="form-control" id="inputNome" name="carga_h">
+                                    </div>
+                                    <div class="form-inline">
+                                        <div class="col-auto">
+                                            <label for="dataInicio" class="form-label">Data de início:</label>
+                                            <input type="date" class="form-control" id="inputNome" name="data_init">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="dataTermino" class="form-label">Data de término:</label>
+                                            <input type="date" class="form-control" id="inputNome" name="data_fim">
+                                        </div>
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-info">Info</button>
                             </div>
                         </form>
+                        <%- include("parts/formsConteudo.ejs") %>
                     </div>
-                    <%- include("parts/formsConteudo.ejs") %>
                 </div>
             </div>
         </div>
     </main>
     <script src="js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
+
 
 
 </body>
