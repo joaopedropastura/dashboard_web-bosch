@@ -44,7 +44,7 @@ module.exports =
 
     async pagDashBoard(req, res)
     {
-        res.render('../views/telas-alunos/dasboard')
+        res.render('../views/telas-alunos/dash-board')
     },
 
 
