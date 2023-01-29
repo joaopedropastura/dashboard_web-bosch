@@ -10,8 +10,8 @@
 <body style="height: 100vh;">
 
 	<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-	Launch demo modal
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+	Adicionar Prova
   </button>
 
   <!-- Modal -->
@@ -19,15 +19,25 @@
 	<div class="modal-dialog" role="document">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		  <h5 class="modal-title" id="exampleModalLabel">Informações sobre a prova:</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </button>
 		</div>
 		<div class="modal-body">
+			<div class="mb-3 forms">
+				<label class="form-label">Nome da prova:</label>
+				<input type="text" class="form-control" placeholder="nome da prova" name="prova">
+			</div>
+			<div class="mb-3 forms">
+				<label class="form-label">Nome da disciplina:</label>
+				<input type="text" class="form-control" placeholder="escolha a disciplina" name="disciplina">
+			</div>
+			<div class="mb-3 forms">
+				<label class="form-label">Turma:</label>
+				<input type="text" class="form-control" placeholder="escolha a turma" name="turma">
+			</div>
 		</div>
 		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 		  <button type="button" class="btn btn-primary">Save changes</button>
 		</div>
 	  </div>

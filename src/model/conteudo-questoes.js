@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const database = require('../config/db');
 const conteudo = require('./conteudos');
 
-const conteudoQuestao = database.define('Conteudo_Questao',
+const conteudoQuestao = database.define('Conteudo_Questoes',
 {
     Conteudo_Questao_ID:
     {

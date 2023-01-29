@@ -136,14 +136,13 @@ module.exports = {
 
     async provasInsert(req, res){
         const dados = req.body;
-
+        console.log(dados)
         await prova.create({
             Nome: dados.nome,
-            Nota: dados.nota,
             Disciplina_ID: dados.disciplina,
-            Aluno_ID: dados.edv,
-            Recuperacao: dados.recuperacao
+            Turma_ID: dados.turma,
+            Recuperacao: dados.recuperacao == "false" ? false : true
         });
-        res.redirect('/');
+        res.redirect('/avaliacao');
     }
 }

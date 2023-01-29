@@ -3,6 +3,7 @@ const turma = require('../model/turmas')
 const instrutor = require('../model/instrutores')
 const aluno = require('../model/alunos')
 const conteudo =  require('../model/conteudos')
+const prova = require('../model/provas')
 
 module.exports =
 {
@@ -50,10 +51,19 @@ module.exports =
 
     async pagAvaliacao(req, res)
     {
-        const alunos = await aluno.findAll({
+        const disciplinas = await disciplina.findAll({
+            raw: true,
+            attributes: ['Disciplina_ID', 'Nome']
+        })
+        const turmas = await turma.findAll({
             raw: true,
             attributes: ['Turma_ID', 'Nome']
         })
-        res.render('../views/telas-instrutores/avaliacao')
+        const provas = await prova.findAll({
+            raw: true,
+            attributes: ['Prova_ID', 'Nome']
+        })
+
+        res.render('../views/telas-instrutores/avaliacao', {disciplinas, turmas, provas})
     }
 }

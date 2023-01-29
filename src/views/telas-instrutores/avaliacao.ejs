@@ -8,7 +8,7 @@
     <%- include("../template/head.ejs") %>
     <link rel="stylesheet" href="css/telas-instrutores/avaliacao.css">
     <script src="js/index.js"></script>
-    
+
     <title>Avaliação</title>
 </head>
 
@@ -16,121 +16,71 @@
     <main>
         <%- include("../template/nav-bar.ejs") %>
         <div class="box-content">
+            <form action="cadastro-prova" method="post">
+                <div class="card-prova">
+                    <div class="add-avaliacao">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Adicionar Prova
+                        </button>
+                    </div>
 
-            <div class="card-prova">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
 
-                <div class="add-avaliacao">
-                    <button type="button" data-toggle="modal" data-target="#exampleModal">
-                        <b>Adicionar Avaliação</b>
-                    </button>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Informações sobre a prova:</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="mb-3 forms">
+                                        <label class="form-label">Nome da prova:</label>
+                                        <input type="text" class="form-control" placeholder="nome da prova" name="nome">
+                                    </div>
+                                    <div class="mb-3 forms">
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="disciplina">
+                                            <option selected>selecione a disciplina</option>
+                                            <% for (let i=0; i<disciplinas.length; i++) { %>
+                                                <option value='<%= disciplinas[i].Disciplina_ID %>'> <%= disciplinas[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 forms">
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
+                                            <option selected>selecione a turma</option>
+                                            <% for (let i=0; i<turmas.length; i++) { %>
+                                                <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
+                                            <% } %>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 forms">
+                                        <select style="width: 100%;" id="inputTurma" class="form-select" name="recuperacao">
+                                            <option value="false" selected> nao</option>
+                                            <option value="true"> sim </option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-
-                          prova
-
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                          <button type="button" class="btn btn-primary">Criar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="provas" style="overflow-y:scroll;">
-
+            </form>
+            <div class="provas" style="overflow-y:scroll;">
+                <% for (let i=0; i<provas.length; i++) { %>
                     <div class="prova">
-                        <b>Prova C#</b>
+                        <b><%= provas[i].Nome %></b>
+                        <b>
+                            <%= disciplinas[i].Nome %>
+                        </b>
                     </div>
-
-                    <div class="prova">
-                        <b>Prova Python</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova SQL</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova JavaScript</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-<<<<<<< HEAD
-=======
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                     <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
->>>>>>> 51529f4a38944a5e0164c846d86e4db764524017
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                     <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-                    <div class="prova">
-                        <b>Prova React</b>
-                    </div>
-
-
-                </div>
-
-
-
+                <% } %>
             </div>
-
-
-
-
-
-
-
-
-
         </div>
     </main>
 </body>

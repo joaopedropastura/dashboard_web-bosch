@@ -3,11 +3,18 @@ main
     height: 100vh;
 }
 
+form{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
 .box-content
 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .card-prova
@@ -26,11 +33,10 @@ main
 
 .add-avaliacao
 {
-    width: 80%;
-    height: 10%;
+    width: 100%;
+    /* height: 100%; */
     background-color: blue;
     border-radius: 20px;
-    margin-top: 20px;
 
     display: flex;
     justify-content: center;

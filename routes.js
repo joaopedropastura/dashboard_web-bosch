@@ -18,6 +18,9 @@ route.post('/',home.pagInicialPost)
 route.get('/avaliacao', home.pagAvaliacao)
 route.get('/dash-board', home.pagDashBoard)
 
+
+route.post('/cadastro-prova', cadastroGeral.provasInsert)
+
 route.post('/cadastro-user', cadastroGeral.userInsert)
 route.post('/cadastro-aula', cadastroGeral.AulaInsert)
 route.post('/cadastro-turma', cadastroGeral.turmaInsert)
