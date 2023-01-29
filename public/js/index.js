@@ -63,10 +63,10 @@ function viewTurma(event){
     }
 }
 
-function viewNome(){
-    // alert("alo")
-}
+// function viewNome(){
+//     // alert("alo")
+// }
 
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
+// $('#myModal').on('shown.bs.modal', function () {
+//     $('#myInput').trigger('focus')
+//   })

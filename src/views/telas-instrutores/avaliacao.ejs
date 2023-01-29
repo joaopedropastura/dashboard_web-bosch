@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include("../template/head.ejs") %>
     <link rel="stylesheet" href="css/telas-instrutores/avaliacao.css">
-    <script src="js/index.js"></script>
+    <!-- <script src="js/index.js"></script> -->
+    <script src="js/lista-alunos.js"></script>
 
     <title>Avaliação</title>
 </head>
@@ -16,7 +17,7 @@
     <main>
         <%- include("../template/nav-bar.ejs") %>
         <div class="box-content">
-            <form action="cadastro-prova" method="post">
+            <form id="form" action="cadastro-prova" method="post">
                 <div class="card-prova">
                     <div class="add-avaliacao">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -71,17 +72,20 @@
                     </div>
                 </div>
             </form>
-            <div class="provas" >
-                <% for (let i=0; i < provas.length; i++) { %>
-                    <div class="prova">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <b><%= turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Nome %></b>
-                            <b><%= provas[i].Nome %></b>
-                            <b><%= disciplinas.find(({Disciplina_ID}) => Disciplina_ID === provas[i].Disciplina_ID).Nome %></b>
-                        </button>
-                    </div>
-                <% } %>
-            </div>
+            <form action="lista-alunos" method="post">
+                <div class="provas">
+                    <% for (let i=0; i < provas.length; i++) { %>
+                        <div class="prova">
+                            <button value="" type="submit" id="<%=turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Turma_ID%>" onclick="passaInfo(this.id)" type="button" class="btn btn-primary" role="button">
+                                <b><%= turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Nome %></b>
+                                <b><%= provas[i].Nome %></b>
+                                <b><%= disciplinas.find(({Disciplina_ID}) => Disciplina_ID === provas[i].Disciplina_ID).Nome %></b>
+                            </button>
+                        </div>
+                    <% } %>
+                </div>
+            </form>
+
         </div>
     </main>
 </body>

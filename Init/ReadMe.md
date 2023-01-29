@@ -27,7 +27,7 @@ login video:
 login page inspiracao:
 
     https://dribbble.com/shots/19133985-Sign-Up-Page-UI
-    
+
     https://dribbble.com/shots/17080426-Log-in-page-Untitled-UI
 
 site oficial de estilos web bosch
@@ -38,3 +38,7 @@ site oficial de estilos web bosch
 icones
 
     https://icons8.com.br/icons/set/home
+
+graficos
+
+    https://github.com/d3/d3/wiki/Gallery#basic-charts
