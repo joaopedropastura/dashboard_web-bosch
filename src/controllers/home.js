@@ -61,9 +61,22 @@ module.exports =
         })
         const provas = await prova.findAll({
             raw: true,
-            attributes: ['Prova_ID', 'Nome']
+            attributes: ['Prova_ID', 'Nome', 'Disciplina_ID', 'Turma_ID']
         })
 
         res.render('../views/telas-instrutores/avaliacao', {disciplinas, turmas, provas})
+    },
+
+    async pagListaAlunos(req, res)
+    {
+        const provas = await prova.findAll({
+            raw: true,
+            attributes: ['Prova_ID', 'Nome', 'Disciplina_ID', 'Turma_ID']
+        })
+        const alunos = await aluno.findAll({
+            raw: true,
+            attributes: ['EDV', 'Nome']
+        })
+        res.render('../views/telas-instrutores/lista-alunos', {provas, alunos})
     }
 }

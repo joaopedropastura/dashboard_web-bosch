@@ -71,13 +71,14 @@
                     </div>
                 </div>
             </form>
-            <div class="provas" style="overflow-y:scroll;">
-                <% for (let i=0; i<provas.length; i++) { %>
+            <div class="provas" >
+                <% for (let i=0; i < provas.length; i++) { %>
                     <div class="prova">
-                        <b><%= provas[i].Nome %></b>
-                        <b>
-                            <%= disciplinas[i].Nome %>
-                        </b>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <b><%= turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Nome %></b>
+                            <b><%= provas[i].Nome %></b>
+                            <b><%= disciplinas.find(({Disciplina_ID}) => Disciplina_ID === provas[i].Disciplina_ID).Nome %></b>
+                        </button>
                     </div>
                 <% } %>
             </div>

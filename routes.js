@@ -14,16 +14,15 @@ route.get('/', home.pagInicialget)
 route.get('/cadastro', home.pagCadastro)
 
 route.get('/login', home.pagLogin)
-route.post('/',home.pagInicialPost)
 route.get('/avaliacao', home.pagAvaliacao)
 route.get('/dash-board', home.pagDashBoard)
+route.get('/lista-alunos', home.pagListaAlunos)
 
-
-route.post('/cadastro-prova', cadastroGeral.provasInsert)
-
+route.post('/', home.pagInicialPost)
 route.post('/cadastro-user', cadastroGeral.userInsert)
 route.post('/cadastro-aula', cadastroGeral.AulaInsert)
 route.post('/cadastro-turma', cadastroGeral.turmaInsert)
+route.post('/cadastro-prova', cadastroGeral.provasInsert)
 route.post('/cadastro-conteudo', cadastroGeral.ConteudoInsert)
 route.post('/cadastro-disciplina', cadastroGeral.DisciplinaInsert)
 
