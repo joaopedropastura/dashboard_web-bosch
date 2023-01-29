@@ -5,6 +5,8 @@ const aluno = require('../model/alunos')
 const turma = require('../model/turmas')
 const informacoes = require('../model/informacoes')
 const aula = require('../model/aula')
+const prova = require('../model/provas')
+const questoes = require('../model/questoes')
 
 module.exports = {
 
@@ -135,7 +137,7 @@ module.exports = {
     async provasInsert(req, res){
         const dados = req.body;
 
-        await provas.create({
+        await prova.create({
             Nome: dados.nome,
             Nota: dados.nota,
             Disciplina_ID: dados.disciplina,

@@ -3,7 +3,7 @@ const database = require('../config/db');
 const disciplina = require('./disciplinas');
 const aluno = require('./alunos');
 
-const provas = database.define('Provas',
+const prova = database.define('Provas',
 {
     Prova_ID:
     {
@@ -25,18 +25,16 @@ const provas = database.define('Provas',
     }
 });
 
-provas.belongsTo(disciplina,
+prova.belongsTo(disciplina,
 {
     constraint: true,
     foreignKey: 'Disciplina_ID'
 });
 
-provas.belongsTo(aluno,
+prova.belongsTo(aluno,
 {
     constraint: true,
     foreignKey: 'EDV'
 });
 
-provas.sync()
-
-module.exports = provas;
+module.exports = prova;
