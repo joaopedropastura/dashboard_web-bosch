@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 const disciplina = require('./disciplinas');
-const aluno = require('./alunos');
+const turma = require('./turmas');
 
 const prova = database.define('Provas',
 {
@@ -31,10 +31,10 @@ prova.belongsTo(disciplina,
     foreignKey: 'Disciplina_ID'
 });
 
-prova.belongsTo(aluno,
+prova.belongsTo(turma,
 {
     constraint: true,
-    foreignKey: 'EDV'
+    foreignKey: 'Turma_ID'
 });
 
 module.exports = prova;

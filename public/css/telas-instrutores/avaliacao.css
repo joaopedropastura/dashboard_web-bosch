@@ -32,9 +32,17 @@
     align-items: center;
 }
 
+.add-avaliacao button
+{
+    background-color:blue;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border-color: transparent;
+}
 .add-avaliacao b
 {
-    color:aliceblue;
+    color: aliceblue;
 }
 
 .provas
@@ -45,25 +53,35 @@
     border-radius: 20px;
     margin-top: 20px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    overflow-y: scroll;
+}
 
-    overflow-y: auto;
+::-webkit-scrollbar
+{
+    background-color: blueviolet;
+    border-radius: 0 20px 20px 0 ;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: aliceblue;
+    border-radius: 20px 20px 20px 20px;
+    border: 4px solid blueviolet;
 }
 
 .prova
 {
     width: 90%;
-    height: 13%;
+    height: 10.5vh;
     background-color: blue;
     border-radius: 20px;
-    margin-top: 20px;
-
+    
     display: flex;
     justify-content: left;
     align-items: center;
+
+    margin: auto;
+    margin-top: 20px;
 }
 
 .prova b
