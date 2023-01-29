@@ -11,6 +11,10 @@ main{
     gap: 2vh;
     background-color: rgb(97, 96, 96)
 }
+a {
+    all: unset;
+}
+
 
 .nav-bar{
     height: 100%;

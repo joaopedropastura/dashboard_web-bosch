@@ -7,6 +7,8 @@ const database = new sequelize('DashBoard', 'root', 'joaopedro',
     dialect: 'mysql', host:'localhost', port: 3306
 });
 
+database.sync();
+
 database.authenticate()
     .then(function(){
         console.log("Conexão com o banco de dados realizada com sucesso!")
@@ -15,7 +17,6 @@ database.authenticate()
     })
 
 
-database.sync();
 
 module.exports = database;
 

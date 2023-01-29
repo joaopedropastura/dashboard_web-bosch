@@ -42,6 +42,12 @@ module.exports =
         res.render('../views/telas-gerais/login')
     },
 
+    async pagDashBoard(req, res)
+    {
+        res.render('../views/telas-alunos/dasboard')
+    },
+
+
     async pagAvaliacao(req, res)
     {
         const alunos = await aluno.findAll({

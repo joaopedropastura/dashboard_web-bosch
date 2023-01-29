@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const turmas = require('./turma');
+const turmas = require('./turmas');
 
-const calendario = database.define('Calendario', 
+const calendario = database.define('Calendario',
 {
-    Calendario_ID: 
+    Calendario_ID:
     {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -12,13 +12,13 @@ const calendario = database.define('Calendario',
         primaryKey: true
     },
 
-    Data: 
+    Data:
     {
         type: Sequelize.DATEONLY,
         allowNull: false
     },
 
-    Tarefa: 
+    Tarefa:
     {
         type: Sequelize.STRING(100),
         allowNull: false
@@ -26,12 +26,10 @@ const calendario = database.define('Calendario',
 
 });
 
-
-calendario.belongsTo(turmas, 
+calendario.belongsTo(turmas,
 {
-    constraint: true, 
+    constraint: true,
     foreignKey: 'Turma_ID'
 });
-
 
 module.exports = calendario;

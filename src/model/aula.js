@@ -1,4 +1,3 @@
-
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 const turmas = require('./turmas');

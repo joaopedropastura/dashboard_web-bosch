@@ -22,6 +22,7 @@ form{
     height: 100%;
     background-color: whitesmoke;
     border-radius: 20px;
+    padding: 30px;
 }
 .card-body
 {
@@ -34,7 +35,7 @@ form{
 .inputs-body{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
 }
 
 

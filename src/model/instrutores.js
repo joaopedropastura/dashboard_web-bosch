@@ -1,24 +1,23 @@
-
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 const informacoes = require('./informacoes');
 
-const instrutores = database.define('Instrutores', 
+const instrutores = database.define('Instrutores',
 {
-    EDV: 
+    EDV:
     {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
     },
 
-    Nome: 
+    Nome:
     {
         type: Sequelize.STRING(100),
         allowNull: false
     },
 
-    Senha: 
+    Senha:
     {
         type: Sequelize.STRING(15),
         allowNull: false
@@ -26,9 +25,9 @@ const instrutores = database.define('Instrutores',
 
 });
 
-instrutores.belongsTo(informacoes, 
+instrutores.belongsTo(informacoes,
 {
-    constraint: true, 
+    constraint: true,
     foreignKey: 'Informacoes_ID'
 });
 
