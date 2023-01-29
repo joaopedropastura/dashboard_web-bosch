@@ -53,14 +53,6 @@
     border-radius: 20px;
     margin-top: 20px;
 
-<<<<<<< HEAD
-    /* display: flex; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    overflow: scroll;
-=======
     overflow-y: scroll;
 }
 
@@ -75,7 +67,6 @@
     background: aliceblue;
     border-radius: 20px 20px 20px 20px;
     border: 4px solid blueviolet;
->>>>>>> 51529f4a38944a5e0164c846d86e4db764524017
 }
 
 .prova
@@ -84,7 +75,7 @@
     height: 10.5vh;
     background-color: blue;
     border-radius: 20px;
-    
+
     display: flex;
     justify-content: left;
     align-items: center;
