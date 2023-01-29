@@ -45,12 +45,12 @@
     border-radius: 20px;
     margin-top: 20px;
 
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    overflow-y: auto;
+    overflow: scroll;
 }
 
 .prova
