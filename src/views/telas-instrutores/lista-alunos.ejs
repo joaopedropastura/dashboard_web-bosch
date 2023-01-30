@@ -12,11 +12,14 @@
 	<main>
 		<%- include("../template/nav-bar.ejs") %>
 		<div class="box-content">
-			<div class="box-aluno">
-				<b>EDV: 12345</b>
-				<b>ETS 2023/1</b>
-				<b>Joao Pedro</b>
-			</div>
+			<% for(let m = 0; m < listaAlunos.length; m++) { %>
+
+				<div class="box-aluno">
+					<b><%= listaAlunos[m].EDV %></b>
+					<b><%= listaAlunos[m]["Turma"].Nome %></b>
+					<b><%= listaAlunos[m].Nome %></b>
+				</div>
+			<%}%>
 		</div>
 	</main>
 </body>
