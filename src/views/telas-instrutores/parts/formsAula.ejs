@@ -2,7 +2,7 @@
     <div class="inputs hidden" id="cadastroAula">
         <div class="inputs-body">
             <div class="mb-3 caixas">
-                <label for="nome" class="form-label">Nome do conteudo:</label>
+                <label for="nome" class="form-label">Conteudo:</label>
                 <select style="width: 100%;" id="inputUnico" class="form-select" name="conteudo">
                     <option selected>selecione o conteudo</option>
                     <% for (let i=0; i<conteudos.length; i++) { %>
@@ -37,11 +37,6 @@
                     <% } %>
                 </select>
             </div>
-
-            <div class="mb-3 caixas">
-                <label for="carga_h" class="form-label">Carga horária:</label>
-                <input type="text" class="form-control" id="inputUnico" name="carga_h">
-            </div>
             
             <div class="inputsDatas">
                 <div class="mb-3 caixasDatas">
@@ -50,12 +45,12 @@
                 </div>
 
                 <div class="mb-3 caixasDatas">
-                    <label for="dataTermino" class="form-label">Data de término:</label>
+                    <label for="dataTermino" class="form-label">Data de fim:</label>
                     <input type="date" class="form-control" id="inputUnico" name="data_fim">
                 </div>
             </div>
         
         </div>
-        <button type="submit" class="btn btn-info">Cadastrar</button>
+        <button type="submit" class="btn btn-primary"">Cadastrar</button>
     </div>
 </form>

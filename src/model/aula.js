@@ -15,12 +15,6 @@ const aula = database.define('Aulas',
         primaryKey: true
     },
 
-    Carga_Horaria:
-    {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-
     Data_Inicio:
     {
         type: Sequelize.DATEONLY,

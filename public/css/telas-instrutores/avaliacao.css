@@ -3,7 +3,8 @@ main
     height: 100vh;
 }
 
-#form{
+#form
+{
     width: 80%;
     height: auto;
     justify-content: center;
@@ -15,7 +16,7 @@ main
     position: absolute;
     top: 162px;
     width: 95%;
-    height: 75%;
+    height: 78%;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -44,7 +45,7 @@ main
 .add-avaliacao
 {
     width: 100%;
-    height: 70px;
+    height: 9vh;
     background-color: blue;
     border-radius: 10px;
 
@@ -55,7 +56,7 @@ main
 
 .add-avaliacao button
 {
-    margin-top: 10px;
+
 
     background-color:blue;
     width: 100%;
@@ -63,6 +64,7 @@ main
     border-radius: 10px;
     border-color: transparent;
 }
+
 .add-avaliacao b
 {
     color: aliceblue;
@@ -72,38 +74,29 @@ main
 {
     width: 95%;
     height: 100%;
-    background-color: blueviolet;
     border-radius: 20px;
     padding: 10px 0;
     overflow-y: scroll;
-   
 }
 
 ::-webkit-scrollbar
 {
-    background-color: blueviolet;
     border-radius: 0 20px 20px 0 ;
 }
 
 ::-webkit-scrollbar-thumb
 {
-    background: aliceblue;
+    background: white;
     border-radius: 20px 20px 20px 20px;
-    border: 4px solid blueviolet;
 }
 
 .prova
 {
     width: 90%;
     height: 10.5vh;
-    background-color: blue;
     border-radius: 20px;
 
     display: flex;
-    justify-content: left;
-    align-items: center;
-    padding:  0 30px;
-    gap: 15px;
     margin: auto;
     margin-top: 20px;
 }
@@ -111,7 +104,6 @@ main
 .prova b
 {
     color: aliceblue;
-    /* margin-left: 30px; */
 }
 
 #opt-2
@@ -122,4 +114,27 @@ main
 #exampleModal
 {
     position: relative;
+    
 }
+
+#btn-prova
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.info-turma
+{
+    margin-left: 10vw;
+}
+
+
+.info-disciplina
+{
+    margin-right: 10vw;
+}
+
