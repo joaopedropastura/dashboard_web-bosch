@@ -83,5 +83,10 @@ module.exports =
     async pagProfile(req, res)
     {
         res.render('../views/telas-gerais/profile')
+    },
+    
+    async pagProvaAluno(req,res)
+    {
+        res.render('../views/telas-instrutores/prova-alunos')
     }
 }

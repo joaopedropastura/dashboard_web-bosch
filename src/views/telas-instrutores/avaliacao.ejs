@@ -79,7 +79,7 @@
                 <div class="provas">
                     <% for (let i=0; i < provas.length; i++) { %>
                         <div class="prova">
-                            <button value="" type="submit" id="<%=turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Turma_ID%>" onclick="passaInfo(this.id)" type="button" class="btn btn-primary" role="button">
+                            <button name="Prova_ID" value="<%= provas[i].Prova_ID %>" type="submit" type="button" class="btn btn-primary" role="button">
                                 <b><%= turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Nome %></b>
                                 <b><%= provas[i].Nome %></b>
                                 <b><%= disciplinas.find(({Disciplina_ID}) => Disciplina_ID === provas[i].Disciplina_ID).Nome %></b>

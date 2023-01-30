@@ -14,11 +14,22 @@ module.exports = {
 	async listaAlunosInfo(req, res){
 		const dados = req.body
 		console.log(dados)
-		const turmaAlunos = await turma.findAll({
-			raw: true,
-			attributes: ['Turma_ID', 'Nome']
-		});
+		const provaID = await prova.findByPk(dados.Prova_ID);
 
-		res.render('../views/telas-instrutores/lista-alunos', {turmaAlunos});
+		const provas = await prova.findAll({
+			raw: true,
+            attributes: ['Prova_ID', 'Nome', 'Disciplina_ID', 'Turma_ID']
+		})
+		const listaAlunos = await aluno.findAll({
+
+			attributes: ['Nome', 'EDV', 'Turma_ID'],
+			where: {Turma_ID: provaID.dataValues.Turma_ID},
+			include: [{
+				model: turma,
+				required: true,
+				attributes: ["Nome"]
+			}]
+		});
+		res.render('../views/telas-instrutores/lista-alunos', {provaID, listaAlunos, provas});
 	}
 }

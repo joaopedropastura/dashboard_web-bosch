@@ -19,6 +19,7 @@ route.get('/avaliacao', home.pagAvaliacao)
 route.get('/dash-board', home.pagDashBoard)
 route.get('/lista-alunos', home.pagListaAlunos)
 route.get('/profile', home.pagProfile)
+route.get('/prova-alunos', home.pagProvaAluno)
 
 route.post('/lista-alunos', avaliacao.listaAlunosInfo)
 

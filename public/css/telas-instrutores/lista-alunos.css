@@ -4,13 +4,21 @@ main{
 
 .box-content{
 	padding: 30px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.info-aluno{
+	display: flex;
+	gap: 30px;
 }
 
 .box-aluno{
 	background-color: lightseagreen;
 	display: flex;
 	align-items: center;
-	height: 50px;
+	height: 70px;
 	padding: 0 20px;
 	gap: 20px;
 	border-radius: 10px;
