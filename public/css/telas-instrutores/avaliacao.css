@@ -3,12 +3,14 @@ main
     height: 100vh;
 }
 
-#form{
+#form
+{
     width: 80%;
     height: auto;
 }
 
-form{
+form
+{
     width: 95%;
     height: 85%;
     justify-content: center;
@@ -71,7 +73,6 @@ form{
     border-radius: 20px;
     padding: 10px 0;
     overflow-y: scroll;
-   
 }
 
 ::-webkit-scrollbar
@@ -111,10 +112,11 @@ form{
 
 #opt-2
 {
-    background-color: rgba(255, 0, 0, 0.705);
+    background-color: red;
 }
 
 #exampleModal
 {
     position: relative;
+    
 }
