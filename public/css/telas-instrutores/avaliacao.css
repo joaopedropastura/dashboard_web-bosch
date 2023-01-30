@@ -9,8 +9,10 @@ main
 }
 
 form{
+    position: absolute;
+    top: 162px;
     width: 95%;
-    height: 85%;
+    height: 75%;
     justify-content: center;
     display: flex;
     align-items: center;
