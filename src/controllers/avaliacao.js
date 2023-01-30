@@ -13,7 +13,6 @@ module.exports = {
 
 	async listaAlunosInfo(req, res){
 		const dados = req.body
-		console.log(dados)
 		const provaID = await prova.findByPk(dados.Prova_ID);
 
 		const provas = await prova.findAll({
@@ -27,9 +26,24 @@ module.exports = {
 			include: [{
 				model: turma,
 				required: true,
-				attributes: ["Nome"]
+				attributes: ["Turma_ID", "Nome"]
 			}]
+
 		});
 		res.render('../views/telas-instrutores/lista-alunos', {provaID, listaAlunos, provas});
+	},
+
+	async provaAlunosInfo(req, res){
+		const dados = req.body
+		const provaID = req.params.id;
+		const alunos = await aluno.findAll({
+			raw: true,
+			where: {EDV: dados.EDV},
+			attributes: ["Nome"]
+		})
+		const nomeProva = await prova.findByPk(provaID);
+
+		console.log(alunos[0])
+		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos});
 	}
 }
