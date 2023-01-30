@@ -6,9 +6,12 @@ main
 #form{
     width: 80%;
     height: auto;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
-form{
+#form2{
     position: absolute;
     top: 162px;
     width: 95%;
@@ -116,7 +119,7 @@ form{
     background-color: rgba(255, 0, 0, 0.705);
 }
 
-/* #exampleModal
+#exampleModal
 {
     position: relative;
-} */
+}
