@@ -16,7 +16,10 @@ module.exports = {
 		console.log(dados)
 		const provaID = await prova.findByPk(dados.Prova_ID);
 
-
+		const provas = await prova.findAll({
+			raw: true,
+            attributes: ['Prova_ID', 'Nome', 'Disciplina_ID', 'Turma_ID']
+		})
 		const listaAlunos = await aluno.findAll({
 
 			attributes: ['Nome', 'EDV', 'Turma_ID'],
@@ -27,7 +30,6 @@ module.exports = {
 				attributes: ["Nome"]
 			}]
 		});
-		console.log(listaAlunos[0]["Turma"].Nome)
-		res.render('../views/telas-instrutores/lista-alunos', {provaID, listaAlunos});
+		res.render('../views/telas-instrutores/lista-alunos', {provaID, listaAlunos, provas});
 	}
 }
