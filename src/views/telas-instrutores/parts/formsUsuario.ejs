@@ -1,0 +1,31 @@
+<form action="/cadastro-user" method="post">
+    <div class="inputs hidden" id="cadastroUsuario">
+        <div class="inputs-body">
+            <div class="mb-3 caixas">
+                <label for="cargo" class="form-label">Cargo:</label>
+                <select  onchange="viewTurma(event)" style="width: 100%;" id="inputUnico" class="form-select" name="cargo" required>
+                    <option value="aluno"> Aluno </option>
+                    <option value="adm"> Administrador </option>
+                </select>
+            </div>
+            <div class="mb-3 caixas">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="inputUnico" name="nome">
+            </div>
+            <div class="mb-3 caixas">
+                <label for="edv" class="form-label">EDV:</label>
+                <input type="text" class="form-control" id="inputUnico" name="edv">
+            </div>
+            <div class="mb-3 caixas" id="turma">
+                <label for="turma" class="form-label">Turma</label>
+                <select style="width: 100%;" id="inputUnico" class="form-select" name="turma">
+                    <option selected>selecione a turma</option>
+                    <% for (let i=0; i<turmas.length; i++) { %>
+                        <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
+                    <% } %>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info">Cadastrar</button>
+    </div>
+</form>

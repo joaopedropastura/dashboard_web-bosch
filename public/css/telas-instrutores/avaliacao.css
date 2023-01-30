@@ -5,7 +5,9 @@ main
 
 #form{
     width: 80%;
+    height: auto;
 }
+
 form{
     width: 95%;
     height: 85%;
@@ -26,11 +28,11 @@ form{
 .card-prova
 {
     width: 85%;
-    height: 85%;
+    height: auto;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     align-items: center;
 }
 
@@ -68,8 +70,8 @@ form{
     background-color: blueviolet;
     border-radius: 20px;
     padding: 10px 0;
-    /* margin-top: 20px; */
     overflow-y: scroll;
+   
 }
 
 ::-webkit-scrollbar
@@ -105,4 +107,14 @@ form{
 {
     color: aliceblue;
     /* margin-left: 30px; */
+}
+
+#opt-2
+{
+    background-color: rgba(255, 0, 0, 0.705);
+}
+
+#exampleModal
+{
+    position: relative;
 }

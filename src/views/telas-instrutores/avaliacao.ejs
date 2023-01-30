@@ -40,6 +40,7 @@
                                         <input type="text" class="form-control" placeholder="nome da prova" name="nome">
                                     </div>
                                     <div class="mb-3 forms">
+                                        <label class="form-label">Disciplina:</label>
                                         <select style="width: 100%;" id="inputTurma" class="form-select" name="disciplina">
                                             <option selected>selecione a disciplina</option>
                                             <% for (let i=0; i<disciplinas.length; i++) { %>
@@ -48,6 +49,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 forms">
+                                        <label class="form-label">Turma:</label>
                                         <select style="width: 100%;" id="inputTurma" class="form-select" name="turma">
                                             <option selected>selecione a turma</option>
                                             <% for (let i=0; i<turmas.length; i++) { %>
@@ -56,8 +58,9 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 forms">
+                                        <label class="form-label">Recuperação?</label>
                                         <select style="width: 100%;" id="inputTurma" class="form-select" name="recuperacao">
-                                            <option value="false" selected> nao</option>
+                                            <option value="false" selected> não</option>
                                             <option value="true"> sim </option>
 
                                         </select>

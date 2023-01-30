@@ -62,26 +62,28 @@ a {
     justify-content: left;
 }
 
-/* #opt-1{
-    background-color: red;
-} */
 .navegacao
 {
-    gap: 20px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     height: 8vh;
-    width: 100%;
-    /* background-color: rgba(255, 90, 90, 0.384); */
+    width: 98%;
     border-radius: 10px;
     justify-content: left;
 
 }
-.navegacao i
+
+.navegacao a
 {
-    margin-left: 25px;
+    gap:20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .box-content{
     position: relative;
     height: 100%;
@@ -89,6 +91,8 @@ a {
     background-color: whitesmoke;
     border-radius: 20px;
 }
+
+
 .nav-header
 {
     height: 15%;

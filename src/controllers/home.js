@@ -78,5 +78,10 @@ module.exports =
             attributes: ['EDV', 'Nome']
         })
         res.render('../views/telas-instrutores/lista-alunos', {provas, alunos})
+    },
+
+    async pagProfile(req, res)
+    {
+        res.render('../views/telas-gerais/profile')
     }
 }

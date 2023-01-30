@@ -1,0 +1,61 @@
+<form action="cadastro-aula" method="post">
+    <div class="inputs hidden" id="cadastroAula">
+        <div class="inputs-body">
+            <div class="mb-3 caixas">
+                <label for="nome" class="form-label">Nome do conteudo:</label>
+                <select style="width: 100%;" id="inputUnico" class="form-select" name="conteudo">
+                    <option selected>selecione o conteudo</option>
+                    <% for (let i=0; i<conteudos.length; i++) { %>
+                        <option value='<%= conteudos[i].Conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="mb-3 caixas">
+                <label for="instrutor" class="form-label">Instrutor:</label>
+                <select style="width: 100%;" id="inputUnico" class="form-select" name="instrutor">
+                    <option selected>selecione o instrutor</option>
+                    <% for (let i=0; i<instrutores.length; i++) { %>
+                        <option value='<%= instrutores[i].EDV %>'> <%= instrutores[i].Nome %> </option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="mb-3 caixas">
+                <label for="disciplina" class="form-label">Disciplina:</label>
+                <select style="width: 100%;" id="inputUnico" class="form-select" name="disciplina">
+                    <option selected>selecione a disciplina</option>
+                    <% for (let i=0; i<disciplinas.length; i++) { %>
+                        <option value='<%= disciplinas[i].Disciplina_ID %>'> <%= disciplinas[i].Nome %> </option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="mb-3 caixas">
+                <label for="turma" class="form-label">Turma:</label>
+                <select style="width: 100%;" id="inputUnico" class="form-select" name="turma">
+                    <option selected>selecione a turma</option>
+                    <% for (let i=0; i<turmas.length; i++) { %>
+                        <option value='<%= turmas[i].Turma_ID %>'> <%= turmas[i].Nome %> </option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="mb-3 caixas">
+                <label for="carga_h" class="form-label">Carga horária:</label>
+                <input type="text" class="form-control" id="inputUnico" name="carga_h">
+            </div>
+            
+            <div class="inputsDatas">
+                <div class="mb-3 caixasDatas">
+                    <label for="dataInicio" class="form-label">Data de início:</label>
+                    <input type="date" class="form-control" id="inputUnico" name="data_init">
+                </div>
+
+                <div class="mb-3 caixasDatas">
+                    <label for="dataTermino" class="form-label">Data de término:</label>
+                    <input type="date" class="form-control" id="inputUnico" name="data_fim">
+                </div>
+            </div>
+        
+        </div>
+        <button type="submit" class="btn btn-info">Cadastrar</button>
+    </div>
+</form>
