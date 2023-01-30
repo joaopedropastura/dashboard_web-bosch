@@ -67,7 +67,6 @@ module.exports = {
             Turma_ID: dados.turma,
             Instrutor_ID: dados.instrutor,
             Disciplina_ID: dados.disciplina,
-            Carga_Horaria: dados.carga_h,
             Data_Inicio: dados.data_init,
             Data_Fim: dados.data_fim
         })

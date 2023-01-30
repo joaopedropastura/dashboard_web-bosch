@@ -28,30 +28,20 @@ form{
     padding: 30px;
 }
 
-.card-top
-{
-    width: 100%;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px 10px;
-}
-
 .card-body
 {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
 }
-.inputs-body{
+.inputs-body
+{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: 100%;
 }
 
 
@@ -64,54 +54,38 @@ form{
     padding: 10px;
 }
 
-.cadastros
+.card-top
 {
-    gap: 150px;
+    gap: 7vw;
     width: 100%;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px 10px;
 }
 
 
-.cadastros a
-{
-    position: relative;
-    /* margin: 30px; */
-    text-decoration: none;
-    font-size: 30px;
-    color: #000000;
-    display: block;
-}
 
-.cadastros a:hover
-{
-    color: rgb(255, 255, 255);
-}
-/* } */
-
-
-/*Borda dos Inputs*/
-/* { */
-#inputUnico  /* Especifico */
+#inputUnico  
 {
     height: 5vh;
 }
 
+#inputAulas
+{
+    height: 4vh;
+}
 
-/* Layout das caixas dos inputs */
-
-/* Tamanho das palavras que ficam em cima das caixas */
 .textLabel
 {
     font-size: 20px;
 }
 
-/* Tamanho das caixas dos inputs */
+
 .caixas
 {
-    width: 25vw;
+    width: 26vw;
     height: 5vh;
     
 }
@@ -121,13 +95,13 @@ form{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4%;
+    gap: 1vw;
     
 }
 
 .caixasDatas
 {
-    width: 48%;
+    width: 12.5vw;
     height: 5vh;
 }
 
@@ -145,4 +119,9 @@ form{
 #opt-3
 {
     background-color: rgba(255, 0, 0, 0.705);
+}
+
+.btn
+{
+    border: none;
 }
