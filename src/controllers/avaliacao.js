@@ -7,6 +7,7 @@ const informacoes = require('../model/informacoes')
 const aula = require('../model/aula')
 const prova = require('../model/provas')
 const questoes = require('../model/questoes')
+const conteudo_questao = require('../model/conteudo-questoes')
 
 
 module.exports = {
@@ -34,16 +35,80 @@ module.exports = {
 	},
 
 	async provaAlunosInfo(req, res){
-		const dados = req.body
+		const dados = req.body;
+		// console.log(dados)
 		const provaID = req.params.id;
+		// console.log(dados)
 		const alunos = await aluno.findAll({
 			raw: true,
 			where: {EDV: dados.EDV},
-			attributes: ["Nome"]
+			attributes: ["Nome", "EDV"]
 		})
 		const nomeProva = await prova.findByPk(provaID);
 
-		console.log(alunos[0])
-		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos});
-	}
+		const viewQuestao = await questoes.findAll({
+			raw: true,
+			where: {EDV: dados.EDV},
+            attributes: ['Questoes_ID', 'Nome']
+		})
+		const conteudos = await conteudo.findAll({
+			raw: true,
+            attributes: ['Conteudo_ID', 'Nome']
+		})
+		// console.log(alunos[0])
+		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});
+	},
+
+    async questoesInsert(req, res){
+        const dados = req.body
+		const provaID = req.params.id;
+		const nomeProva = await prova.findByPk(provaID);
+		const alunos = await aluno.findAll({
+			raw: true,
+			where: {EDV: dados.edv},
+			attributes: ["Nome", "EDV"]
+		})
+		const conteudos = await conteudo.findAll({
+			raw: true,
+            attributes: ['Conteudo_ID', 'Nome']
+		})
+		const viewQuestao = await questoes.findAll({
+			raw: true,
+			where: {EDV: dados.edv},
+            attributes: ['Questoes_ID', 'Nome']
+		})
+        const questao = await questoes.create({
+            Nome: dados.nome,
+            Review: dados.review,
+            Correcao: dados.correcao,
+            Nota_Questao: dados.notas_questao,
+            Valor_Questao: dados.valor_questao,
+            Prova_ID: dados.prova,
+			EDV: dados.edv
+        });
+		const q_conteudo = dados.conteudo
+		console.log(viewQuestao)
+		for (let i = 0; i < q_conteudo.length; i++) {
+			await conteudo_questao.create({
+				Conteudo_ID: q_conteudo[i],
+				Questoes_ID: questao.Questoes_ID
+			})
+		}
+		console.log(viewQuestao.length)
+
+		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});
+    },
+
+    async provasInsert(req, res){
+        const dados = req.body;
+        // console.log(dados)
+        await prova.create({
+            Nome: dados.nome,
+            Disciplina_ID: dados.disciplina,
+            Turma_ID: dados.turma,
+            Recuperacao: dados.recuperacao == "false" ? false : true
+        });
+        res.redirect('/avaliacao');
+    }
+
 }

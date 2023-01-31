@@ -1,3 +1,57 @@
 /* main{
 	height: 100vh;
 } */
+
+.box-content{
+	display: flex;
+}
+
+
+.modal{
+	--bs-modal-width: 700px;
+}
+
+@media (min-width: 576px)
+{
+	.modal {
+		--bs-modal-margin: none;
+	}
+}
+
+.fade{
+	/* width: 700px; */
+}
+
+#info-pag{
+	background-color: gray;
+	width: 80%;
+	height: 5vh;
+	z-index: 999;
+	top: 164px;
+    position: absolute;
+	left: 30px;
+
+}
+
+.dropdown-toggle{
+	width: 100%;
+}
+
+.dropdown-menu{
+	width: 100%;
+	padding: 12px;
+}
+
+.questoes{
+	background-color: cadetblue;
+	top: 205px;
+	position: absolute;
+    height: 69%;
+	width: 94%;
+
+}
+
+#desc-questao{
+	display: flex;
+	flex-direction: column;
+}

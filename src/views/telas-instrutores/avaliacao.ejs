@@ -20,8 +20,8 @@
             <form id="form" action="cadastro-prova" method="post">
                 <div class="card-prova">
                     <div class="add-avaliacao">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Adicionar Prova
+                        <button type="button" class="btn botaoAvaliacao" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <b>Adicionar Prova</b>
                         </button>
                     </div>
 
@@ -76,13 +76,21 @@
                 </div>
             </form>
             <form id="form2" action="lista-alunos" method="post">
+                <div class="legenda">
+                    <div id="btn-legenda">
+                        <b class="legendas">Turma:</b>
+                        <b class="legendas disciplina">Disciplina:</b>
+                        <b class="nomeProva">Nome da prova:</b>
+                    </div>
+                </div>
+
                 <div class="provas">
                     <% for (let i=0; i < provas.length; i++) { %>
                         <div class="prova">
-                            <button name="Prova_ID" value="<%= provas[i].Prova_ID %>" type="submit" type="button" class="btn btn-primary" role="button" id="btn-prova">
-                                <b class="info-turma"><%= turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Nome %></b>
-                                <b class="info-nome"><%= provas[i].Nome %></b>
-                                <b class="info-disciplina"><%= disciplinas.find(({Disciplina_ID}) => Disciplina_ID === provas[i].Disciplina_ID).Nome %></b>
+                            <button name="Prova_ID" value="<%= provas[i].Prova_ID %>" type="submit" type="button" class="btn botaoProvas" role="button" id="btn-prova">
+                                <b class="infoProvas"><%= turmas.find(({Turma_ID}) => Turma_ID === provas[i].Turma_ID).Nome %></b>
+                                <b class="infoProvas"><%= disciplinas.find(({Disciplina_ID}) => Disciplina_ID === provas[i].Disciplina_ID).Nome %></b>
+                                <b><%= provas[i].Nome %></b>
                             </button>
                         </div>
                     <% } %>

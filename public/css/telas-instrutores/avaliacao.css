@@ -19,7 +19,11 @@ main
     height: 78%;
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    background-color: #BFC0C2;
     align-items: center;
+    border-radius: 20px ;
+    box-shadow: 3px 3px 20px #BFC0C2;
 }
 
 .box-content
@@ -31,6 +35,11 @@ main
     flex-direction: column;
 }
 
+.box-content b
+{
+    color:rgba(0, 0, 0, 0.644);
+}
+
 .card-prova
 {
     width: 85%;
@@ -39,14 +48,27 @@ main
     display: flex;
     flex-direction: column;
     justify-content: center;
+  
     align-items: center;
+}
+.botaoAvaliacao
+{
+    color: white;
+    font-size: large;
+
+}
+
+.botaoAvaliacao:hover
+{
+    background-color:  #003b6a;
+    color: whitesmoke;
 }
 
 .add-avaliacao
 {
     width: 100%;
     height: 9vh;
-    background-color: blue;
+    background-color: #005691;
     border-radius: 10px;
 
     display: flex;
@@ -58,7 +80,7 @@ main
 {
 
 
-    background-color:blue;
+    background-color:  #005691;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -70,12 +92,21 @@ main
     color: aliceblue;
 }
 
+.botaoProvas
+{
+    background-color: whitesmoke;
+}
+.botaoProvas:hover
+{
+    background-color: rgba(0, 0, 0, 0.336);
+}
+
 .provas
 {
     width: 95%;
     height: 100%;
+    
     border-radius: 20px;
-    padding: 10px 0;
     overflow-y: scroll;
 }
 
@@ -93,7 +124,7 @@ main
 .prova
 {
     width: 90%;
-    height: 10.5vh;
+    height: 8.5vh;
     border-radius: 20px;
 
     display: flex;
@@ -101,10 +132,6 @@ main
     margin-top: 20px;
 }
 
-.prova b
-{
-    color: aliceblue;
-}
 
 #opt-2
 {
@@ -122,19 +149,60 @@ main
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     border-radius: 20px;
+    gap: 10px;
 }
 
-.info-turma
+
+.infoProvas
 {
-    margin-left: 10vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 20%;
 }
 
-
-.info-disciplina
+.legenda
 {
-    margin-right: 10vw;
+    width: 84%;
+    height: 5vh;
+    border-radius: 2px;
+
+    margin-left: 6.5vw;
+    margin-top: 2vh;
+    margin-right: 6.6vw ;
 }
+
+.legendas
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 20%;
+    
+}
+
+#btn-legenda
+{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.disciplina
+{
+    margin-left: 5vw;
+}
+
+.nomeProva
+{
+    margin-left: 5vw;
+}
+
 

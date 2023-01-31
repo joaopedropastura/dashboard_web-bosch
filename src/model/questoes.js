@@ -1,9 +1,9 @@
 
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-
+const aluno = require('./alunos')
 const prova = require('./provas');
-const conteudoQuestao = require('./conteudo-questoes');
+// const conteudoQuestao = require('./conteudo-questoes');
 
 const questoes = database.define('Questoes', 
 {
@@ -17,7 +17,7 @@ const questoes = database.define('Questoes',
 
     Nome: 
     {
-        type: Sequelize.STRING(50),
+        type: Sequelize.INTEGER,
         allowNull: false
     },
 
@@ -43,12 +43,6 @@ const questoes = database.define('Questoes',
     {
         type: Sequelize.FLOAT,
         allowNull: false
-    },
-
-    Estado: 
-    {
-        type: Sequelize.STRING(20),
-        allowNull: false
     }
 
 });
@@ -59,10 +53,16 @@ questoes.belongsTo(prova,
     foreignKey: 'Prova_ID'
 });
 
-questoes.belongsTo(conteudoQuestao,
-{
-    constraint: true,
-    foreignKey: 'Conteudo_Questao_ID'
-});
+questoes.belongsTo(aluno,
+    {
+        constraint: true,
+        foreignKey: 'EDV'
+    });
+
+// questoes.belongsTo(conteudoQuestao,
+// {
+//     constraint: true,
+//     foreignKey: 'Conteudo_Questao_ID'
+// });
 
 module.exports = questoes;
