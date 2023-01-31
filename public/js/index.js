@@ -11,6 +11,9 @@ const showTurma = () =>
     disciplina.style.display = 'none';
     conteudo.style.display = 'none';
     aula.style.display = 'none';
+
+    // document.getElementsByClassName('efeitoU').style.width=100%;
+
 }
 const showAula = () =>
 {
@@ -62,6 +65,26 @@ function viewTurma(event){
         turmaInput.style.display = 'block';
     }
 }
+
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
 
 // function viewNome(){
 //     // alert("alo")
