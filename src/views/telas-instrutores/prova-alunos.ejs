@@ -7,15 +7,18 @@
     <%- include("../template/head.ejs") %>
     <link rel="stylesheet" href="/css/telas-instrutores/avaliacao.css">
     <link rel="stylesheet" href="/css/telas-instrutores/prova-alunos.css">
+    <script src="/js/prova-alunos.js"></script>
+
     <title>Document</title>
 </head>
 <body>
     <main>
         <%- include("../template/nav-bar.ejs") %>
         <div class="box-content">
-            <form id="form" action="cadastro-questao" method="post">
-                <input value="<%=nomeProva.Prova_ID%>" name="id" hidden>
-                <input value="<%=alunos[0].EDV%>" name="EDV" hidden>
+            <form id="form" action="/cadastro-questao/<%= nomeProva.Prova_ID %>" method="post">
+                <input value="<%=nomeProva.Prova_ID%>" name="prova" hidden>
+                <input value="<%=alunos[0].EDV%>" name="edv" hidden>
+                <input value="1" name="nome" hidden>
                 <div class="card-prova">
                     <div class="add-avaliacao">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -28,7 +31,7 @@
 
                                 <div class="modal-header">
                                     <div id="desc-questao">
-                                        <h5 class="modal-title" id="exampleModalLabel"  name="nome" >Questao: <span id="numQuestao"></span> </h5>
+                                        <h5 class="modal-title" id="exampleModalLabel" name="nome" value="#numQuestao" >Questao: <span id="numQuestao"></span> </h5>
                                         <h6 value="<%= nomeProva.Prova_ID %>" name="prova"> <%= nomeProva.Nome %></h6>
                                     </div>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

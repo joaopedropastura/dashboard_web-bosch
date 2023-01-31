@@ -36,7 +36,7 @@ module.exports = {
 
 	async provaAlunosInfo(req, res){
 		const dados = req.body;
-		console.log(dados)
+		// console.log(dados)
 		const provaID = req.params.id;
 		// console.log(dados)
 		const alunos = await aluno.findAll({
@@ -56,28 +56,38 @@ module.exports = {
 
     async questoesInsert(req, res){
         const dados = req.body
+		console.log("oioioo")
+		const provaID = req.params.id;
 		console.log(dados)
-
-		
+		const nomeProva = await prova.findByPk(provaID);
+		const alunos = await aluno.findAll({
+			raw: true,
+			where: {EDV: dados.edv},
+			attributes: ["Nome", "EDV"]
+		})
+		const conteudos = await conteudo.findAll({
+			raw: true,
+            attributes: ['Conteudo_ID', 'Nome']
+		})
         const questao = await questoes.create({
             Nome: dados.nome,
             Review: dados.review,
             Correcao: dados.correcao,
             Nota_Questao: dados.notas_questao,
             Valor_Questao: dados.valor_questao,
-            Estado: dados.estado,
             Prova_ID: dados.prova,
 			EDV: dados.edv
         });
-		const q_conteudo = questao.conteudo
-		for (let i = 0; i < q_conteudo.lenght; i++) {
+		const q_conteudo = dados.conteudo
+		console.log(q_conteudo)
+		for (let i = 0; i < q_conteudo.length; i++) {
 			await conteudo_questao.create({
 				Conteudo_ID: q_conteudo[i],
-				Questao_ID: questao.Questao_ID
+				Questoes_ID: questao.Questoes_ID
 			})
 		}
 		
-        res.redirect('prova-alunos/' + dados.prova);
+		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos});
     },
 
     async provasInsert(req, res){

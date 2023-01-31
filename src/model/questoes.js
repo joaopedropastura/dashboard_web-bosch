@@ -17,7 +17,7 @@ const questoes = database.define('Questoes',
 
     Nome: 
     {
-        type: Sequelize.STRING(50),
+        type: Sequelize.INTEGER,
         allowNull: false
     },
 
