@@ -14,7 +14,7 @@ main
 
 #form2{
     position: absolute;
-    top: 162px;
+    top: 135px;
     width: 95%;
     height: 78%;
     justify-content: center;
@@ -114,7 +114,7 @@ main
 #exampleModal
 {
     position: relative;
-    
+
 }
 
 #btn-prova

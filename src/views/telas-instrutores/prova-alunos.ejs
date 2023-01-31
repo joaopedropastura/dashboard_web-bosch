@@ -16,7 +16,7 @@
             <form id="form" action="cadastro-prova" method="post">
                 <div class="card-prova">
                     <div class="add-avaliacao">
-                        <button type="button" onclick="adiciona()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Adicionar Questão
                         </button>
                     </div>
@@ -57,22 +57,23 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" onclick="adiciona()" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-            <form id="form2" action="lista-alunos" method="post">
-                <div class="provas">
-                   
-                </div>
-            </form>
+            <div class="provas" id="dados-pag">
+
+            </div>
+            <div class="provas">
+
+            </div>
 
             <!-- <div id="header">
 
-             
+
             </div>
             <div id="add-questao">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
