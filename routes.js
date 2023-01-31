@@ -22,7 +22,7 @@ route.get('/prova-alunos', home.pagProvaAluno)
 route.get('/lista-alunos', home.pagListaAlunos)
 
 // route.post('/', home.pagInicialPost)
-route.post('cadastro-questao', avaliacao.questoesInsert)
+route.post('/cadastro-questao', avaliacao.questoesInsert)
 route.post('/prova-alunos/:id', avaliacao.provaAlunosInfo)
 route.post('/lista-alunos', avaliacao.listaAlunosInfo)
 route.post('/cadastro-user', cadastroGeral.userInsert)

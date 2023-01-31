@@ -7,6 +7,7 @@ const informacoes = require('../model/informacoes')
 const aula = require('../model/aula')
 const prova = require('../model/provas')
 const questoes = require('../model/questoes')
+const conteudo_questao = require('../model/conteudo-questoes')
 
 
 module.exports = {
@@ -34,28 +35,31 @@ module.exports = {
 	},
 
 	async provaAlunosInfo(req, res){
-		const dados = req.body
+		const dados = req.body;
+		console.log(dados)
 		const provaID = req.params.id;
+		// console.log(dados)
 		const alunos = await aluno.findAll({
 			raw: true,
 			where: {EDV: dados.EDV},
-			attributes: ["Nome"]
+			attributes: ["Nome", "EDV"]
 		})
 		const nomeProva = await prova.findByPk(provaID);
-		
-		
+
 		const conteudos = await conteudo.findAll({
 			raw: true,
             attributes: ['Conteudo_ID', 'Nome']
 		})
-		console.log(alunos[0])
+		// console.log(alunos[0])
 		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos});
 	},
 
     async questoesInsert(req, res){
         const dados = req.body
+		console.log(dados)
 
-        await questoes.create({
+		
+        const questao = await questoes.create({
             Nome: dados.nome,
             Review: dados.review,
             Correcao: dados.correcao,
@@ -63,14 +67,22 @@ module.exports = {
             Valor_Questao: dados.valor_questao,
             Estado: dados.estado,
             Prova_ID: dados.prova,
-            Conteudos_Questao_ID: dados.conteudos_questao
+			EDV: dados.edv
         });
-        res.redirect('prova-alunos/:id');
+		const q_conteudo = questao.conteudo
+		for (let i = 0; i < q_conteudo.lenght; i++) {
+			await conteudo_questao.create({
+				Conteudo_ID: q_conteudo[i],
+				Questao_ID: questao.Questao_ID
+			})
+		}
+		
+        res.redirect('prova-alunos/' + dados.prova);
     },
 
     async provasInsert(req, res){
         const dados = req.body;
-        console.log(dados)
+        // console.log(dados)
         await prova.create({
             Nome: dados.nome,
             Disciplina_ID: dados.disciplina,
@@ -78,6 +90,6 @@ module.exports = {
             Recuperacao: dados.recuperacao == "false" ? false : true
         });
         res.redirect('/avaliacao');
-    },
+    }
 
 }

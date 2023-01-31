@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../config/db');
 const conteudo = require('./conteudos');
+const questao = require('../model/questoes')
 
 const conteudoQuestao = database.define('Conteudo_Questoes',
 {
@@ -14,10 +15,17 @@ const conteudoQuestao = database.define('Conteudo_Questoes',
 });
 
 conteudoQuestao.belongsTo(conteudo,
-    {
-        constraint: true,
-        foreignKey: 'Conteudo_ID'
-    });
+{
+    constraint: true,
+    foreignKey: 'Conteudo_ID'
+});
+
+conteudoQuestao.belongsTo(questao,
+{
+    constraint: true,
+    foreignKey: 'Questoes_ID'
+});
+    
 
 
 
