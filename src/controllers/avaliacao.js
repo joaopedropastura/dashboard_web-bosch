@@ -42,8 +42,42 @@ module.exports = {
 			attributes: ["Nome"]
 		})
 		const nomeProva = await prova.findByPk(provaID);
-
+		
+		
+		const conteudos = await conteudo.findAll({
+			raw: true,
+            attributes: ['Conteudo_ID', 'Nome']
+		})
 		console.log(alunos[0])
-		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos});
-	}
+		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos});
+	},
+
+    async questoesInsert(req, res){
+        const dados = req.body
+
+        await questoes.create({
+            Nome: dados.nome,
+            Review: dados.review,
+            Correcao: dados.correcao,
+            Nota_Questao: dados.notas_questao,
+            Valor_Questao: dados.valor_questao,
+            Estado: dados.estado,
+            Prova_ID: dados.prova,
+            Conteudos_Questao_ID: dados.conteudos_questao
+        });
+        res.redirect('prova-alunos/:id');
+    },
+
+    async provasInsert(req, res){
+        const dados = req.body;
+        console.log(dados)
+        await prova.create({
+            Nome: dados.nome,
+            Disciplina_ID: dados.disciplina,
+            Turma_ID: dados.turma,
+            Recuperacao: dados.recuperacao == "false" ? false : true
+        });
+        res.redirect('/avaliacao');
+    },
+
 }

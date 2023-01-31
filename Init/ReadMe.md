@@ -62,3 +62,6 @@ join:
         inner join Questoes q on q.Conteudo_Questao_ID = a.EDV
         inner join Provas p on p.Prova_ID = q.Prova_ID
         where p.Prova_ID = 4 and a.EDV = 4 
+
+
+<option value='<%= conteudos[i].Conteudo_ID %>'> <%= conteudos[i].Nome %> </option>

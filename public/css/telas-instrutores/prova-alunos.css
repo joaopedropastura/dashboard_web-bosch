@@ -1,3 +1,29 @@
 /* main{
 	height: 100vh;
 } */
+.box-content{
+	display: flex;
+}
+
+#info-pag{
+	background-color: gray;
+	width: 80%;
+	height: 5vh;
+	z-index: 999;
+	top: 164px;
+    position: absolute;
+	left: 25px;
+
+}
+
+
+#form2{
+	background-color: cadetblue;
+	top: 205px;
+	height: 69%;
+}
+
+#desc-questao{
+	display: flex;
+	flex-direction: column;
+}

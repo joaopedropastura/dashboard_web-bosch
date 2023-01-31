@@ -115,35 +115,7 @@ module.exports = {
             Nome: dados.nome
         });
         res.redirect('/cadastro');
-    },
-
-    async questoesInsert(req, res){
-        const dados = req.body
-
-        await questoes.create({
-            Nome: dados.nome,
-            Review: dados.review,
-            Correcao: dados.correcao,
-            Nota_Questao: dados.notas_questao,
-            Valor_Questao: dados.valor_questao,
-            Estado: dados.estado,
-            Prova_ID: dados.prova,
-            Conteudos_Questao_ID: dados.conteudos_questao
-        });
-        res.redirect('/');
-    },
-
-    async provasInsert(req, res){
-        const dados = req.body;
-        console.log(dados)
-        await prova.create({
-            Nome: dados.nome,
-            Disciplina_ID: dados.disciplina,
-            Turma_ID: dados.turma,
-            Recuperacao: dados.recuperacao == "false" ? false : true
-        });
-        res.redirect('/avaliacao');
-    },
+    }
 
 
 
