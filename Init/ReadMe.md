@@ -42,3 +42,26 @@ icones
 graficos
 
     https://github.com/d3/d3/wiki/Gallery#basic-charts
+
+
+ALTERAR A TABELA de questoes para receber o id do aluno tb
+
+
+join:
+
+    select a.EDV, a.Nome, t.Nome as Turma, d.Nome as Disciplina, p.Nome as Prova, p.Recuperacao from Alunos a
+        inner join Turmas t on a.Turma_ID = t.Turma_ID
+        inner join Aulas u on u.Turma_ID = t.Turma_ID
+        inner join Disciplinas d on d.Disciplina_ID = u.Disciplina_ID
+        inner join Provas p on p.Disciplina_ID = d.Disciplina_ID
+        where p.Prova_ID = 4
+        group by a.EDV, a.Nome, t.Nome, d.Nome, p.Nome, p.Recuperacao
+
+
+    select * from Alunos a
+        inner join Questoes q on q.Conteudo_Questao_ID = a.EDV
+        inner join Provas p on p.Prova_ID = q.Prova_ID
+        where p.Prova_ID = 4 and a.EDV = 4 
+
+
+<option value='<%= conteudos[i].Conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
