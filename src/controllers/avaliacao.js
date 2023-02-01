@@ -35,20 +35,20 @@ module.exports = {
 	},
 
 	async provaAlunosInfo(req, res){
-		const dados = req.body;
-		// console.log(dados)
+		const dados = req.params.edv;
+		console.log(dados + "dados aqui")
 		const provaID = req.params.id;
 		// console.log(dados)
 		const alunos = await aluno.findAll({
 			raw: true,
-			where: {EDV: dados.EDV},
+			where: {EDV: dados},
 			attributes: ["Nome", "EDV"]
 		})
 		const nomeProva = await prova.findByPk(provaID);
 
 		const viewQuestao = await questoes.findAll({
 			raw: true,
-			where: {EDV: dados.EDV},
+			where: {EDV: dados},
             attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review',  'Valor_Questao', 'Nota_Questao' ]
 		})
 		const conteudos = await conteudo.findAll({
@@ -60,23 +60,12 @@ module.exports = {
 	},
 
     async questoesInsert(req, res){
-        const dados = req.body
+
+		const dados = req.body;
+		console.log(dados + "dados aqui")
 		const provaID = req.params.id;
-		const nomeProva = await prova.findByPk(provaID);
-		const alunos = await aluno.findAll({
-			raw: true,
-			where: {EDV: dados.edv},
-			attributes: ["Nome", "EDV"]
-		})
-		const conteudos = await conteudo.findAll({
-			raw: true,
-            attributes: ['Conteudo_ID', 'Nome']
-		})
-		const viewQuestao = await questoes.findAll({
-			raw: true,
-			where: {EDV: dados.edv},
-            attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review', 'Valor_Questao', 'Nota_Questao' ]
-		})
+		const EDV = req.params.edv;
+
 
         const questao = await questoes.create({
             Nome: dados.nome,
@@ -84,20 +73,21 @@ module.exports = {
             Correcao: dados.correcao,
             Nota_Questao: dados.notas_questao,
             Valor_Questao: dados.valor_questao,
-            Prova_ID: dados.prova,
-			EDV: dados.edv
+            Prova_ID: provaID,
+			EDV: EDV
         });
 		const q_conteudo = dados.conteudo
-		console.log(viewQuestao)
+		
 		for (let i = 0; i < q_conteudo.length; i++) {
 			await conteudo_questao.create({
 				Conteudo_ID: q_conteudo[i],
 				Questoes_ID: questao.Questoes_ID
 			})
 		}
-		console.log(viewQuestao.length)
+		
 
-		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});
+		res.redirect('/prova-alunos/' + provaID + "/" + EDV)
+		// res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});
     },
 
     async provasInsert(req, res){

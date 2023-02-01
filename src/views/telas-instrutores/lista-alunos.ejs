@@ -13,9 +13,9 @@
 		<%- include("../template/nav-bar.ejs") %>
 		<div class="box-content">
 			<% for(let m = 0; m < listaAlunos.length; m++) { %>
-				<form action="/prova-alunos/<%= provaID.Prova_ID %> " method="post">
+				<form action="/prova-alunos/<%= provaID.Prova_ID %>/<%= listaAlunos[m].EDV%>" method="get">
 					<div class="box-aluno">
-						<button name="EDV" value="<%= listaAlunos[m].EDV %>" type="submit" class="btn btn-primary info-aluno" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						<button type="submit" class="btn btn-primary info-aluno" data-bs-toggle="modal" data-bs-target="#exampleModal">
 							<b><%= listaAlunos[m].EDV %></b>
 							<b><%= listaAlunos[m]["Turma"].Nome %></b>
 							<b><%= listaAlunos[m].Nome %></b>

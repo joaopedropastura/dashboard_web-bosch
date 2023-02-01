@@ -14,9 +14,7 @@
     <main>
         <%- include("../template/nav-bar.ejs") %>
         <div class="box-content">
-            <form id="form" action="/cadastro-questao/<%= nomeProva.Prova_ID %>" method="post">
-                <input value="<%=nomeProva.Prova_ID%>" name="prova" hidden>
-                <input value="<%=alunos[0].EDV%>" name="edv" hidden>
+            <form id="form" action="/cadastro-questao/<%= nomeProva.Prova_ID %>/<%= alunos[0].EDV %>" method="post">
                 <input value="1" name="nome" hidden>
                 <div class="card-questao">
                     <div class="add-questao">
