@@ -1,9 +1,13 @@
 const disciplina = require('../model/disciplinas')
-const turma = require('../model/turmas')
+const conteudo = require('../model/conteudos')
 const instrutor = require('../model/instrutores')
 const aluno = require('../model/alunos')
-const conteudo =  require('../model/conteudos')
+const turma = require('../model/turmas')
+const informacoes = require('../model/informacoes')
+const aula = require('../model/aula')
 const prova = require('../model/provas')
+const questoes = require('../model/questoes')
+const conteudo_questao = require('../model/conteudo-questoes')
 
 module.exports =
 {
@@ -45,7 +49,41 @@ module.exports =
 
     async pagDashBoard(req, res)
     {
-        res.render('../views/telas-alunos/dash-board')
+        const instrutores = await instrutor.findAll({
+            raw: true,
+            attributes: ['EDV', 'Nome']
+        })
+        const alunos = await aluno.findAll({
+            raw: true,
+            attributes: ['EDV', 'Nome']
+        })
+        const disciplinas = await disciplina.findAll({
+            raw: true,
+            attributes: ['Disciplina_ID', 'Nome']
+        })
+        const turmas = await turma.findAll({
+            raw: true,
+            attributes: ['Turma_ID', 'Nome']
+        })
+        const provas = await prova.findAll({
+            raw: true,
+            attributes: ['Prova_ID', 'Nome', 'Disciplina_ID', 'Turma_ID']
+        })
+        
+		const questao = await questoes.findAll({
+			raw: true,
+            attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review',  'Valor_Questao', 'Nota_Questao' ]
+		})
+
+        const conteudo_questoes = await conteudo_questao.findAll({
+			raw: true,
+            attributes: ['Conteudo_Questao_ID', 'Conteudo_ID', 'Questoes_ID' ]
+		})
+		const conteudos = await conteudo.findAll({
+			raw: true,
+            attributes: ['Conteudo_ID', 'Nome']
+		})
+        res.render('../views/telas-alunos/dash-board', {conteudos, conteudo_questoes, questao, provas, turmas, disciplinas, alunos, instrutores})
     },
 
 
