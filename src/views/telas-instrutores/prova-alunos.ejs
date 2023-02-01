@@ -105,9 +105,11 @@
                     <% for (let i=0; i<viewQuestao.length; i++) { %>
                         <div class="questao">
                             <button class="btn botaoQuestoes">
-                                <b class="legendas">Questao: <%= viewQuestao[i].Nome %></b>
-                                <b class="legendas">Preview: <%= viewQuestao[i].Review %></b>
-                                <b class="legendaNota">Nota: <%= viewQuestao[i].Nota_Questao %>/<%= viewQuestao[i].Valor_Questao %></b>
+                                <div class="teste">
+                                    <div class="legendaQuestao"><b>Questao: <%= viewQuestao[i].Nome %></b></div>
+                                    <div class="legendaPreview"><b>Preview: <%= viewQuestao[i].Review %></b></div>
+                                </div>
+                                <div class="legendaNota"><b>Nota: <%= viewQuestao[i].Nota_Questao %>/<%= viewQuestao[i].Valor_Questao %></b></div>
                             </button>
                         </div>
                     <% } %>
