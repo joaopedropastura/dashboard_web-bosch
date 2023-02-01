@@ -21,9 +21,10 @@ route.get('/dash-board', home.pagDashBoard)
 route.get('/prova-alunos', home.pagProvaAluno)
 route.get('/lista-alunos', home.pagListaAlunos)
 
+route.get('/prova-alunos/:id/:edv', avaliacao.provaAlunosInfo)
+
 // route.post('/', home.pagInicialPost)
-route.post('/cadastro-questao/:id', avaliacao.questoesInsert)
-route.post('/prova-alunos/:id', avaliacao.provaAlunosInfo)
+route.post('/cadastro-questao/:id/:edv', avaliacao.questoesInsert)
 route.post('/lista-alunos', avaliacao.listaAlunosInfo)
 route.post('/cadastro-user', cadastroGeral.userInsert)
 route.post('/cadastro-aula', cadastroGeral.AulaInsert)
