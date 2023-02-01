@@ -242,4 +242,5 @@ main
 }
 .modal{
     --bs-modal-width: 700px;
+    top: -40px;
 }
