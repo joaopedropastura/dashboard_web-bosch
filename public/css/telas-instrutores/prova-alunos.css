@@ -43,12 +43,24 @@
 }
 
 .questoes{
-	background-color: cadetblue;
-	top: 205px;
-	position: absolute;
+	display: flex;
+    background-color: cadetblue;
+    top: 205px;
+    flex-direction: column;
+    position: absolute;
     height: 69%;
-	width: 94%;
+    width: 94%;
+    gap: 20px;
 
+}
+
+.box-aluno{
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	height: 20px;
+	background-color: whitesmoke;
+	gap: 40px;
 }
 
 #desc-questao{
