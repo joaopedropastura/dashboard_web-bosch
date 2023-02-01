@@ -49,7 +49,7 @@ module.exports = {
 		const viewQuestao = await questoes.findAll({
 			raw: true,
 			where: {EDV: dados.EDV},
-            attributes: ['Questoes_ID', 'Nome']
+            attributes: ['Questoes_ID', 'Nome', 'EDV', 'Valor_Questao', 'Nota_Questao' ]
 		})
 		const conteudos = await conteudo.findAll({
 			raw: true,
