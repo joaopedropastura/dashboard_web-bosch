@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include("../template/head.ejs") %>
-    <link rel="stylesheet" href="/css/telas-instrutores/avaliacao.css">
     <link rel="stylesheet" href="/css/telas-instrutores/prova-alunos.css">
     <script src="/js/prova-alunos.js"></script>
 
@@ -19,10 +18,10 @@
                 <input value="<%=nomeProva.Prova_ID%>" name="prova" hidden>
                 <input value="<%=alunos[0].EDV%>" name="edv" hidden>
                 <input value="1" name="nome" hidden>
-                <div class="card-prova">
-                    <div class="add-avaliacao">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Adicionar Questão
+                <div class="card-questao">
+                    <div class="add-questao">
+                        <button type="button" class="btn botaoQuestao" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <b>Adicionar Questão</b>
                         </button>
                     </div>
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,41 +84,35 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
 
-                                    <button type="submit" onclick="adiciona()" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" onclick="adiciona()" class="btn btn-primary">Criar questão</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-            <div  id="info-pag">
-                <b><%= alunos[0].Nome  %> ></b>
-                <b><%= nomeProva.Nome %> </b>
-            </div>
-            <div class="questoes">
-                <% for (let i=0; i<viewQuestao.length; i++) { %>
-                    <div class="box-aluno">
-                        <b>Questao: <%= viewQuestao[i].Nome %></b>
-                        <b>Preview: <%= viewQuestao[i].Review %></b>
-                        <b>Nota: <%= viewQuestao[i].Nota_Questao %>/<%= viewQuestao[i].Valor_Questao %></b>
+            <form id="form2">
+                <div class="legenda">
+                    <div id="btn-legenda">
+                        <b><%= alunos[0].Nome  %> ></b>
+                        <b><%= nomeProva.Nome %> </b>
                     </div>
-                <% } %>
-            </div>
+                 </div>
 
-            <!-- <div id="header">
-
-
-            </div>
-            <div id="add-questao">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Adicionar Questão
-                </button>
-                <div id="questooes">
-
+                <div class="questoes">
+                    <% for (let i=0; i<viewQuestao.length; i++) { %>
+                        <div class="questao">
+                            <button class="btn botaoQuestoes">
+                                <b class="legendas">Questao: <%= viewQuestao[i].Nome %></b>
+                                <b class="legendas">Preview: <%= viewQuestao[i].Review %></b>
+                                <b class="legendaNota">Nota: <%= viewQuestao[i].Nota_Questao %>/<%= viewQuestao[i].Valor_Questao %></b>
+                            </button>
+                        </div>
+                    <% } %>
                 </div>
-            </div> -->
+            </div>
         </div>
     </main>
     <script src="/js/prova-alunos.js"></script>

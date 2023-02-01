@@ -4,7 +4,7 @@ var disciplina = document.getElementById('cadastroDisciplina');
 var conteudo = document.getElementById('cadastroConteudo');
 var aula = document.getElementById('cadastroAula')
 
-const showTurma = () =>
+const showTurma = (id) =>
 {
     turma.style.display = 'flex';
     usuario.style.display = 'none';
@@ -12,9 +12,9 @@ const showTurma = () =>
     conteudo.style.display = 'none';
     aula.style.display = 'none';
 
-    // document.getElementsByClassName('efeitoU').style.width=100%;
-
+    document.getElementsById(id).style.borderBottom = "3px solid render";
 }
+
 const showAula = () =>
 {
     turma.style.display = 'none';
@@ -85,6 +85,11 @@ function viewTurma(event){
         }, false)
       })
   })()
+  
+function buttonClicked() 
+{
+    this.style.borderStyle = (this.style.borderStyle!=='inset' ? 'inset' : 'outset');
+}
 
 // function viewNome(){
 //     // alert("alo")

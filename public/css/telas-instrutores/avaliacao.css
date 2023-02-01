@@ -132,7 +132,6 @@ main
     margin-top: 20px;
 }
 
-
 #opt-2
 {
     background-color: rgba(255, 0, 0, 0.705);
@@ -155,13 +154,17 @@ main
     gap: 10px;
 }
 
-
+.prova b
+{
+    font-size: 14px;
+}
 .infoProvas
 {
     display: flex;
     justify-content: left;
     align-items: center;
     width: 20%;
+    font-size: 14px;
 }
 
 .legenda
