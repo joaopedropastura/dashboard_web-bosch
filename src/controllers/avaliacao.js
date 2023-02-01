@@ -46,19 +46,22 @@ module.exports = {
 		})
 		const nomeProva = await prova.findByPk(provaID);
 
+		const viewQuestao = await questoes.findAll({
+			raw: true,
+			where: {EDV: dados.EDV},
+            attributes: ['Questoes_ID', 'Nome']
+		})
 		const conteudos = await conteudo.findAll({
 			raw: true,
             attributes: ['Conteudo_ID', 'Nome']
 		})
 		// console.log(alunos[0])
-		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos});
+		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});
 	},
 
     async questoesInsert(req, res){
         const dados = req.body
-		console.log("oioioo")
 		const provaID = req.params.id;
-		console.log(dados)
 		const nomeProva = await prova.findByPk(provaID);
 		const alunos = await aluno.findAll({
 			raw: true,
@@ -68,6 +71,11 @@ module.exports = {
 		const conteudos = await conteudo.findAll({
 			raw: true,
             attributes: ['Conteudo_ID', 'Nome']
+		})
+		const viewQuestao = await questoes.findAll({
+			raw: true,
+			where: {EDV: dados.edv},
+            attributes: ['Questoes_ID', 'Nome']
 		})
         const questao = await questoes.create({
             Nome: dados.nome,
@@ -79,15 +87,16 @@ module.exports = {
 			EDV: dados.edv
         });
 		const q_conteudo = dados.conteudo
-		console.log(q_conteudo)
+		console.log(viewQuestao)
 		for (let i = 0; i < q_conteudo.length; i++) {
 			await conteudo_questao.create({
 				Conteudo_ID: q_conteudo[i],
 				Questoes_ID: questao.Questoes_ID
 			})
 		}
-		
-		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos});
+		console.log(viewQuestao.length)
+
+		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});
     },
 
     async provasInsert(req, res){

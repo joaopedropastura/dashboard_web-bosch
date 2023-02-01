@@ -1,4 +1,4 @@
-// MYSQL JP
+// // MYSQL JP
 
 const sequelize = require('sequelize');
 
@@ -23,7 +23,7 @@ database.sync();
 module.exports = database;
 
 
-// // SQL SERVER
+// SQL SERVER
 
 // const sequelize = require('sequelize');
 

@@ -1,8 +1,25 @@
 /* main{
 	height: 100vh;
 } */
+
 .box-content{
 	display: flex;
+}
+
+
+.modal{
+	--bs-modal-width: 700px;
+}
+
+@media (min-width: 576px)
+{
+	.modal {
+		--bs-modal-margin: none;
+	}
+}
+
+.fade{
+	/* width: 700px; */
 }
 
 #info-pag{
@@ -12,7 +29,7 @@
 	z-index: 999;
 	top: 164px;
     position: absolute;
-	left: 25px;
+	left: 30px;
 
 }
 
@@ -25,10 +42,13 @@
 	padding: 12px;
 }
 
-#form2{
+.questoes{
 	background-color: cadetblue;
 	top: 205px;
-	height: 69%;
+	position: absolute;
+    height: 69%;
+	width: 94%;
+
 }
 
 #desc-questao{

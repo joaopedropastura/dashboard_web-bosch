@@ -98,15 +98,20 @@
                 <b><%= alunos[0].Nome  %> ></b>
                 <b><%= nomeProva.Nome %> </b>
             </div>
-            <form id="form2" action="lista-alunos" method="post">
-                <div class="prova">
-                   
-                </div>
-            </form>
+            <div class="questoes">
+                <% for (let i=0; i<viewQuestao.length; i++) { %>
+                    <div class="box-aluno">
+                        <b><%= viewQuestao[i].EDV %></b>
+                        <b><%= viewQuestao[i].Nome %></b>
+                        <b><%= viewQuestao[i].Nota_Questao %></b>
+                        <b><%= viewQuestao[i].Valor_Questao %></b>
+                    </div>
+                <% } %>
+            </div>
 
             <!-- <div id="header">
 
-             
+
             </div>
             <div id="add-questao">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

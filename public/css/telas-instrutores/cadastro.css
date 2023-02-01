@@ -150,14 +150,16 @@ form{
 }
 
 /* EfeitoU */
-.efeitoU {
+.efeitoU
+{
     text-decoration: none;
     display: inline-block;
     font-size: 22px;
     color: black;
 }
 
-.efeitoU:after {
+.efeitoU:after 
+{
     content: '';
     display: block;
     border-bottom: 3px solid red;
@@ -166,13 +168,17 @@ form{
     transition: 0.3s ease;
 }
 
-.efeitoU:hover:after{
+.efeitoU:hover:after
+{
     width: 100%;
 }
 
-.efeitoU:hover{
+.efeitoU:hover
+{
     color: red;
 }
+
+
 
 .sublinhar{
     text-decoration:none;
