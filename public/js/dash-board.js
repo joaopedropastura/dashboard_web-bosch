@@ -1,15 +1,19 @@
 
 function getDados(conteudos, conteudo_questao, questao, provas, turmas, disciplinas, alunos, instrutores)
 {	
-	
+	console.log(alunos)
 	// console.log(conteudos, conteudo_questao, questao, provas, turmas, disciplinas, alunos, instrutores)
-	const joao =  d3.select(".box-content")
-					.selectAll('p')
-					.data(alunos)
-					.enter()
-					.append('p')
-					.text(dta => dta.Nome);
+	const container = d3.select(".graphics")
+						.classed('graph01', true)
 
+	const bars = container
+			.selectAll('.bar')
+			.data([alunos, questao])
+			.enter()
+			.append('div')
+			.classed('bar', true)
+			.style('width', '20px')
+			.style('height', data => (alunos.EDV / 10000) + 'px')
 	console.log(joao);
 
 }
