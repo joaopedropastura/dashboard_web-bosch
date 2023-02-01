@@ -101,10 +101,9 @@
             <div class="questoes">
                 <% for (let i=0; i<viewQuestao.length; i++) { %>
                     <div class="box-aluno">
-                        <b><%= viewQuestao[i].EDV %></b>
-                        <b><%= viewQuestao[i].Nome %></b>
-                        <b><%= viewQuestao[i].Nota_Questao %></b>
-                        <b><%= viewQuestao[i].Valor_Questao %></b>
+                        <b>Questao: <%= viewQuestao[i].Nome %></b>
+                        <b>Preview: <%= viewQuestao[i].Review %></b>
+                        <b>Nota: <%= viewQuestao[i].Nota_Questao %>/<%= viewQuestao[i].Valor_Questao %></b>
                     </div>
                 <% } %>
             </div>
