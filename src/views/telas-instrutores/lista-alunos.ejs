@@ -12,17 +12,30 @@
 	<main>
 		<%- include("../template/nav-bar.ejs") %>
 		<div class="box-content">
-			<% for(let m = 0; m < listaAlunos.length; m++) { %>
-				<form action="/prova-alunos/<%= provaID.Prova_ID %>/<%= listaAlunos[m].EDV%>" method="get">
-					<div class="box-aluno">
-						<button type="submit" class="btn btn-primary info-aluno" data-bs-toggle="modal" data-bs-target="#exampleModal">
-							<b><%= listaAlunos[m].EDV %></b>
-							<b><%= listaAlunos[m]["Turma"].Nome %></b>
-							<b><%= listaAlunos[m].Nome %></b>
-						</button>
-					</div>	
-				</form>
-			<%}%>
+			<div id="form2">
+
+				<div class="legenda">
+
+					<div id="btn-legenda">
+						<b class="legendas">EDV:</b>
+						<b class="legendas disciplina">Turma:</b>
+						<b class="nomeProva">Nome do aluno:</b>
+					</div>
+				</div>
+				<div class="alunos">
+					<% for(let m = 0; m < listaAlunos.length; m++) { %>
+						<form action="/prova-alunos/<%= provaID.Prova_ID %>/<%= listaAlunos[m].EDV%>" method="get">
+							<div class="prova">
+								<button type="submit" class="btn botaoProvas" data-bs-toggle="modal" data-bs-target="#exampleModal">
+									<b class="infoProvas"><%= listaAlunos[m].EDV %></b>
+									<b class="infoProvas"><%= listaAlunos[m]["Turma"].Nome %></b>
+									<b><%= listaAlunos[m].Nome %></b>
+								</button>
+							</div>
+						</form>
+					<%}%>
+				</div>
+			</div>
 		</div>
 	</main>
 </body>

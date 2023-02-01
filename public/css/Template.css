@@ -13,6 +13,7 @@ main{
 }
 a {
     all: unset;
+    
 }
 
 
@@ -90,6 +91,7 @@ a {
     width: 86vw;
     background-color: whitesmoke;
     border-radius: 20px;
+
 }
 
 
@@ -102,4 +104,16 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes trocarTela
+{
+    from 
+    {
+        transform: translateY(100%);
+    }
+    to 
+    {
+        transform: translateY(0%);
+    }
 }

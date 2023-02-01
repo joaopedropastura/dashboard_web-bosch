@@ -11,8 +11,6 @@ const showTurma = (id) =>
     disciplina.style.display = 'none';
     conteudo.style.display = 'none';
     aula.style.display = 'none';
-
-    document.getElementsById(id).style.borderBottom = "3px solid render";
 }
 
 const showAula = () =>
@@ -86,15 +84,3 @@ function viewTurma(event){
       })
   })()
   
-function buttonClicked() 
-{
-    this.style.borderStyle = (this.style.borderStyle!=='inset' ? 'inset' : 'outset');
-}
-
-// function viewNome(){
-//     // alert("alo")
-// }
-
-// $('#myModal').on('shown.bs.modal', function () {
-//     $('#myInput').trigger('focus')
-//   })
