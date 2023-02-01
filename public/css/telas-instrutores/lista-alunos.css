@@ -31,7 +31,7 @@ form{
 	flex-direction: column;
 	width: 100%;
 	height: 95vh;
-	margin-top: 30px;
+	margin-top: 10px;
 	overflow-y: scroll;
 }
 
@@ -78,7 +78,7 @@ form{
     display: flex;
     justify-content: left;
     align-items: center;
-    width: 20%;
+   
     font-size: 14px;
 }
 
@@ -116,7 +116,7 @@ form{
     border-radius: 2px;
 	
     margin-left: 2vw;
-	margin-top: 30px;
+	margin-top: 60px;
     
 }
 
