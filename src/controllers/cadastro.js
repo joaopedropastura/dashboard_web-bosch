@@ -101,7 +101,7 @@ module.exports = {
 
     async DisciplinaInsert(req, res){
         const dados = req.body;
-        console.log(dados)
+        // console.log(dados)
         await disciplina.create({
             Nome: dados.nome
         });
