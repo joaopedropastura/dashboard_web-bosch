@@ -69,4 +69,11 @@ console.log(aulas[0]['Disciplina.Nome'])
 
 
 D3JS
+
     https://www.youtube.com/watch?v=TOJ9yjvlapY&ab_channel=Academind
+
+
+
+sequelize:
+
+    https://sequelize.org/docs/v6/core-concepts/model-querying-basics/

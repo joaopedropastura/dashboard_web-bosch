@@ -12,7 +12,17 @@
 	<title>Document</title>
 </head>
 
-<body onload="getDados(<%=JSON.stringify(conteudos)%>,<%=JSON.stringify(conteudo_questoes)%>, <%=JSON.stringify(questao)%>, <%=JSON.stringify(provas)%>, <%=JSON.stringify(turmas)%>, <%=JSON.stringify(result)%>, <%=JSON.stringify(alunos)%>, <%=JSON.stringify(instrutores)%>, <%=JSON.stringify(SumValorQuestao)%>, <%=JSON.stringify(SumNotaQuestao)%>)">
+<body onload="getDados(<%=JSON.stringify(conteudos)%>,
+					   <%=JSON.stringify(conteudo_questoes)%>, 
+					   <%=JSON.stringify(questao)%>, 
+					   <%=JSON.stringify(provas)%>, 
+					   <%=JSON.stringify(turmas)%>, 
+					   <%=JSON.stringify(result)%>, 
+					   <%=JSON.stringify(alunos)%>, 
+					   <%=JSON.stringify(instrutores)%>, 
+					   <%=JSON.stringify(SumValorQuestao)%>, 
+					   <%=JSON.stringify(SumNotaQuestao)%>
+					)">
 	<main>
 		<%- include("../template/nav-bar.ejs") %>
 		<div class="box-content">
