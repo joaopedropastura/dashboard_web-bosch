@@ -14,6 +14,6 @@ function getDados(conteudos, conteudo_questao, questao, provas, turmas, resultDi
 			.classed('bar', true)
 			.style('width', '20px')
 			.style('height', data => (alunos.EDV / 10000) + 'px')
-	console.log(joao);
+	// console.log(joao);
 
 }
