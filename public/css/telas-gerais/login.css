@@ -50,7 +50,11 @@ main{
 /* CARDS */
 /* { */
 
-
+    .imgEts
+    {
+        width: 35vw;
+        height: fit-content;
+    }
 
     .card
     {
