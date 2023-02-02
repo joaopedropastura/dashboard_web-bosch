@@ -15,11 +15,13 @@ route.get('/', home.pagInicialget)
 route.get('/cadastro', home.pagCadastro)
 
 route.get('/login', home.pagLogin)
+route.post('/login', login.checkLogin)
+
 route.get('/profile', home.pagProfile)
 route.get('/avaliacao', home.pagAvaliacao)
-route.get('/dash-board', home.pagDashBoard)
 route.get('/prova-alunos', home.pagProvaAluno)
 route.get('/lista-alunos', home.pagListaAlunos)
+route.get('/dash-board/:edv', home.pagDashBoard)
 
 route.get('/prova-alunos/:id/:edv', avaliacao.provaAlunosInfo)
 
@@ -33,6 +35,5 @@ route.post('/cadastro-prova', avaliacao.provasInsert)
 route.post('/cadastro-conteudo', cadastroGeral.ConteudoInsert)
 route.post('/cadastro-disciplina', cadastroGeral.DisciplinaInsert)
 
-route.post('/login', login.checkLogin)
 
 module.exports = route;

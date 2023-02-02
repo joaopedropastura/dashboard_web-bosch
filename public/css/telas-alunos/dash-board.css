@@ -18,3 +18,12 @@ main{
 .bar{
     background-color: purple;
 }
+
+
+#opt-2{
+    display: none;
+}
+
+#opt-3{
+    display: none;
+}

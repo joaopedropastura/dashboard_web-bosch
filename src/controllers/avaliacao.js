@@ -36,7 +36,7 @@ module.exports = {
 
 	async provaAlunosInfo(req, res){
 		const dados = req.params.edv;
-		console.log(dados + "dados aqui")
+		// console.log(dados + "dados aqui")
 		const provaID = req.params.id;
 		// console.log(dados)
 		const alunos = await aluno.findAll({
@@ -62,7 +62,7 @@ module.exports = {
     async questoesInsert(req, res){
 
 		const dados = req.body;
-		console.log(dados + "dados aqui")
+		// console.log(dados + "dados aqui")
 		const provaID = req.params.id;
 		const EDV = req.params.edv;
 
