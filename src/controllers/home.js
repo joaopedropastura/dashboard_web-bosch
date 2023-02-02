@@ -89,11 +89,13 @@ module.exports =
         
 		const questao = await questoes.findAll({
 			raw: true,
-            
+            where: {EDV: alunos[0].EDV},
             attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review', 'Valor_Questao', 'Nota_Questao', 'Prova_ID' ]
             
 		})
-        const sla = await questoes.sum("Valor_Questao")
+        const SumValorQuestao = await questoes.sum("Valor_Questao")
+        const SumNotaQuestao = await questoes.sum("Nota_Questao")
+
         const conteudo_questoes = await conteudo_questao.findAll({
 			raw: true,
             attributes: ['Conteudo_Questao_ID', 'Conteudo_ID', 'Questoes_ID' ]
@@ -112,10 +114,10 @@ module.exports =
                 result.push(obj[0])
             }
         });
-        console.log(sla)
+        console.log(questao)
         // console.log(listaDis.filter((item, index) => listaDis.indexOf(item[index]) === index))
         // console.log(disciplinas)
-        res.render('../views/telas-alunos/dash-board', {conteudos, conteudo_questoes, questao, provas, turmas, result, alunos, instrutores})
+        res.render('../views/telas-alunos/dash-board', {conteudos, conteudo_questoes, questao, provas, turmas, result, alunos, SumValorQuestao, SumNotaQuestao, instrutores})
     },
 
 
