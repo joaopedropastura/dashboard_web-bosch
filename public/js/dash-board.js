@@ -1,7 +1,7 @@
 
 function getDados(conteudos, conteudo_questao, questao, provas, turmas, resultDis, alunos, instrutores, SumValorQuestao, SumNotaQuestao)
 {	
-	console.log(resultDis, questao, provas,SumNotaQuestao, SumValorQuestao)
+	console.log(resultDis, questao, provas,SumNotaQuestao/SumValorQuestao)
 	// console.log(conteudos, conteudo_questao, questao, provas, turmas, disciplinas, alunos, instrutores)
 	const container = d3.select(".graphics")
 						.classed('graph01', true)
@@ -17,3 +17,6 @@ function getDados(conteudos, conteudo_questao, questao, provas, turmas, resultDi
 	// console.log(joao);
 
 }
+
+
+return (sla)

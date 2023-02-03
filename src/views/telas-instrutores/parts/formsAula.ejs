@@ -2,15 +2,6 @@
     <div class="inputs hidden" id="cadastroAula">
         <div class="inputs-body">
             <div class="mb-3 caixas">
-                <label for="nome" class="form-label">Conteudo:</label>
-                <select style="width: 100%;" id="inputUnico" class="form-select" name="conteudo">
-                    <option selected>selecione o conteudo</option>
-                    <% for (let i=0; i<conteudos.length; i++) { %>
-                        <option value='<%= conteudos[i].Conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
-                    <% } %>
-                </select>
-            </div>
-            <div class="mb-3 caixas">
                 <label for="instrutor" class="form-label">Instrutor:</label>
                 <select style="width: 100%;" id="inputUnico" class="form-select" name="instrutor">
                     <option selected>selecione o instrutor</option>
@@ -25,6 +16,15 @@
                     <option selected>selecione a disciplina</option>
                     <% for (let i=0; i<disciplinas.length; i++) { %>
                         <option value='<%= disciplinas[i].Disciplina_ID %>'> <%= disciplinas[i].Nome %> </option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="mb-3 caixas">
+                <label for="nome" class="form-label">Conteudo:</label>
+                <select style="width: 100%;" id="inputUnico" class="form-select" name="conteudo">
+                    <option selected>selecione o conteudo</option>
+                    <% for (let i=0; i<conteudos.length; i++) { %>
+                        <option value='<%= conteudos[i].Conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
                     <% } %>
                 </select>
             </div>
