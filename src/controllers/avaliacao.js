@@ -36,7 +36,7 @@ module.exports = {
 
 	async provaAlunosInfo(req, res){
 		const dados = req.params.edv;
-		console.log(dados + "dados aqui")
+		// console.log(dados + "dados aqui")
 		const provaID = req.params.id;
 		// console.log(dados)
 		const alunos = await aluno.findAll({
@@ -48,7 +48,7 @@ module.exports = {
 
 		const viewQuestao = await questoes.findAll({
 			raw: true,
-			where: {EDV: dados},
+			where: {EDV: dados, Prova_ID: provaID},
             attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review',  'Valor_Questao', 'Nota_Questao' ]
 		})
 		const conteudos = await conteudo.findAll({
@@ -62,7 +62,7 @@ module.exports = {
     async questoesInsert(req, res){
 
 		const dados = req.body;
-		console.log(dados + "dados aqui")
+		// console.log(dados + "dados aqui")
 		const provaID = req.params.id;
 		const EDV = req.params.edv;
 
@@ -77,14 +77,14 @@ module.exports = {
 			EDV: EDV
         });
 		const q_conteudo = dados.conteudo
-		
+
 		for (let i = 0; i < q_conteudo.length; i++) {
 			await conteudo_questao.create({
 				Conteudo_ID: q_conteudo[i],
 				Questoes_ID: questao.Questoes_ID
 			})
 		}
-		
+
 
 		res.redirect('/prova-alunos/' + provaID + "/" + EDV)
 		// res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});

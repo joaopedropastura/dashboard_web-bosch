@@ -63,9 +63,17 @@ join:
         inner join Provas p on p.Prova_ID = q.Prova_ID
         where p.Prova_ID = 4 and a.EDV = 4
 
+console.log(aulas[0]['Disciplina.Nome'])
 
 <option value='<%= conteudos[i].Conteudo_ID %>'> <%= conteudos[i].Nome %> </option>
 
 
 D3JS
+
     https://www.youtube.com/watch?v=TOJ9yjvlapY&ab_channel=Academind
+
+
+
+sequelize:
+
+    https://sequelize.org/docs/v6/core-concepts/model-querying-basics/

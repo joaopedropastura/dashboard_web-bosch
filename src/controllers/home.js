@@ -8,6 +8,7 @@ const aula = require('../model/aula')
 const prova = require('../model/provas')
 const questoes = require('../model/questoes')
 const conteudo_questao = require('../model/conteudo-questoes')
+const { Sequelize } = require('sequelize')
 
 module.exports =
 {
@@ -46,47 +47,7 @@ module.exports =
     {
         res.render('../views/telas-gerais/login')
     },
-
-    async pagDashBoard(req, res)
-    {
-        const instrutores = await instrutor.findAll({
-            raw: true,
-            attributes: ['EDV', 'Nome']
-        })
-        const alunos = await aluno.findAll({
-            raw: true,
-            attributes: ['EDV', 'Nome']
-        })
-        const disciplinas = await disciplina.findAll({
-            raw: true,
-            attributes: ['Disciplina_ID', 'Nome']
-        })
-        const turmas = await turma.findAll({
-            raw: true,
-            attributes: ['Turma_ID', 'Nome']
-        })
-        const provas = await prova.findAll({
-            raw: true,
-            attributes: ['Prova_ID', 'Nome', 'Disciplina_ID', 'Turma_ID']
-        })
-        
-		const questao = await questoes.findAll({
-			raw: true,
-            attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review',  'Valor_Questao', 'Nota_Questao' ]
-		})
-
-        const conteudo_questoes = await conteudo_questao.findAll({
-			raw: true,
-            attributes: ['Conteudo_Questao_ID', 'Conteudo_ID', 'Questoes_ID' ]
-		})
-		const conteudos = await conteudo.findAll({
-			raw: true,
-            attributes: ['Conteudo_ID', 'Nome']
-		})
-        res.render('../views/telas-alunos/dash-board', {conteudos, conteudo_questoes, questao, provas, turmas, disciplinas, alunos, instrutores})
-    },
-
-
+    
     async pagAvaliacao(req, res)
     {
         const disciplinas = await disciplina.findAll({
