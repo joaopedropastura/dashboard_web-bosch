@@ -35,8 +35,18 @@
 				<div class="form2">
 					<div class="legenda">
 						<div id="btn-legenda">
-							<b><%= alunos[0].Nome %> ></b>
-							<b><%= provas.Nome %> </b>
+							<b><%= alunos[0].Nome %></b>
+							<select id="inputProva" class="form-select" onchange="this.form.submit()" name="prova">
+								<option value="invalido" >selecione uma disciplina</option>
+								<% for (let i=0; i<provas.length; i++) { %>
+									<% if (provas[i].Disciplina_ID == id || id == 'invalido' || id == undefined) { %>
+										<option value='<%= provas[i].Disciplina_ID %>'
+											<%= id == provas[i].Disciplina_ID ? 'selected' : ''%>>
+											<%= provas[i].Nome %>
+										</option>
+									<% } %>
+								<% } %>
+							</select>
 						</div>
 					</div>
 					<div class="questoes">
