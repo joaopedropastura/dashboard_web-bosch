@@ -9,15 +9,22 @@ main{
 }
 
 .graph01{
-    height: 450px;
+    height: 300px;
     width: 400px;
-    border: 3px solid #800080;
+    /* border: 3px solid #800080; */
+}
+
+.box-content{
+    display: flex;
+    position: relative;
 }
 
 .bar{
-    fill: #800080;
+    fill: rgb(0, 86, 145, 0.7);
 }
-
+#inputDis{
+    width: fit-content;
+}
 
 #opt-2{
     display: none;
@@ -25,4 +32,22 @@ main{
 
 #opt-3{
     display: none;
+}
+
+#grafos{
+    padding: 30px;
+    gap: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-end;
+}
+
+#provas{
+    width: 50%;
+}
+
+#menuDis{
+    width: fit-content;
 }
