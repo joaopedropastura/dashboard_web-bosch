@@ -79,9 +79,14 @@ module.exports =
         res.render('../views/telas-instrutores/lista-alunos', {provas, alunos})
     },
 
-    async pagProfile(req, res)
+    async pagProfileAluno(req, res)
     {
-        res.render('../views/telas-gerais/profile')
+        res.render('../views/telas-alunos/profile-aluno')
+    },
+
+    async pagProfileInstrutor(req, res)
+    {
+        res.render('../views/telas-instrutores/profile-instrutor')
     },
 
     async pagProvaAluno(req,res)

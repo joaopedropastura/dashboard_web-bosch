@@ -135,6 +135,7 @@ main
 #opt-2
 {
     background-color: rgba(255, 0, 0, 0.705);
+    color: white;
 }
 
 #exampleModal
@@ -149,8 +150,9 @@ main
     height: 100%;
     display: flex;
     justify-content: left;
-    align-items: center;
-    gap: 10px;
+    padding-top: 25px;
+    align-items: top;
+    gap: 50px;
 }
 
 .prova b
@@ -163,6 +165,7 @@ main
     justify-content: left;
     align-items: center;
     width: 20%;
+    text-align: left;
     font-size: 14px;
 }
 
@@ -183,7 +186,6 @@ main
     justify-content: left;
     align-items: center;
     width: 20%;
-    
 }
 
 #btn-legenda
@@ -194,7 +196,7 @@ main
     justify-content: left;
     align-items: center;
     border-radius: 20px;
-    gap: 10px;
+    
 }
 
 .disciplina
@@ -208,3 +210,15 @@ main
 }
 
 
+@media screen and (max-width: 1280px) 
+{
+    
+    .disciplina
+    {
+        margin-left: 9vw; 
+    }
+    .nomeProva
+    {
+        margin-left: 8.5vw;
+    }
+}

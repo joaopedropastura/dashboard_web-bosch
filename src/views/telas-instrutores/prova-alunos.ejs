@@ -12,10 +12,10 @@
 </head>
 <body>
     <main>
-        <%- include("../template/nav-bar.ejs") %>
+        <%- include("../template/nav-bar-instrutor.ejs") %>
         <div class="box-content">
             <form id="form" action="/cadastro-questao/<%= nomeProva.Prova_ID %>/<%= alunos[0].EDV %>" method="post">
-                <input value="1" name="nome" hidden>
+                <input value="<%= viewQuestao.length+1 %>" name="nome" hidden>
                 <div class="card-questao">
                     <div class="add-questao">
                         <button type="button" class="btn botaoQuestao" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -28,7 +28,7 @@
 
                                 <div class="modal-header">
                                     <div id="desc-questao">
-                                        <h5 class="modal-title" id="exampleModalLabel" name="nome" value="#numQuestao" >Questao: <span id="numQuestao"></span> </h5>
+                                        <h5 class="modal-title" id="exampleModalLabel" name="nome" value="#numQuestao" >Questao: <%= viewQuestao.length+1 %> </h5>
                                         <h6 value="<%= nomeProva.Prova_ID %>" name="prova"> <%= nomeProva.Nome %></h6>
                                     </div>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -81,7 +81,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
 
-                                    <button type="submit" onclick="adiciona()" class="btn btn-primary">Criar questão</button>
+                                    <button type="submit" class="btn btn-primary">Criar questão</button>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
             <form id="form2">
                 <div class="legenda">
                     <div id="btn-legenda">
-                        <b><%= alunos[0].Nome  %> ></b>
+                        <b><%= alunos[0].Nome %> ></b>
                         <b><%= nomeProva.Nome %> </b>
                     </div>
                  </div>
@@ -101,7 +101,7 @@
                         <div class="questao">
                             <button class="btn botaoQuestoes">
                                 <div class="teste">
-                                    <div class="legendaQuestao"><b>Questao: <%= viewQuestao[i].Nome %></b></div>
+                                    <div class="legendaQuestao"><b>Questao: <%= viewQuestao[i].Nome %> </b></div>
                                     <div class="legendaPreview"><b>Preview: <%= viewQuestao[i].Review %></b></div>
                                 </div>
                                 <div class="legendaNota"><b>Nota: <%= viewQuestao[i].Nota_Questao %>/<%= viewQuestao[i].Valor_Questao %></b></div>

@@ -55,7 +55,7 @@ module.exports = {
 			raw: true,
             attributes: ['Conteudo_ID', 'Nome']
 		})
-		// console.log(alunos[0])
+		console.log(viewQuestao.length)
 		res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});
 	},
 
