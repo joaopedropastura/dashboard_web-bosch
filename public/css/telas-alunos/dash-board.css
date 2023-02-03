@@ -1,4 +1,5 @@
-main{
+main
+{
 	height: 100vh;
 }
 
@@ -17,6 +18,8 @@ main{
 .box-content{
     display: flex;
     position: relative;
+    padding: 3vh;
+    width: 79vw;
 }
 
 .bar{
@@ -35,7 +38,6 @@ main{
 }
 
 #grafos{
-    padding: 30px;
     gap: 30px;
     width: 50%;
     display: flex;
@@ -43,11 +45,164 @@ main{
     
     align-items: flex-end;
 }
-
-#provas{
-    width: 50%;
-}
+    
 
 #menuDis{
     width: fit-content;
+}
+
+#provas
+{
+    position: relative;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+ 
+}
+
+
+
+.form2
+{
+    display: flex;
+    position: relative;
+    width: 95%;
+    height: 50%;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #BFC0C2;
+    align-items: center;
+    border-radius: 20px ;
+    box-shadow: 3px 3px 20px #BFC0C2;
+}
+
+.botaoQuestoes
+{
+    background-color: whitesmoke;
+	width: 100%;
+}
+
+.botaoQuestoes:hover
+{
+    background-color: rgba(0, 0, 0, 0.336);
+}
+
+.questoes
+{
+    width: 95%;
+    height: 100%;
+
+    border-radius: 20px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar
+{
+    border-radius: 0 20px 20px 0 ;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: white;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.questao
+{
+    width: 90%;
+    height: 10.5vh;
+    border-radius: 20px;
+
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#opt-2
+{
+    background-color: rgba(255, 0, 0, 0.705);
+}
+
+#btn-prova
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.questao b
+{
+    font-size: 14px;
+}
+
+
+.legenda
+{
+    width: 84%;
+    height: 5vh;
+    border-radius: 2px;
+
+    margin-left: 6.5vw;
+    margin-top: 2vh;
+    margin-right: 6.6vw ;
+}
+
+.legendaQuestao
+{
+    display: flex;
+    justify-content: left;
+    align-items: top;
+    width: 100%;
+    height: 30%;
+}
+
+.legendaPreview
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 80%;
+    height: 40%;
+
+}
+
+.legendaPreview b
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.legendaNota
+{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.teste
+{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#btn-legenda
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 20px;
+    gap: 10px;
 }

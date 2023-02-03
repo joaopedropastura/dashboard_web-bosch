@@ -17,11 +17,13 @@
             <form id="form" action="/cadastro-questao/<%= nomeProva.Prova_ID %>/<%= alunos[0].EDV %>" method="post">
                 <input value="<%= viewQuestao.length+1 %>" name="nome" hidden>
                 <div class="card-questao">
+
                     <div class="add-questao">
                         <button type="button" class="btn botaoQuestao" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <b>Adicionar Questão</b>
                         </button>
                     </div>
+
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -35,24 +37,30 @@
                                 </div>
 
                                 <div class="modal-body">
+
                                     <div class="mb-3 forms">
                                         <label class="form-label">Review: </label>
                                         <textarea class="form-control" aria-label="With textarea" name="review"></textarea>
                                     </div>
+
                                     <div class="mb-3 forms">
                                         <label class="form-label">Correção: </label>
                                         <textarea class="form-control" aria-label="With textarea" name="correcao"></textarea>
+                                    </div>
+
                                     <div id="pe">
                                         <div id="nota">
                                             <div class="mb-3 forms">
                                                 <label class="form-label">Nota do aluno: </label>
                                                 <input type="text" class="form-control" name="notas_questao">
                                             </div>
+
                                             <div class="mb-3 forms">
                                                 <label class="form-label">Valor da questão: </label>
                                                 <input type="text" class="form-control" name="valor_questao">
                                             </div>
                                         </div>
+
                                         <div id="conteudos">
                                             <div class="mb-3 caixas">
                                                 <label for="nome" class="form-label">Conteudo:</label>
@@ -72,7 +80,7 @@
                                                             </li>
                                                         <% } %>
                                                     </ul>
-                                                  </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -88,14 +96,13 @@
                     </div>
                 </div>
             </form>
-            <form id="form2">
+            <form class="form2">
                 <div class="legenda">
                     <div id="btn-legenda">
                         <b><%= alunos[0].Nome %> ></b>
                         <b><%= nomeProva.Nome %> </b>
                     </div>
-                 </div>
-
+                </div>
                 <div class="questoes">
                     <% for (let i=0; i<viewQuestao.length; i++) { %>
                         <div class="questao">
@@ -109,7 +116,7 @@
                         </div>
                     <% } %>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
     <script src="/js/prova-alunos.js"></script>

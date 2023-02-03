@@ -12,7 +12,7 @@ main
     align-items: center;
 }
 
-#form2{
+.form2{
     position: absolute;
     top: 135px;
     width: 95%;

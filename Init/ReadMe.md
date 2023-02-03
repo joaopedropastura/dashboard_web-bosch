@@ -77,3 +77,8 @@ D3JS
 sequelize:
 
     https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
+
+
+spyder grafo:
+
+    http://alangrafu.github.io/radar-chart-d3/csv2radar.html

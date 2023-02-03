@@ -6,7 +6,7 @@ main{
     height: 96vh;
     display: flex;
     align-items: center;
-    padding: 2vh;
+    padding: 1vh;
     position: relative;
     gap: 2vh;
     background-color: rgb(97, 96, 96)
@@ -19,7 +19,8 @@ a {
 
 .nav-bar{
     height: 100%;
-    width: 18vw;
+    min-width: 18vw;
+    max-width: 18vw;
     background-color: whitesmoke;
     border-radius: 20px;
 }
@@ -93,7 +94,7 @@ a {
 .box-content{
     position: relative;
     height: 100%;
-    width: 86vw;
+    width: 84vw;
     background-color: whitesmoke;
     border-radius: 20px;
 
@@ -122,3 +123,11 @@ a {
         transform: translateY(0%);
     }
 }
+
+@media screen and (max-width: 1280px) 
+{
+    .nav-footer 
+    {
+        gap: 30px;
+    }
+  }
