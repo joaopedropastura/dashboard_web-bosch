@@ -9,7 +9,7 @@ const home = require('./src/controllers/home')
 const login = require('./src/controllers/check-login')
 const cadastroGeral = require('./src/controllers/cadastro')
 const avaliacao = require('./src/controllers/avaliacao')
-const dashBoard = require('./src/controllers/dash-board')
+const dashBoard = require('./src/controllers/dashboard')
 
 route.get('/', home.pagInicialget)
 route.get('/cadastro', home.pagCadastro)
@@ -24,6 +24,7 @@ route.get('/lista-alunos', home.pagListaAlunos)
 
 route.get('/dash-board/:edv', dashBoard.pagDashBoard)
 route.get('/prova-alunos/:id/:edv', avaliacao.provaAlunosInfo)
+route.post('/dash-board/:edv', dashBoard.pagDashBoard)
 
 // route.post('/', home.pagInicialPost)
 route.post('/cadastro-prova', avaliacao.provasInsert)

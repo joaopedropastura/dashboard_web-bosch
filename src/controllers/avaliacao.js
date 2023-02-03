@@ -48,7 +48,7 @@ module.exports = {
 
 		const viewQuestao = await questoes.findAll({
 			raw: true,
-			where: {EDV: dados},
+			where: {EDV: dados, Prova_ID: provaID},
             attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review',  'Valor_Questao', 'Nota_Questao' ]
 		})
 		const conteudos = await conteudo.findAll({
@@ -77,14 +77,14 @@ module.exports = {
 			EDV: EDV
         });
 		const q_conteudo = dados.conteudo
-		
+
 		for (let i = 0; i < q_conteudo.length; i++) {
 			await conteudo_questao.create({
 				Conteudo_ID: q_conteudo[i],
 				Questoes_ID: questao.Questoes_ID
 			})
 		}
-		
+
 
 		res.redirect('/prova-alunos/' + provaID + "/" + EDV)
 		// res.render('../views/telas-instrutores/prova-alunos', {nomeProva, alunos, conteudos, viewQuestao});

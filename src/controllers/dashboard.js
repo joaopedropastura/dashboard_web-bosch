@@ -9,15 +9,19 @@ const prova = require('../model/provas')
 const questoes = require('../model/questoes')
 const conteudo_questao = require('../model/conteudo-questoes')
 const { Sequelize } = require('sequelize')
+const disciplinas = require('../model/disciplinas')
 
 
 module.exports = {
 
     async pagDashBoard(req, res)
     {
+        const id = req.body.disciplina
+
+
         var aux = []
-        var result = []
-        var SumNotaQuestao = 0 
+        var resultDis = []
+        var SumNotaQuestao = 0
         var SumValorQuestao = 0
         const EDV = req.params.edv
         const instrutores = await instrutor.findAll({
@@ -55,12 +59,12 @@ module.exports = {
             where: {Turma_ID: alunos[0].Turma_ID},
             attributes: ['Prova_ID', 'Nome', 'Disciplina_ID', 'Turma_ID']
         })
-        
+
 		const questao = await questoes.findAll({
 			raw: true,
             where: {EDV: alunos[0].EDV},
             attributes: ['Questoes_ID', 'Nome', 'EDV', 'Review', 'Valor_Questao', 'Nota_Questao', 'Prova_ID' ]
-            
+
 		})
         const conteudo_questoes = await conteudo_questao.findAll({
 			raw: true,
@@ -74,27 +78,28 @@ module.exports = {
             if (aux.indexOf(obj[0].Disciplina_ID) === -1)
             {
                 aux.push(obj[0].Disciplina_ID)
-                result.push(obj[0])
+                resultDis.push(obj[0])
             }
         });
-        
+
         questao.forEach(element => {
             SumValorQuestao += element.Valor_Questao
             SumNotaQuestao += element.Nota_Questao
         });
-        console.log(SumNotaQuestao, SumValorQuestao)
+        console.log(id)
         // console.log(listaDis.filter((item, index) => listaDis.indexOf(item[index]) === index))
         // console.log(disciplinas)
-        res.render('../views/telas-alunos/dash-board', {conteudos, 
-                                                        conteudo_questoes, 
-                                                        questao, 
-                                                        provas, 
-                                                        turmas, 
-                                                        result, 
-                                                        alunos, 
-                                                        SumValorQuestao, 
-                                                        SumNotaQuestao, 
-                                                        instrutores
+        res.render('../views/telas-alunos/dash-board', {conteudos,
+                                                        conteudo_questoes,
+                                                        questao,
+                                                        provas,
+                                                        turmas,
+                                                        resultDis,
+                                                        alunos,
+                                                        SumValorQuestao,
+                                                        SumNotaQuestao,
+                                                        instrutores,
+                                                        id: id
                                                     })
     }
 }

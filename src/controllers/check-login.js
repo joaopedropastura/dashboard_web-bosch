@@ -11,12 +11,12 @@ module.exports = {
             const alunos = await aluno.findAll({
                 raw: true,
                 attributes: ["EDV", "Nome", "Senha"],
-                
+
             })
             const instrutores = await instrutor.findAll({
                 raw: true,
                 attributes: ["EDV", "Nome", "Senha"],
-                
+
             })
             alunos.forEach(ele => {
                 if(dados.edv == ele.EDV && dados.senha == ele.Senha)

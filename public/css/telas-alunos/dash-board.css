@@ -10,13 +10,11 @@ main{
 .graph01{
     height: 450px;
     width: 400px;
-    border: 1px solid rgba(255, 0, 0, 0.705);
-    display: flex;
-    justify-content: space-around;
+    border: 3px solid #800080;
 }
 
 .bar{
-    background-color: purple;
+    fill: #800080;
 }
 
 
