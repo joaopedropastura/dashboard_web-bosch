@@ -8,7 +8,7 @@
 	<%- include("../template/head.ejs") %>
 	<link rel="stylesheet" href="/css/telas-alunos/dash-board.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script src="https://d3js.org/d3.v7.min.js" defer></script>
+	<script src="https://d3js.org/d3.v6.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></script>
 	<script src="/js/dash-board.js" defer></script>
 	<title>Document</title>
@@ -28,22 +28,31 @@
 	<main>
 		<%- include("../template/nav-bar.ejs") %>
 		<div class="box-content">
-			<div>
-				<form action="/dash-board/<%=alunos[0].EDV%>" name="nome" method="post">
-					<select id="inputDis" class="form-select" id="disciplina" onchange="this.form.submit()" name="disciplina">
-						<option value="invalido" >selecione uma disciplina</option>
-						<% for (let i=0; i<resultDis.length; i++) { %>
-							<option value='<%= resultDis[i].Disciplina_ID %>'
-								<%= id == resultDis[i].Disciplina_ID ? 'selected' : ''%>>
-								<%= resultDis[i].Nome %>
-							</option>
-						<% } %>
-					</select>
-				</form>
+
+			<div id="provas">
+				
+
 			</div>
-			<svg></svg>
-			<div class="test"></div>
-			<div class="graphics"></div>
+
+			<div id="grafos">
+
+				<div id="menuDis">
+					<form action="/dash-board/<%=alunos[0].EDV%>" name="nome" method="post">
+						<select id="inputDis" class="form-select" id="disciplina" onchange="this.form.submit()" name="disciplina">
+							<option value="invalido" >selecione uma disciplina</option>
+							<% for (let i=0; i<resultDis.length; i++) { %>
+								<option value='<%= resultDis[i].Disciplina_ID %>'
+									<%= id == resultDis[i].Disciplina_ID ? 'selected' : ''%>>
+									<%= resultDis[i].Nome %>
+								</option>
+							<% } %>
+						</select>
+					</form>
+				</div>
+
+				<svg></svg>
+				<div id="dunutChart"></div>
+			</div>
 		</div>
 
 	</main>
