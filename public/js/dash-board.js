@@ -11,7 +11,7 @@ function getDados(conteudos, conteudo_questao, questao, provas, turmas, resultDi
 	const apto = questao.filter((quest) => (quest.Nota_Questao/quest.Valor_Questao) *10 >= 8)
 	const emDesenvolvimento = questao.filter((quest) => (quest.Nota_Questao/quest.Valor_Questao)*10 < 8 && (quest.Nota_Questao/quest.Valor_Questao)*10 >= 5)
 	const inapto = questao.filter((quest) => (quest.Nota_Questao/quest.Valor_Questao)*10 < 5)
-	
+
 	const xScale = d3
 				.scaleBand()
 				.domain(questao.map((dataPoint) => dataPoint.Questoes_ID))
@@ -33,7 +33,7 @@ function getDados(conteudos, conteudo_questao, questao, provas, turmas, resultDi
 			.attr('x', dta => xScale(dta.Questoes_ID))
 			.attr('y', dta => yScale(dta.Nota_Questao))
 
-	
+
 
 // set the dimensions and margins of the graph
 const width = 510,
@@ -121,7 +121,7 @@ svg
 
 
 let data = [];
-let features = ["Python", "C#", "JavaScript", "D", "E", "F"];
+let features = ["Python", "C#", "JavaScript"];
 //generate the data
 for (var i = 0; i < 3; i++){
     var point = {}
@@ -132,9 +132,9 @@ for (var i = 0; i < 3; i++){
 console.log(data);
 
 
-let width = 600;
-let height = 600;
-let svg = d3.select("body").append("svg")
+let width = 250;
+let height = 250;
+let svg = d3.select("#provas").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -174,7 +174,7 @@ svg.selectAll("circle")
 		let y = Math.sin(angle) * radialScale(value);
 		return {"x": width / 2 + x, "y": height / 2 - y};
 	}
-	
+
 
 
 
@@ -187,7 +187,7 @@ svg.selectAll("circle")
 			"label_coord": angleToCoordinate(angle, 10.5)
 		};
 	});
-	
+
 	// draw axis line
 	svg.selectAll("line")
 		.data(featureData)
@@ -199,7 +199,7 @@ svg.selectAll("circle")
 				.attr("y2", d => d.line_coord.y)
 				.attr("stroke","black")
 		);
-	
+
 	// draw axis label
 	svg.selectAll(".axislabel")
 		.data(featureData)
@@ -209,7 +209,7 @@ svg.selectAll("circle")
 				.attr("y", d => d.label_coord.y)
 				.text(d => d.name)
 		);
-	
+
 
 		let line = d3.line()
     .x(d => d.x)

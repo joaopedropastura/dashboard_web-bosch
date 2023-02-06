@@ -32,7 +32,7 @@
 		<%- include("../template/nav-bar-aluno.ejs") %>
 		<div class="box-content">
 			<div id="provas">
-				<div class="form2">
+				<form class="form2" action="/dash-board/<%=alunos[0].EDV%>">
 					<div class="legenda">
 						<div id="btn-legenda">
 							<b><%= alunos[0].Nome %></b>
@@ -41,7 +41,7 @@
 								<% for (let i=0; i<provas.length; i++) { %>
 									<% if (provas[i].Disciplina_ID == id || id == 'invalido' || id == undefined) { %>
 										<option value='<%= provas[i].Disciplina_ID %>'
-											<%= id == provas[i].Disciplina_ID ? 'selected' : ''%>>
+											<%= test == provas[i].Disciplina_ID ? 'selected' : ''%>>
 											<%= provas[i].Nome %>
 										</option>
 									<% } %>
@@ -62,9 +62,9 @@
 									</button>
 								</div>
 							<% } %>
-						<% } %>	
+						<% } %>
 					</div>
-				</div>
+				</form>
 			</div>
 			<div id="grafos">
 				<div id="menuDis">
@@ -82,7 +82,7 @@
 				</div>
 
 				<div id="dunutChart"></div>
-				<svg></svg>
+				<svg id="barCharts"></svg>
 			</div>
 		</div>
 

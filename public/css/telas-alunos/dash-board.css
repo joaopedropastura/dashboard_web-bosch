@@ -42,10 +42,10 @@ main
     width: 50%;
     display: flex;
     flex-direction: column;
-    
+
     align-items: flex-end;
 }
-    
+
 
 #menuDis{
     width: fit-content;
@@ -59,7 +59,7 @@ main
     display: flex;
     flex-direction: column;
 
- 
+
 }
 
 
@@ -151,6 +151,14 @@ main
     margin-left: 6.5vw;
     margin-top: 2vh;
     margin-right: 6.6vw ;
+}
+
+.dropdown-toggle{
+    width: 56%;
+}
+
+.dropdown-menu{
+    width: 56%;
 }
 
 .legendaQuestao

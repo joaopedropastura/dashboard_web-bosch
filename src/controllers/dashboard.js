@@ -17,7 +17,7 @@ module.exports = {
     async pagDashBoard(req, res)
     {
         const id = req.body.disciplina
-
+        const test = req.body.prova
 
         var aux = []
         var resultDis = []
@@ -88,7 +88,8 @@ module.exports = {
         });
         console.log(id)
         // console.log(listaDis.filter((item, index) => listaDis.indexOf(item[index]) === index))
-        // console.log(disciplinas)
+        console.log(test)
+
         res.render('../views/telas-alunos/dash-board', {conteudos,
                                                         conteudo_questoes,
                                                         questao,
@@ -99,7 +100,8 @@ module.exports = {
                                                         SumValorQuestao,
                                                         SumNotaQuestao,
                                                         instrutores,
-                                                        id: id
+                                                        id : id,
+                                                        test : test
                                                     })
     }
 }
