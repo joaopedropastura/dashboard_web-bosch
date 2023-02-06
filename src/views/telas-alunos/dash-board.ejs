@@ -31,8 +31,24 @@
 	<main>
 		<%- include("../template/nav-bar-aluno.ejs") %>
 		<div class="box-content">
+			<div class="questoes">
+				<% for (let i=0; i < questao.length; i++) { %>
+					<% if (questao[i].Prova_ID == test || test == 'invalido' || test == undefined) { %>
+						<div class="questao">
+							<button class="btn botaoQuestoes" id="<%= questao[i].Questao_ID %>" class="btn btn-primary" onclick="passainfo(<%=JSON.stringify(questao[i].Review)%>, <%=JSON.stringify(questao[i].Correcao)%>, <%=JSON.stringify(questao[i].Nota_Questao)%>, <%=JSON.stringify(questao[i].Valor_Questao)%>)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+								<div class="teste">
+									<div class="legendaQuestao"><b>Questao: <%= questao[i].Nome %> </b></div>
+									<div class="legendaPreview"><b>Preview: <%= questao[i].Review %></b></div>
+								</div>
+								<div class="legendaNota"><b>Nota: <%= questao[i].Nota_Questao %>/<%= questao[i].Valor_Questao %></b></div>
+							</button>
+						</div>
+					<% } %>
+				<% } %>
+			</div>
+		<form id="formGlobal" action="/dash-board/<%=alunos[0].EDV%>" method="post">
 			<div id="provas">
-				<form class="form2" action="/dash-board/<%=alunos[0].EDV%>">
+				<div class="form2">
 					<div class="legenda">
 						<div id="btn-legenda">
 							<b><%= alunos[0].Nome %></b>
@@ -40,8 +56,8 @@
 								<option value="invalido" >selecione uma disciplina</option>
 								<% for (let i=0; i<provas.length; i++) { %>
 									<% if (provas[i].Disciplina_ID == id || id == 'invalido' || id == undefined) { %>
-										<option value='<%= provas[i].Disciplina_ID %>'
-											<%= test == provas[i].Disciplina_ID ? 'selected' : ''%>>
+										<option value='<%= provas[i].Prova_ID %>'
+											<%= test == provas[i].Prova_ID ? 'selected' : ''%>>
 											<%= provas[i].Nome %>
 										</option>
 									<% } %>
@@ -49,26 +65,12 @@
 							</select>
 						</div>
 					</div>
-					<div class="questoes">
-						<% for (let i=0; i < questao.length; i++) { %>
-							<% if (questao[i].Prova_ID == id || id == 'invalido' || id == undefined) { %>
-								<div class="questao">
-									<button class="btn botaoQuestoes">
-										<div class="teste">
-											<div class="legendaQuestao"><b>Questao: <%= questao[i].Nome %> </b></div>
-											<div class="legendaPreview"><b>Preview: <%= questao[i].Review %></b></div>
-										</div>
-										<div class="legendaNota"><b>Nota: <%= questao[i].Nota_Questao %>/<%= questao[i].Valor_Questao %></b></div>
-									</button>
-								</div>
-							<% } %>
-						<% } %>
-					</div>
-				</form>
+					
+				</div>
 			</div>
 			<div id="grafos">
 				<div id="menuDis">
-					<form action="/dash-board/<%=alunos[0].EDV%>" name="nome" method="post">
+					<div>
 						<select id="inputDis" class="form-select" id="disciplina" onchange="this.form.submit()" name="disciplina">
 							<option value="invalido" >selecione uma disciplina</option>
 							<% for (let i=0; i<resultDis.length; i++) { %>
@@ -78,12 +80,46 @@
 								</option>
 							<% } %>
 						</select>
-					</form>
+					</div>
 				</div>
-
+				<span>Competencias</span>
 				<div id="dunutChart"></div>
+				<span>Nota por Questão</span>
 				<svg id="barCharts"></svg>
 			</div>
+		</form>
+		
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<div id="desc-questao">
+							
+						</div>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<div class="modal-body">
+
+						<div class="mb-3 forms">
+							<label class="form-label">Review: </label>
+							<textarea disabled class="form-control" id="review" aria-label="With textarea" name="review"></textarea>
+						</div>
+
+						<div class="mb-3 forms">
+							<label class="form-label">Correção: </label>
+							<textarea disabled class="form-control"  id="correcao" aria-label="With textarea" name="correcao"></textarea>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		</div>
 
 	</main>
